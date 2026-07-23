@@ -427,20 +427,6 @@ Migrasi harus selesai sebelum LeviLauncher dapat melanjutkan.</string>
     <string name="dialog_title_exit_app">Keluar dari Aplikasi</string>
     <string name="dialog_message_exit_app">Apakah Anda yakin ingin keluar?</string>
     <string name="dialog_positive_exit">Keluar</string>
-    <string name="show_logcat_overlay">Logcat overlay</string>
-    <string name="logcat_live">Logcat: <b>hidup(live)</b></string>
-    <string name="logcat_paused">Logcat: terhenti</string>
-    <!-- Logcat Overlay i18n -->
-    <string name="logcat_filter_hint">Filter kata kunci</string>
-    <string name="logcat_blacklist_hint">Daftar hitam (dipisahkan koma)</string>
-    <string name="logcat_filter_clear">Hapus filter</string>
-    <string name="logcat_filter">Filter</string>
-    <string name="logcat_autoscroll">Auto-scroll</string>
-    <string name="logcat_pause">Berhentikan(pause)</string>
-    <string name="logcat_clear">Bersihkan</string>
-    <string name="logcat_close">Tutup</string>
-    <string name="logcat_corner_bottom_left">Ubah ukuran: kiri bawah</string>
-    <string name="logcat_corner_bottom_right">Ubah ukuran: kanan bawah</string>
 
     <!-- Inbuilt Mods -->
     <string name="inbuilt_mods">Mod Bawaan</string>

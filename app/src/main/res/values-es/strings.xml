@@ -465,19 +465,6 @@ La migración debe completarse antes de continuar con LeviLauncher.</string>
     <string name="dialog_title_exit_app">Salir de la aplicación</string>
     <string name="dialog_message_exit_app">¿Estás seguro de que deseas salir?</string>
     <string name="dialog_positive_exit">Salir</string>
-    <string name="show_logcat_overlay">Superposición Logcat</string>
-    <string name="logcat_live">Logcat: <b>en vivo</b></string>
-    <string name="logcat_paused">Logcat: en pausa</string>
-    <string name="logcat_filter_hint">Filtro de palabra clave</string>
-    <string name="logcat_blacklist_hint">Lista negra (separada por comas)</string>
-    <string name="logcat_filter_clear">Borrar filtros</string>
-    <string name="logcat_filter">Filtro</string>
-    <string name="logcat_autoscroll">Auto-scroll</string>
-    <string name="logcat_pause">Pausa</string>
-    <string name="logcat_clear">Limpiar</string>
-    <string name="logcat_close">Cerrar</string>
-    <string name="logcat_corner_bottom_left">Redimensionar: abajo-izq</string>
-    <string name="logcat_corner_bottom_right">Redimensionar: abajo-der</string>
 
     <string name="inbuilt_mods">Mods Incorporados</string>
     <string name="inbuilt_mods_title">Mods Incorporados</string>

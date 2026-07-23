@@ -6,7 +6,6 @@ import android.content.SharedPreferences
 import androidx.preference.PreferenceManager
 import org.levimc.launcher.core.crash.CrashReporter
 import org.levimc.launcher.settings.FeatureSettings
-import org.levimc.launcher.ui.dialogs.LogcatOverlayManager
 
 class LauncherApplication : Application() {
 
@@ -17,8 +16,6 @@ class LauncherApplication : Application() {
         CrashReporter.init(this)
         val processName = Application.getProcessName()
         if (processName.endsWith(":crash")) return
-
-        LogcatOverlayManager.init(this)
 
         preferences = PreferenceManager.getDefaultSharedPreferences(this)
     }

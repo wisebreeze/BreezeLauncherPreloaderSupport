@@ -546,20 +546,6 @@ LeviLauncher\'ın devam edebilmesi için taşımanın tamamlanması gerekiyor.</
     <string name="dialog_title_exit_app">Uygulamadan Çık</string>
     <string name="dialog_message_exit_app">Çıkmak istediğinizden emin misiniz?</string>
     <string name="dialog_positive_exit">Çık</string>
-    <string name="show_logcat_overlay">Logcat katmanı</string>
-    <string name="logcat_live">Logcat: <b>canlı</b></string>
-    <string name="logcat_paused">Logcat: duraklatıldı</string>
-    <!-- Logcat Overlay -->
-    <string name="logcat_filter_hint">Anahtar kelime filtresi</string>
-    <string name="logcat_blacklist_hint">Kara liste (virgülle ayrılmış)</string>
-    <string name="logcat_filter_clear">Filtreleri temizle</string>
-    <string name="logcat_filter">Filtrele</string>
-    <string name="logcat_autoscroll">Otomatik kaydır</string>
-    <string name="logcat_pause">Duraklat</string>
-    <string name="logcat_clear">Temizle</string>
-    <string name="logcat_close">Kapat</string>
-    <string name="logcat_corner_bottom_left">Yeniden boyutlandır: sol alt</string>
-    <string name="logcat_corner_bottom_right">Yeniden boyutlandır: sağ alt</string>
 
     <!-- Inbuilt Mods -->
     <string name="inbuilt_mods">Yerleşik Modlar</string>

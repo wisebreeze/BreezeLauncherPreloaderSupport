@@ -465,19 +465,6 @@ LeviLauncher を続行するには移行を完了する必要があります。<
     <string name="dialog_title_exit_app">アプリを終了</string>
     <string name="dialog_message_exit_app">本当に終了してもよろしいですか？</string>
     <string name="dialog_positive_exit">終了</string>
-    <string name="show_logcat_overlay">Logcat オーバーレイ</string>
-    <string name="logcat_live">Logcat: <b>ライブ</b></string>
-    <string name="logcat_paused">Logcat: 一時停止中</string>
-    <string name="logcat_filter_hint">キーワードフィルター</string>
-    <string name="logcat_blacklist_hint">ブラックリスト (カンマ区切り)</string>
-    <string name="logcat_filter_clear">フィルターをクリア</string>
-    <string name="logcat_filter">フィルター</string>
-    <string name="logcat_autoscroll">自動スクロール</string>
-    <string name="logcat_pause">一時停止</string>
-    <string name="logcat_clear">クリア</string>
-    <string name="logcat_close">閉じる</string>
-    <string name="logcat_corner_bottom_left">サイズ変更: 左下</string>
-    <string name="logcat_corner_bottom_right">サイズ変更: 右下</string>
 
     <string name="inbuilt_mods">内蔵モッド</string>
     <string name="inbuilt_mods_title">内蔵モッド</string>

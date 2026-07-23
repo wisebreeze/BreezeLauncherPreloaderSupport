@@ -479,20 +479,6 @@ LeviLauncher जारी रखने से पहले माइग्रे
     <string name="dialog_title_exit_app">ऐप से बाहर निकलें</string>
     <string name="dialog_message_exit_app">क्या आप सुनिश्चित हैं कि आप बाहर निकलना चाहते हैं?</string>
     <string name="dialog_positive_exit">बाहर निकलें</string>
-    <string name="show_logcat_overlay">Logcat ओवरले</string>
-    <string name="logcat_live">Logcat: <b>लाइव</b></string>
-    <string name="logcat_paused">Logcat: रुका हुआ है</string>
-    <!-- Logcat Overlay i18n -->
-    <string name="logcat_filter_hint">कीवर्ड फ़िल्टर</string>
-    <string name="logcat_blacklist_hint">ब्लैकलिस्ट (अल्पविराम से अलग)</string>
-    <string name="logcat_filter_clear">फ़िल्टर साफ़ करें</string>
-    <string name="logcat_filter">फ़िल्टर</string>
-    <string name="logcat_autoscroll">ऑटो-स्क्रॉल</string>
-    <string name="logcat_pause">रोकें</string>
-    <string name="logcat_clear">साफ़ करें</string>
-    <string name="logcat_close">बंद करें</string>
-    <string name="logcat_corner_bottom_left">आकार बदलें: नीचे-बाएँ</string>
-    <string name="logcat_corner_bottom_right">आकार बदलें: नीचे-दाएँ</string>
 
     <!-- Inbuilt Mods -->
     <string name="inbuilt_mods">अंतर्निर्मित मॉड्स</string>

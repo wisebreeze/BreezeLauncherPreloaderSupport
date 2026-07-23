@@ -35,7 +35,6 @@ import org.levimc.launcher.core.crash.CrashReporter;
 import org.levimc.launcher.preloader.PreloaderSignatureRulesManager;
 import org.levimc.launcher.settings.FeatureSettings;
 import org.levimc.launcher.ui.animation.DynamicAnim;
-import org.levimc.launcher.ui.dialogs.LogcatOverlayManager;
 import org.levimc.launcher.util.GithubReleaseUpdater;
 import org.levimc.launcher.util.LanguageManager;
 import org.levimc.launcher.util.LauncherStorage;
@@ -220,8 +219,8 @@ public class SettingsActivity extends BaseActivity {
                 getString(R.string.french),
                 getString(R.string.japanese),
                 getString(R.string.hindi),
-		        getString(R.string.turkish),
-			    getString(R.string.vietnamese)
+                        getString(R.string.turkish),
+                            getString(R.string.vietnamese)
         };
 
         String currentCode = languageManager.getCurrentLanguage();
@@ -234,8 +233,8 @@ public class SettingsActivity extends BaseActivity {
             case "fr" -> 6;
             case "ja" -> 7;
             case "hi" -> 8;
-	        case "tr", "tr-TR" -> 9;
-			case "vi" -> 10;
+                case "tr", "tr-TR" -> 9;
+                        case "vi" -> 10;
             default -> 0;
         };
 
@@ -260,8 +259,8 @@ public class SettingsActivity extends BaseActivity {
                     case 6 -> "fr";
                     case 7 -> "ja";
                     case 8 -> "hi";
-		            case 9 -> "tr";
-					case 10 -> "vi";
+                            case 9 -> "tr";
+                                        case 10 -> "vi";
                     default -> "en";
                 };
                 if (!code.equals(languageManager.getCurrentLanguage())) {
@@ -273,16 +272,6 @@ public class SettingsActivity extends BaseActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
             }
-        });
-
-        SwitchMaterial switchLogcat = findViewById(R.id.switch_logcat);
-        switchLogcat.setChecked(fs.isLogcatOverlayEnabled());
-        switchLogcat.setOnCheckedChangeListener((btn, checked) -> {
-            fs.setLogcatOverlayEnabled(checked);
-            try {
-                LogcatOverlayManager mgr = LogcatOverlayManager.getInstance();
-                if (mgr != null) mgr.refreshVisibility();
-            } catch (Throwable ignored) {}
         });
 
         SwitchMaterial switchCrashUpload = findViewById(R.id.switch_crash_upload);
@@ -489,15 +478,7 @@ public class SettingsActivity extends BaseActivity {
             btnUpdatePreloaderSigs.setBackgroundTintList(ColorStateList.valueOf(accent));
             btnUpdatePreloaderSigs.setTextColor(Color.WHITE);
         }
-        
-        SwitchMaterial switchLogcat = findViewById(R.id.switch_logcat);
-        if (switchLogcat != null && accent != 0) {
-            int[][] states = {{android.R.attr.state_checked}, {}};
-            switchLogcat.setThumbTintList(new ColorStateList(states, new int[]{accent, 0xFFAAAAAA}));
-            int trackChecked = Color.argb(100, Color.red(accent), Color.green(accent), Color.blue(accent));
-            switchLogcat.setTrackTintList(new ColorStateList(states, new int[]{trackChecked, 0xFF555555}));
-        }
-        
+
         SwitchMaterial switchManagedLogin = findViewById(R.id.switch_managed_login);
         if (switchManagedLogin != null && accent != 0) {
             int[][] states = {{android.R.attr.state_checked}, {}};

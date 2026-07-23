@@ -550,20 +550,6 @@ Migration must complete before LeviLauncher can continue.</string>
     <string name="dialog_title_exit_app">Exit App</string>
     <string name="dialog_message_exit_app">Are you sure you want to exit?</string>
     <string name="dialog_positive_exit">Exit</string>
-    <string name="show_logcat_overlay">Logcat overlay</string>
-    <string name="logcat_live">Logcat: <b>live</b></string>
-    <string name="logcat_paused">Logcat: paused</string>
-    <!-- Logcat Overlay i18n -->
-    <string name="logcat_filter_hint">Keyword filter</string>
-    <string name="logcat_blacklist_hint">Blacklist (comma-separated)</string>
-    <string name="logcat_filter_clear">Clear filters</string>
-    <string name="logcat_filter">Filter</string>
-    <string name="logcat_autoscroll">Auto-scroll</string>
-    <string name="logcat_pause">Pause</string>
-    <string name="logcat_clear">Clear</string>
-    <string name="logcat_close">Close</string>
-    <string name="logcat_corner_bottom_left">Resize: bottom-left</string>
-    <string name="logcat_corner_bottom_right">Resize: bottom-right</string>
 
     <!-- Inbuilt Mods -->
     <string name="inbuilt_mods">Inbuilt Mods</string>

@@ -7,7 +7,6 @@ public class FeatureSettings {
     private static Context appContext;
     private boolean versionIsolationEnabled = false;
     private boolean launcherManagedMcLoginEnabled = false;
-    private boolean logcatOverlayEnabled = false;
     private Boolean crashUploadEnabled = true;
 
     public enum StorageType {
@@ -41,9 +40,6 @@ public class FeatureSettings {
 
     public boolean isLauncherManagedMcLoginEnabled() { return launcherManagedMcLoginEnabled; }
     public void setLauncherManagedMcLoginEnabled(boolean enabled) { this.launcherManagedMcLoginEnabled = enabled; autoSave(); }
-
-    public boolean isLogcatOverlayEnabled() { return logcatOverlayEnabled; }
-    public void setLogcatOverlayEnabled(boolean enabled) { this.logcatOverlayEnabled = enabled; autoSave(); }
 
     public boolean isCrashUploadEnabled() { return crashUploadEnabled == null || crashUploadEnabled; }
     public void setCrashUploadEnabled(boolean enabled) { this.crashUploadEnabled = enabled; autoSave(); }

@@ -532,20 +532,6 @@ Quá trình chuyển đổi phải hoàn tất trước khi LeviLauncher có th�
     <string name="dialog_title_exit_app">Thoát ứng dụng</string>
     <string name="dialog_message_exit_app">Bạn có chắc chắn muốn thoát ra không?</string>
     <string name="dialog_positive_exit">Thoát</string>
-    <string name="show_logcat_overlay">Lớp phủ Logcat</string>
-    <string name="logcat_live">Logcat: <b>trực tiếp</b></string>
-    <string name="logcat_paused">Logcat: đã tạm dừng</string>
-    <!-- Logcat Overlay i18n -->
-    <string name="logcat_filter_hint">Bộ lọc từ khóa</string>
-    <string name="logcat_blacklist_hint">Danh sách đen (phân cách bằng dấu phẩy)</string>
-    <string name="logcat_filter_clear">Xóa bộ lọc</string>
-    <string name="logcat_filter">Bộ lọc</string>
-    <string name="logcat_autoscroll">Tự động cuộn</string>
-    <string name="logcat_pause">Dừng</string>
-    <string name="logcat_clear">Xóa</string>
-    <string name="logcat_close">Đóng</string>
-    <string name="logcat_corner_bottom_left">Thay đổi kích thước: góc dưới bên trái</string>
-    <string name="logcat_corner_bottom_right">Thay đổi kích thước: góc dưới bên phải</string>
 
     <!-- Inbuilt Mods -->
     <string name="inbuilt_mods">Mods có sẵn</string>
