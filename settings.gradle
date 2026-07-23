@@ -22,7 +22,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "levilauncher"
+rootProject.name = "BreezeLauncherPreloaderSupport"
 include ':app'
 include ':minecraft'
 include ':minecraft-msftauth'
