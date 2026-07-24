@@ -66,7 +66,6 @@
     <string name="files_processed">成功处理 %d 个模组文件</string>
     <string name="user_cancelled">用户取消导入</string>
 
-
     <string name="exit">退出</string>
 
     <string name="overlay_permission_message">请授予悬浮窗权限</string>
@@ -123,13 +122,6 @@
     <string name="repair_processing">正在提取库文件…</string>
     <string name="repair_finalizing">正在完成修复…</string>
 
-这次存储迁移是为了满足 Google Play 上架合规要求，不得不这么做。旧目录会保持不变，但迁移后不再作为运行目录使用。
-
-迁移可能需要一段时间，可以把应用挂在后台等待；大量复制文件期间手机可能会发烫，请您理解。</string>
-
-旧的 games/org.levimc 目录未被删除，后续不再使用。</string>
-
-必须完成迁移后才能继续使用 LeviLauncher。</string>
     
     <string name="theme_title">主题模式</string>
     <string name="theme_follow_system">跟随系统</string>
@@ -151,7 +143,6 @@
     <string name="dialog_message_disable_version_isolation">您尝试在启用版本隔离的情况下启动已安装的版本。请禁用版本隔离以继续。</string>
     <string name="dialog_positive_disable">禁用</string>
     <string name="dialog_positive_ok">确定</string>
-
 
     <string name="eula_title">LeviLauncher 用户协议</string>
     <string name="eula_message"><b>欢迎使用 LeviLauncher</b>\n\n使用本软件即表示您同意：\n\n• 此为<b>非官方</b> Minecraft 启动器\n• 您需拥有<b>合法授权</b>的 Minecraft 副本\n• 禁止任何形式的盗版或作弊行为\n• 模组/资源包使用风险自负\n• 与 Mojang/Microsoft 无关联\n\n继续使用视为接受条款</string>
@@ -299,7 +290,6 @@
     <string name="genuine_badge_label">未通过正版验证</string>
     <string name="invalid_license_detected_toast">非正版MC，请确保设备上MC来自于谷歌商店</string>
 
-
     <string name="full_mods_title">模组 </string>
     <string name="total_mods">模组总数：</string>
     <string name="enabled_mods">已启用：</string>
@@ -427,8 +417,6 @@
      <string name="dialog_title_exit_app">退出应用</string>
      <string name="dialog_message_exit_app">确定要退出应用吗？</string>
      <string name="dialog_positive_exit">退出</string>
-
-
 
     <!-- Inbuilt Mods -->
     <string name="inbuilt_mods">内置模组</string>

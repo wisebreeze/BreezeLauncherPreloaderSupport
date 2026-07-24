@@ -55,7 +55,6 @@
     <string name="files_processed">Успешно добавлены файлы мода %d </string>
     <string name="user_cancelled">Импорт отменен пользователем</string>
 
-
     <string name="exit">Выйти</string>
 
     <string name="overlay_permission_message">Необходимо разрешение на отображение поверх других приложений</string>
@@ -111,7 +110,6 @@
     <string name="dialog_positive_disable">Отключить</string>
     <string name="dialog_positive_ok">ОК</string>
 
-
     <string name="new_version_found">Найдена новая версия: %1$s</string>
     <string name="update_question">Вы хотите скачать и установить последнюю версию?</string>
     <string name="download_update">Скачать обновление</string>
@@ -138,14 +136,6 @@
     <string name="repair_preparing">Подготовка…</string>
     <string name="repair_processing">Извлечение библиотек…</string>
     <string name="repair_finalizing">Завершение восстановления…</string>
-
-Это изменение хранилища необходимо для соответствия требованиям публикации в Google Play. Старая папка останется нетронутой, но после миграции больше не будет использоваться.
-
-Миграция может занять время. Можно оставить приложение в фоне; при интенсивном копировании файлов телефон может нагреваться. Благодарим за понимание.</string>
-
-Старая папка games/org.levimc не была удалена и больше не используется.</string>
-
-Миграция должна завершиться, прежде чем LeviLauncher сможет продолжить.</string>
 
     <string name="theme_title">Тема</string>
     <string name="theme_follow_system">Как в системе</string>
@@ -383,7 +373,6 @@
     <string name="dialog_title_exit_app">Выйти из приложения</string>
     <string name="dialog_message_exit_app">Вы уверены, что хотите выйти?</string>
     <string name="dialog_positive_exit">Выйти</string>
-
 
     <!-- Inbuilt Mods -->
     <string name="inbuilt_mods">Встроенные моды</string>

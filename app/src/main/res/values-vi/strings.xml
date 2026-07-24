@@ -66,7 +66,6 @@
     <string name="files_processed">Đã xử lý thành công file Mod %d</string>
     <string name="user_cancelled">Hành động đã bị hủy bởi người dùng</string>
 
-
     <string name="exit">Thoát</string>
 
     <string name="overlay_permission_message">Vui lòng cấp quyền hiển thị lớp phủ.</string>
@@ -99,7 +98,6 @@
     <string name="settings_tab_about">Về</string>
     <string name="settings_theme_desc">Chọn chủ đề cho ứng dụng</string>
 
-
     <string name="unknown_sources_permission_title">Quyền cài đặt</string>
     <string name="unknown_sources_permission_message">Để cài đặt hoặc cập nhật ứng dụng này, vui lòng cấp quyền cài đặt ứng dụng không rõ nguồn gốc. Nhấp vào "Cấp quyền" để mở cài đặt hệ thống, bật quyền cho ứng dụng này và quay lại để tiếp tục.</string>
 
@@ -129,7 +127,6 @@
     <string name="dialog_positive_disable">Tắt</string>
     <string name="dialog_positive_ok">OK</string>
 
-
     <string name="new_version_found">Đã tìm thấy phiên bản mới: %1$s</string>
     <string name="update_question">Bạn có muốn tải xuống và cài đặt phiên bản mới nhất không?</string>
     <string name="download_update">Tải xuống bản cập nhật</string>
@@ -156,15 +153,6 @@
     <string name="repair_preparing">Đang chuẩn bị…</string>
     <string name="repair_processing">Đang trích xuất thư viện…</string>
     <string name="repair_finalizing">Hoàn tất sửa chữa…</string>
-
-
-Việc thay đổi thư mục lưu trữ này là cần thiết để tuân thủ các quy định về hiển thị danh sách trên Google Play. Thư mục cũ sẽ được giữ nguyên, nhưng sẽ không còn được sử dụng sau khi chuyển đổi. 
-
-Quá trình chuyển đổi có thể mất một lúc. Bạn có thể để ứng dụng chạy ngầm trong khi nó thực hiện; điện thoại có thể nóng lên trong quá trình sao chép tập tin lớn. Cảm ơn sự thông cảm của bạn.</string>
-
-Thư mục games/org.levimc cũ không bị xóa và không còn được sử dụng nữa.</string>
-
-Quá trình chuyển đổi phải hoàn tất trước khi LeviLauncher có thể tiếp tục.</string>
 
     <string name="theme_title">Chế độ chủ đề</string>
     <string name="theme_follow_system">Theo hệ thống</string>
@@ -258,7 +246,6 @@ Quá trình chuyển đổi phải hoàn tất trước khi LeviLauncher có th�
     <string name="japanese">日本語</string>
     <string name="hindi">हिन्दी</string>
     <string name="vietnamese">Tiếng Việt</string>
-
 
     <!-- Version Rename -->
     <string name="rename_version_title">Đổi tên phiên bản</string>

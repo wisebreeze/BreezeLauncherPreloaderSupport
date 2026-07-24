@@ -154,15 +154,6 @@
     <string name="repair_processing">Kütüphaneler çıkarılıyor…</string>
     <string name="repair_finalizing">Onarım tamamlanıyor…</string>
 
-
-Bu depolama değişikliği Google Play listeleme uyumluluğu için zorunludur. Eski dizin dokunulmadan kalacak ancak taşımanın ardından artık kullanılmayacaktır.
-
-Taşıma biraz zaman alabilir. Uygulama arka planda çalışırken ayrılabilirsiniz; yoğun dosya kopyalama sırasında telefon ısınabilir. Anlayışınız için teşekkür ederiz.</string>
-
-Eski games/org.levimc dizini silinmedi ve artık kullanılmıyor.</string>
-
-LeviLauncher\'ın devam edebilmesi için taşımanın tamamlanması gerekiyor.</string>
-
     <string name="theme_title">Tema Modu</string>
     <string name="theme_follow_system">Sistemi Takip Et</string>
     <string name="theme_light">Açık Mod</string>
