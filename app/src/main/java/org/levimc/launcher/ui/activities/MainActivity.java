@@ -58,6 +58,8 @@ import java.util.ArrayList;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 
  import android.widget.Button;
@@ -625,14 +627,6 @@ import okhttp3.OkHttpClient;
             VersionManager.attemptRepairLibs(this, selectedVersion);
         }
     }
-
-    private void showEulaIfNeeded() {
-        SharedPreferences prefs = getSharedPreferences("LauncherPrefs", MODE_PRIVATE);
-        if (!prefs.getBoolean("eula_accepted", false)) {
-            showEulaDialog();
-        }
-    }
-
 
     private void showEulaIfNeeded() {
         SharedPreferences prefs = getSharedPreferences("LauncherPrefs", MODE_PRIVATE);
