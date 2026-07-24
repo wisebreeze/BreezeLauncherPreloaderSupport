@@ -159,8 +159,8 @@ public final class LauncherStorage {
         ensureSharedStorageModeInitialized(context);
         String key = external ? KEY_SHARED_EXTERNAL_MODE : KEY_SHARED_INTERNAL_MODE;
         String mode = context.getSharedPreferences(STORAGE_LAYOUT_PREFS_NAME, Context.MODE_PRIVATE)
-                .getString(key, SHARED_MODE_NEW);
-        return SHARED_MODE_LEGACY.equals(mode) ? SHARED_MODE_LEGACY : SHARED_MODE_NEW;
+                .getString(key, SHARED_MODE_LEGACY);
+        return SHARED_MODE_NEW.equals(mode) ? SHARED_MODE_NEW : SHARED_MODE_LEGACY;
     }
 
     private static void ensureSharedStorageModeInitialized(Context context) {
@@ -182,8 +182,8 @@ public final class LauncherStorage {
     public static boolean isUsingNewSharedStorage(Context context) {
         ensureSharedStorageModeInitialized(context);
         android.content.SharedPreferences prefs = context.getSharedPreferences(STORAGE_LAYOUT_PREFS_NAME, Context.MODE_PRIVATE);
-        return SHARED_MODE_NEW.equals(prefs.getString(KEY_SHARED_INTERNAL_MODE, SHARED_MODE_NEW))
-                && SHARED_MODE_NEW.equals(prefs.getString(KEY_SHARED_EXTERNAL_MODE, SHARED_MODE_NEW));
+        return SHARED_MODE_NEW.equals(prefs.getString(KEY_SHARED_INTERNAL_MODE, SHARED_MODE_LEGACY))
+                && SHARED_MODE_NEW.equals(prefs.getString(KEY_SHARED_EXTERNAL_MODE, SHARED_MODE_LEGACY));
     }
 
     public static void setUseNewSharedStorage(Context context, boolean useNewStorage) {
@@ -204,10 +204,7 @@ public final class LauncherStorage {
     }
 
     static String chooseSharedStorageMode(File legacyInternalFilesRoot, File legacyExternalFilesRoot) {
-        return hasAnyFile(new File(legacyInternalFilesRoot, GAME_DATA_RELATIVE_PATH))
-                || hasAnyFile(new File(legacyExternalFilesRoot, GAME_DATA_RELATIVE_PATH))
-                ? SHARED_MODE_LEGACY
-                : SHARED_MODE_NEW;
+        return SHARED_MODE_LEGACY;
     }
 
     static File resolveSharedFilesRoot(File legacyRoot, File newRoot, String mode) {
