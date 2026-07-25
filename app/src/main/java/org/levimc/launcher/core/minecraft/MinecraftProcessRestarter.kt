@@ -33,6 +33,7 @@ import org.levimc.launcher.util.PersonalizationManager
 import kotlin.system.exitProcess
 
 private const val EXTRA_OLD_MAIN_PROCESS_PID = "org.levimc.launcher.extra.OLD_MAIN_PROCESS_PID"
+const val EXTRA_RETURN_TO_PACKAGE = "org.levimc.launcher.extra.RETURN_TO_PACKAGE"
 const val EXTRA_CLOSE_RESTART_ACTIVITY_ON_FIRST_DRAW =
     "org.levimc.launcher.extra.CLOSE_RESTART_ACTIVITY_ON_FIRST_DRAW"
 const val ACTION_MAIN_ACTIVITY_FIRST_DRAWN =
@@ -42,7 +43,7 @@ private const val KILL_OLD_PROCESS_DELAY_MS = 300L
 private const val RELAUNCH_AFTER_KILL_DELAY_MS = 700L
 
 object MinecraftProcessRestarter {
-    fun restartLauncherAfterMinecraftExit(context: Context) {
+    fun restartLauncherAfterMinecraftExit(context: Context, returnToPackage: String? = null) {
         val appContext = context.applicationContext
         val oldPid = Process.myPid()
         cancelLegacyLauncherRestart(appContext)
@@ -50,6 +51,9 @@ object MinecraftProcessRestarter {
         val intent = Intent(appContext, LauncherRestartActivity::class.java).apply {
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_NO_ANIMATION)
             putExtra(EXTRA_OLD_MAIN_PROCESS_PID, oldPid)
+            if (!returnToPackage.isNullOrEmpty()) {
+                putExtra(EXTRA_RETURN_TO_PACKAGE, returnToPackage)
+            }
         }
 
         try {
@@ -137,6 +141,21 @@ class LauncherRestartActivity : BaseActivity() {
             mainHandler.postDelayed({ hideSystemUI() }, 360L)
             mainHandler.postDelayed({
                 hideSystemUI()
+                val returnPackage = intent.getStringExtra(EXTRA_RETURN_TO_PACKAGE)
+                if (!returnPackage.isNullOrEmpty()) {
+                    // 兼容模式：退出后返回调用方启动器（如 BreezeLauncher）
+                    val returnIntent = packageManager.getLaunchIntentForPackage(returnPackage)
+                    if (returnIntent != null) {
+                        returnIntent.addFlags(
+                            Intent.FLAG_ACTIVITY_NEW_TASK or
+                                Intent.FLAG_ACTIVITY_REORDER_TO_FRONT
+                        )
+                        startActivity(returnIntent)
+                        overridePendingTransition(0, 0)
+                        finish()
+                        return@postDelayed
+                    }
+                }
                 startActivity(Intent(this, MainActivity::class.java).apply {
                     addFlags(
                         Intent.FLAG_ACTIVITY_NEW_TASK or

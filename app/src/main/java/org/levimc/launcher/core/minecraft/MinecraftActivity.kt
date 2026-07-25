@@ -130,7 +130,7 @@ class MinecraftActivity : MainActivity() {
     private fun returnToLauncherAfterLaunchFailure() {
         gameRuntimeStarted = false
         MinecraftLaunchSession.clear()
-        MinecraftProcessRestarter.restartLauncherAfterMinecraftExit(this)
+        MinecraftProcessRestarter.restartLauncherAfterMinecraftExit(this, intent?.getStringExtra(MinecraftProcessRestarter.EXTRA_RETURN_TO_PACKAGE))
         finish()
     }
 
@@ -299,7 +299,7 @@ class MinecraftActivity : MainActivity() {
         if (normalExitRestartScheduled) return
         normalExitRestartScheduled = true
 
-        MinecraftProcessRestarter.restartLauncherAfterMinecraftExit(this)
+        MinecraftProcessRestarter.restartLauncherAfterMinecraftExit(this, intent?.getStringExtra(MinecraftProcessRestarter.EXTRA_RETURN_TO_PACKAGE))
     }
 
     override fun getAssets(): AssetManager {

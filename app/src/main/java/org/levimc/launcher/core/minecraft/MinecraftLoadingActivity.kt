@@ -316,7 +316,7 @@ class MinecraftLoadingActivity : BaseActivity(), MinecraftRuntimePreparer.Progre
         returningToLauncher = true
 
         MinecraftLaunchSession.clear()
-        MinecraftProcessRestarter.restartLauncherAfterMinecraftExit(this)
+        MinecraftProcessRestarter.restartLauncherAfterMinecraftExit(this, intent?.getStringExtra(MinecraftProcessRestarter.EXTRA_RETURN_TO_PACKAGE))
         finish()
     }
 
