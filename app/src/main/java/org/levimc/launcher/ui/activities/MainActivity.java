@@ -126,6 +126,12 @@ import okhttp3.OkHttpClient;
         closeLauncherRestartAfterFirstDraw();
         setupNavBar();
         setupManagersAndHandlers();
+
+        // Initialize storage and preloader signature rules (was in SplashActivity)
+        org.levimc.launcher.util.LauncherStorage.ensureNoMedia(getApplicationContext());
+        org.levimc.launcher.preloader.PreloaderSignatureRulesManager.refreshOnLauncherStart(getApplicationContext());
+        syncSystemLocale();
+
         new GithubReleaseUpdater(this, "LiteLDev", "LeviLaunchroid", permissionResultLauncher).checkUpdateOnLaunch();
         initializeAfterMigrationGate();
         setupOnBackPressedCallback();
@@ -179,6 +185,24 @@ import okhttp3.OkHttpClient;
         super.onNewIntent(intent);
         setIntent(intent);
         handleVersionDependentIntent();
+    }
+
+    private void syncSystemLocale() {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
+            try {
+                android.app.LocaleManager localeManager = getSystemService(android.app.LocaleManager.class);
+                if (localeManager != null) {
+                    android.os.LocaleList appLocales = localeManager.getApplicationLocales();
+                    android.os.LocaleList systemLocales = localeManager.getSystemLocales();
+                    if (!appLocales.isEmpty()) {
+                        localeManager.setApplicationLocales(android.os.LocaleList.getEmptyLocaleList());
+                    }
+                    if (!systemLocales.isEmpty()) {
+                        java.util.Locale.setDefault(systemLocales.get(0));
+                    }
+                }
+            } catch (Exception ignored) {}
+        }
     }
 
     private void closeLauncherRestartAfterFirstDraw() {

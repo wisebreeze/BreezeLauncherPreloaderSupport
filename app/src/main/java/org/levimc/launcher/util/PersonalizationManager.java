@@ -183,8 +183,6 @@ public class PersonalizationManager {
     }
 
     public void applyToActivity(Activity activity) {
-        if (activity instanceof org.levimc.launcher.ui.activities.SplashActivity) return;
-
         ViewGroup rootView = activity.findViewById(android.R.id.content);
         if (rootView == null) return;
 
