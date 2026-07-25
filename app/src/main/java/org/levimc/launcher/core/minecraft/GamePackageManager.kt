@@ -48,6 +48,7 @@ class GamePackageManager private constructor(
     private val extractableLibs = requiredLibs + optionalLibs
 
     private val systemLoadedLibs = arrayOf(
+        "libpairipcore.so",
         "libPlayFabMultiplayer.so",
         "libmaesdk.so",
         "libgxcore.so",
