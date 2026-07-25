@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.wisebreeze.compatible"
     tools:ignore="MissingClass">
 
     <uses-feature
@@ -143,7 +142,7 @@
             tools:ignore="DiscouragedApi" />
 
         <activity
-            android:name="org.levimc.launcher.ui.activities.ModsFullscreenActivity"
+            android:name=".ui.activities.ModsFullscreenActivity"
             android:theme="@style/Base.Theme.FullScreen"
             android:screenOrientation="sensorLandscape"
             android:configChanges="fontScale|density|smallestScreenSize|screenSize|uiMode|screenLayout|orientation|navigation|keyboardHidden|keyboard|touchscreen|locale|mnc|mcc"
@@ -151,7 +150,7 @@
             tools:ignore="DiscouragedApi" />
 
         <activity
-            android:name="org.levimc.launcher.ui.activities.ModDetailActivity"
+            android:name=".ui.activities.ModDetailActivity"
             android:theme="@style/Base.Theme.FullScreen"
             android:screenOrientation="sensorLandscape"
             android:configChanges="fontScale|density|smallestScreenSize|screenSize|uiMode|screenLayout|orientation|navigation|keyboardHidden|keyboard|touchscreen|locale|mnc|mcc"
@@ -159,7 +158,7 @@
             tools:ignore="DiscouragedApi" />
 
         <activity
-            android:name="org.levimc.launcher.ui.activities.ModConfigActivity"
+            android:name=".ui.activities.ModConfigActivity"
             android:theme="@style/Base.Theme.FullScreen"
             android:screenOrientation="sensorLandscape"
             android:configChanges="fontScale|density|smallestScreenSize|screenSize|uiMode|screenLayout|orientation|navigation|keyboardHidden|keyboard|touchscreen|locale|mnc|mcc"
@@ -167,7 +166,7 @@
             tools:ignore="DiscouragedApi" />
 
         <activity
-            android:name="org.levimc.launcher.ui.activities.QuickLaunchActivity"
+            android:name=".ui.activities.QuickLaunchActivity"
             android:theme="@style/Base.Theme.FullScreen"
             android:screenOrientation="sensorLandscape"
             android:configChanges="fontScale|density|smallestScreenSize|screenSize|uiMode|screenLayout|orientation|navigation|keyboardHidden|keyboard|touchscreen|locale|mnc|mcc"
@@ -176,7 +175,7 @@
             tools:ignore="DiscouragedApi" />
 
         <activity
-            android:name="org.levimc.launcher.ui.activities.IntentHandler"
+            android:name=".ui.activities.IntentHandler"
             android:alwaysRetainTaskState="true"
             android:configChanges="fontScale|density|smallestScreenSize|screenSize|uiMode|screenLayout|orientation|navigation|keyboardHidden|keyboard|touchscreen|locale|mnc|mcc"
             android:excludeFromRecents="false"
@@ -350,7 +349,7 @@
         </activity>
 
         <activity
-            android:name="org.levimc.launcher.core.minecraft.MinecraftLoadingActivity"
+            android:name=".core.minecraft.MinecraftLoadingActivity"
             android:alwaysRetainTaskState="true"
             android:configChanges="fontScale|density|smallestScreenSize|screenSize|uiMode|screenLayout|orientation|navigation|keyboardHidden|keyboard|touchscreen|locale|mnc|mcc"
             android:excludeFromRecents="false"
@@ -361,7 +360,7 @@
             tools:ignore="DiscouragedApi" />
 
         <activity
-            android:name="org.levimc.launcher.core.minecraft.MinecraftActivity"
+            android:name=".core.minecraft.MinecraftActivity"
             android:alwaysRetainTaskState="true"
             android:configChanges="fontScale|density|smallestScreenSize|screenSize|uiMode|screenLayout|orientation|navigation|keyboardHidden|keyboard|touchscreen|locale|mnc|mcc"
             android:excludeFromRecents="false"
@@ -376,7 +375,7 @@
         </activity>
 
         <activity
-            android:name="org.levimc.launcher.core.minecraft.LauncherRestartActivity"
+            android:name=".core.minecraft.LauncherRestartActivity"
             android:configChanges="fontScale|density|smallestScreenSize|screenSize|uiMode|screenLayout|orientation|navigation|keyboardHidden|keyboard|touchscreen|locale|mnc|mcc"
             android:excludeFromRecents="true"
             android:exported="false"
