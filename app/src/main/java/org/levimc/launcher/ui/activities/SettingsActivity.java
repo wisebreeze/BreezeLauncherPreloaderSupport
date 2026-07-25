@@ -474,6 +474,95 @@ public class SettingsActivity extends BaseActivity {
         }
     }
 
+    private void setupUpdatesSection() {
+        try {
+            String localVersion = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
+            TextView versionText = findViewById(R.id.version_text);
+            versionText.setText(getString(R.string.version_prefix) + localVersion);
+        } catch (PackageManager.NameNotFoundException ignored) {
+        }
+
+        Button btnCheckUpdate = findViewById(R.id.btn_check_update);
+        btnCheckUpdate.setOnClickListener(v -> handleUpdateButtonClick());
+
+        preloaderSigsLastUpdateText = findViewById(R.id.preloader_sigs_last_update);
+        preloaderSigsUpdateButton = findViewById(R.id.btn_update_preloader_sigs);
+        refreshPreloaderSigsLastUpdateUi();
+        if (preloaderSigsUpdateButton != null) {
+            preloaderSigsUpdateButton.setOnClickListener(v -> handlePreloaderSigsUpdateClick());
+        }
+    }
+
+    private void handleUpdateButtonClick() {
+        long currentTime = System.currentTimeMillis();
+
+        if (currentTime - lastUpdateButtonTapTime > TAP_TIMEOUT_MS) {
+            updateButtonTapCount = 0;
+        }
+
+        updateButtonTapCount++;
+        lastUpdateButtonTapTime = currentTime;
+
+        if (updateButtonTapCount >= EASTER_EGG_TAP_COUNT) {
+            updateButtonTapCount = 0;
+            triggerEasterEgg();
+        } else {
+            new GithubReleaseUpdater(this, "LiteLDev", "LeviLaunchroid", permissionResultLauncher).checkUpdate();
+        }
+    }
+
+    private void triggerEasterEgg() {
+        try {
+            String encoded = "aHR0cHM6Ly95b3V0dS5iZS9GdHV0TEE2M0NwOD9zaT1CSExEWHZLOTZPZ1A0NUI4";
+            String url = new String(Base64.decode(encoded, Base64.DEFAULT));
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            startActivity(intent);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void handlePreloaderSigsUpdateClick() {
+        if (preloaderSigsUpdateButton == null) {
+            return;
+        }
+        if (!PreloaderSignatureRulesManager.hasRemoteRulesUrl()) {
+            Toast.makeText(this, R.string.preloader_sigs_no_remote_url, Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        preloaderSigsUpdateButton.setEnabled(false);
+        preloaderSigsUpdateButton.setText(R.string.preloader_sigs_updating);
+        PreloaderSignatureRulesManager.refreshNow(this, result -> {
+            if (isFinishing()) {
+                return;
+            }
+            preloaderSigsUpdateButton.setEnabled(true);
+            preloaderSigsUpdateButton.setText(R.string.preloader_sigs_update);
+            refreshPreloaderSigsLastUpdateUi();
+
+            if (result.success) {
+                Toast.makeText(this, R.string.preloader_sigs_update_success, Toast.LENGTH_SHORT).show();
+            } else {
+                String detail = result.message.isEmpty()
+                        ? getString(R.string.unknown_error)
+                        : result.message;
+                Toast.makeText(this, getString(R.string.preloader_sigs_update_failed, detail), Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    private void refreshPreloaderSigsLastUpdateUi() {
+        if (preloaderSigsLastUpdateText == null) {
+            return;
+        }
+
+        long updateTime = PreloaderSignatureRulesManager.getLastSuccessfulUpdateTime(this);
+        String updateText = updateTime > 0L
+                ? DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT, Locale.getDefault()).format(new Date(updateTime))
+                : getString(R.string.preloader_sigs_never_updated);
+        preloaderSigsLastUpdateText.setText(getString(R.string.preloader_sigs_last_update, updateText));
+    }
 
     private void setupNavBar() {
         setActiveNavTab(R.id.nav_tab_settings);
