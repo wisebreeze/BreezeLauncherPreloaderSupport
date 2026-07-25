@@ -48,7 +48,6 @@ public class SettingsActivity extends BaseActivity {
 
     private PermissionsHandler permissionsHandler;
     private ActivityResultLauncher<Intent> permissionResultLauncher;
-    private ActivityResultLauncher<Intent> bgImagePickerLauncher;
     private int updateButtonTapCount = 0;
     private long lastUpdateButtonTapTime = 0;
     private static final int EASTER_EGG_TAP_COUNT = 3;
@@ -57,12 +56,10 @@ public class SettingsActivity extends BaseActivity {
     private TextView tabBasic;
     private TextView tabPersonalize;
     private TextView tabUpdates;
-    private TextView tabAbout;
 
     private View sectionBasic;
     private View sectionPersonalize;
     private View sectionUpdates;
-    private View sectionAbout;
 
     private static final String KEY_SELECTED_TAB = "selected_tab_index";
     private int selectedTabIndex = 0;
@@ -70,10 +67,6 @@ public class SettingsActivity extends BaseActivity {
     private PersonalizationManager personalizationManager;
     private LinearLayout colorGridContainer;
     private LinearLayout moreColorsContainer;
-    private TextView bgImageStatus;
-    private TextView bgImageBlurValue;
-    private TextView bgImageBrightnessValue;
-    private ImageView bgImagePreview;
     private TextView preloaderSigsLastUpdateText;
     private Button preloaderSigsUpdateButton;
 
@@ -103,25 +96,11 @@ public class SettingsActivity extends BaseActivity {
         );
         permissionsHandler.setActivity(this, permissionResultLauncher);
 
-        bgImagePickerLauncher = registerForActivityResult(
-                new ActivityResultContracts.StartActivityForResult(),
-                result -> {
-                    if (result.getResultCode() == RESULT_OK && result.getData() != null) {
-                        Uri uri = result.getData().getData();
-                        if (uri != null) {
-                            personalizationManager.setBackgroundImage(uri, this);
-                            updateBgImageUI();
-                            recreate();
-                        }
-                    }
-                }
-        );
 
         initTabs();
         setupBasicSection();
         setupPersonalizeSection();
         setupUpdatesSection();
-        setupAboutSection();
 
         TextView[] tabs = getSettingsTabs();
         if (selectedTabIndex >= tabs.length) {
@@ -140,22 +119,19 @@ public class SettingsActivity extends BaseActivity {
         tabBasic = findViewById(R.id.tab_basic);
         tabPersonalize = findViewById(R.id.tab_personalize);
         tabUpdates = findViewById(R.id.tab_updates);
-        tabAbout = findViewById(R.id.tab_about);
 
         sectionBasic = findViewById(R.id.section_basic);
         sectionPersonalize = findViewById(R.id.section_personalize);
         sectionUpdates = findViewById(R.id.section_updates);
-        sectionAbout = findViewById(R.id.section_about);
 
         tabBasic.setOnClickListener(v -> { selectedTabIndex = 0; selectTab(tabBasic); });
         tabPersonalize.setOnClickListener(v -> { selectedTabIndex = 1; selectTab(tabPersonalize); });
         tabUpdates.setOnClickListener(v -> { selectedTabIndex = 2; selectTab(tabUpdates); });
-        tabAbout.setOnClickListener(v -> { selectedTabIndex = 3; selectTab(tabAbout); });
     }
 
     private void selectTab(TextView selectedTab) {
         TextView[] tabs = getSettingsTabs();
-        View[] sections = {sectionBasic, sectionPersonalize, sectionUpdates, sectionAbout};
+        View[] sections = {sectionBasic, sectionPersonalize, sectionUpdates};
 
         int accent = personalizationManager.getAccentColor();
 
@@ -190,7 +166,7 @@ public class SettingsActivity extends BaseActivity {
     }
 
     private TextView[] getSettingsTabs() {
-        return new TextView[]{tabBasic, tabPersonalize, tabUpdates, tabAbout};
+        return new TextView[]{tabBasic, tabPersonalize, tabUpdates};
     }
 
     private void setupBasicSection() {
@@ -290,7 +266,6 @@ public class SettingsActivity extends BaseActivity {
         }
 
         setupColorPicker();
-        setupBackgroundImagePicker();
     }
 
     private void refreshThemeSelectionUI() {
@@ -448,13 +423,7 @@ public class SettingsActivity extends BaseActivity {
         if (settingsTitle instanceof TextView && accent != 0) {
             ((TextView) settingsTitle).setTextColor(accent);
         }
-        
-        Button btnSelectImage = findViewById(R.id.btn_select_bg_image);
-        if (btnSelectImage != null && accent != 0) {
-            btnSelectImage.setBackgroundTintList(ColorStateList.valueOf(accent));
-            btnSelectImage.setTextColor(Color.WHITE);
-        }
-        
+
         Button btnCheckUpdate = findViewById(R.id.btn_check_update);
         if (btnCheckUpdate != null && accent != 0) {
             btnCheckUpdate.setBackgroundTintList(ColorStateList.valueOf(accent));
@@ -505,242 +474,6 @@ public class SettingsActivity extends BaseActivity {
         }
     }
 
-    private void setupBackgroundImagePicker() {
-        bgImageStatus = findViewById(R.id.bg_image_status);
-        bgImagePreview = findViewById(R.id.bg_image_preview);
-        Button btnSelectImage = findViewById(R.id.btn_select_bg_image);
-        Button btnClearImage = findViewById(R.id.btn_clear_bg_image);
-
-        if (btnSelectImage == null) return;
-
-        setupBackgroundImageControls();
-        updateBgImageUI();
-
-        btnSelectImage.setOnClickListener(v -> {
-            Intent intent = new Intent(Intent.ACTION_PICK);
-            intent.setType("image/*");
-            bgImagePickerLauncher.launch(intent);
-        });
-
-        if (btnClearImage != null) {
-            btnClearImage.setOnClickListener(v -> {
-                personalizationManager.clearBackgroundImage();
-                updateBgImageUI();
-                recreate();
-            });
-        }
-    }
-
-    private void setupBackgroundImageControls() {
-        SeekBar blurSeek = findViewById(R.id.seek_bg_image_blur);
-        SeekBar brightnessSeek = findViewById(R.id.seek_bg_image_brightness);
-        bgImageBlurValue = findViewById(R.id.bg_image_blur_value);
-        bgImageBrightnessValue = findViewById(R.id.bg_image_brightness_value);
-
-        if (blurSeek != null) {
-            blurSeek.setMax(PersonalizationManager.BG_BLUR_MAX);
-            blurSeek.setProgress(personalizationManager.getBackgroundImageBlur());
-            updateBgImageBlurValue(blurSeek.getProgress());
-            blurSeek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-                @Override
-                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                    updateBgImageBlurValue(progress);
-                    if (!fromUser) return;
-                    personalizationManager.setBackgroundImageBlur(progress);
-                    if (personalizationManager.supportsRealtimeBackgroundBlur()) {
-                        refreshBackgroundImageEffects();
-                    }
-                }
-
-                @Override
-                public void onStartTrackingTouch(SeekBar seekBar) {
-                }
-
-                @Override
-                public void onStopTrackingTouch(SeekBar seekBar) {
-                    refreshBackgroundImageEffects();
-                }
-            });
-        }
-
-        if (brightnessSeek != null) {
-            brightnessSeek.setMin(PersonalizationManager.BG_BRIGHTNESS_MIN);
-            brightnessSeek.setMax(PersonalizationManager.BG_BRIGHTNESS_MAX);
-            brightnessSeek.setProgress(personalizationManager.getBackgroundImageBrightness());
-            updateBgImageBrightnessValue(brightnessSeek.getProgress());
-            brightnessSeek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-                @Override
-                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                    updateBgImageBrightnessValue(progress);
-                    if (!fromUser) return;
-                    personalizationManager.setBackgroundImageBrightness(progress);
-                    refreshBackgroundImageColorEffects();
-                }
-
-                @Override
-                public void onStartTrackingTouch(SeekBar seekBar) {
-                }
-
-                @Override
-                public void onStopTrackingTouch(SeekBar seekBar) {
-                }
-            });
-        }
-    }
-
-    private void updateBgImageBlurValue(int blurRadius) {
-        if (bgImageBlurValue != null) {
-            bgImageBlurValue.setText(getString(R.string.bg_image_blur_value, blurRadius));
-        }
-    }
-
-    private void updateBgImageBrightnessValue(int brightnessPercent) {
-        if (bgImageBrightnessValue != null) {
-            bgImageBrightnessValue.setText(getString(R.string.bg_image_brightness_value, brightnessPercent));
-        }
-    }
-
-    private void refreshBackgroundImageEffects() {
-        personalizationManager.refreshBackgroundEffects(this);
-        if (bgImagePreview != null) {
-            personalizationManager.refreshBackgroundImageView(bgImagePreview);
-        }
-    }
-
-    private void refreshBackgroundImageColorEffects() {
-        personalizationManager.refreshBackgroundColorEffects(this);
-        if (bgImagePreview != null) {
-            personalizationManager.applyBackgroundImageEffects(bgImagePreview);
-        }
-    }
-
-    private void updateBgImageUI() {
-        if (bgImageStatus == null) return;
-        boolean hasBackgroundImage = personalizationManager.hasBackgroundImage();
-        View effectControls = findViewById(R.id.bg_image_effect_controls);
-        if (effectControls != null) {
-            effectControls.setVisibility(hasBackgroundImage ? View.VISIBLE : View.GONE);
-        }
-
-        if (hasBackgroundImage) {
-            bgImageStatus.setText(R.string.bg_image_selected);
-            if (bgImagePreview != null) {
-                if (personalizationManager.applyBackgroundImageToView(bgImagePreview)) {
-                    bgImagePreview.setVisibility(View.VISIBLE);
-                }
-            }
-            View btnClear = findViewById(R.id.btn_clear_bg_image);
-            if (btnClear != null) btnClear.setVisibility(View.VISIBLE);
-        } else {
-            bgImageStatus.setText(R.string.bg_image_none);
-            if (bgImagePreview != null) {
-                bgImagePreview.setImageDrawable(null);
-                bgImagePreview.setVisibility(View.GONE);
-            }
-            View btnClear = findViewById(R.id.btn_clear_bg_image);
-            if (btnClear != null) btnClear.setVisibility(View.GONE);
-        }
-    }
-
-
-
-    private void setupUpdatesSection() {
-        try {
-            String localVersion = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
-            TextView versionText = findViewById(R.id.version_text);
-            versionText.setText(getString(R.string.version_prefix) + localVersion);
-        } catch (PackageManager.NameNotFoundException ignored) {
-        }
-
-        Button btnCheckUpdate = findViewById(R.id.btn_check_update);
-        btnCheckUpdate.setOnClickListener(v -> handleUpdateButtonClick());
-
-        preloaderSigsLastUpdateText = findViewById(R.id.preloader_sigs_last_update);
-        preloaderSigsUpdateButton = findViewById(R.id.btn_update_preloader_sigs);
-        refreshPreloaderSigsLastUpdateUi();
-        if (preloaderSigsUpdateButton != null) {
-            preloaderSigsUpdateButton.setOnClickListener(v -> handlePreloaderSigsUpdateClick());
-        }
-    }
-
-    private void handlePreloaderSigsUpdateClick() {
-        if (preloaderSigsUpdateButton == null) {
-            return;
-        }
-        if (!PreloaderSignatureRulesManager.hasRemoteRulesUrl()) {
-            Toast.makeText(this, R.string.preloader_sigs_no_remote_url, Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        preloaderSigsUpdateButton.setEnabled(false);
-        preloaderSigsUpdateButton.setText(R.string.preloader_sigs_updating);
-        PreloaderSignatureRulesManager.refreshNow(this, result -> {
-            if (isFinishing()) {
-                return;
-            }
-            preloaderSigsUpdateButton.setEnabled(true);
-            preloaderSigsUpdateButton.setText(R.string.preloader_sigs_update);
-            refreshPreloaderSigsLastUpdateUi();
-
-            if (result.success) {
-                Toast.makeText(this, R.string.preloader_sigs_update_success, Toast.LENGTH_SHORT).show();
-            } else {
-                String detail = result.message.isEmpty()
-                        ? getString(R.string.unknown_error)
-                        : result.message;
-                Toast.makeText(this, getString(R.string.preloader_sigs_update_failed, detail), Toast.LENGTH_LONG).show();
-            }
-        });
-    }
-
-    private void refreshPreloaderSigsLastUpdateUi() {
-        if (preloaderSigsLastUpdateText == null) {
-            return;
-        }
-
-        long updateTime = PreloaderSignatureRulesManager.getLastSuccessfulUpdateTime(this);
-        String updateText = updateTime > 0L
-                ? DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT, Locale.getDefault()).format(new Date(updateTime))
-                : getString(R.string.preloader_sigs_never_updated);
-        preloaderSigsLastUpdateText.setText(getString(R.string.preloader_sigs_last_update, updateText));
-    }
-
-    private void setupAboutSection() {
-        findViewById(R.id.settings_btn_github).setOnClickListener(v ->
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/LiteLDev/LeviLaunchroid"))));
-
-        findViewById(R.id.settings_btn_discord).setOnClickListener(v ->
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://discord.gg/jsnzw4ueAt"))));
-    }
-
-    private void handleUpdateButtonClick() {
-        long currentTime = System.currentTimeMillis();
-
-        if (currentTime - lastUpdateButtonTapTime > TAP_TIMEOUT_MS) {
-            updateButtonTapCount = 0;
-        }
-
-        updateButtonTapCount++;
-        lastUpdateButtonTapTime = currentTime;
-
-        if (updateButtonTapCount >= EASTER_EGG_TAP_COUNT) {
-            updateButtonTapCount = 0;
-            triggerEasterEgg();
-        } else {
-            new GithubReleaseUpdater(this, "LiteLDev", "LeviLaunchroid", permissionResultLauncher).checkUpdate();
-        }
-    }
-
-    private void triggerEasterEgg() {
-        try {
-            String encoded = "aHR0cHM6Ly95b3V0dS5iZS9GdHV0TEE2M0NwOD9zaT1CSExEWHZLOTZPZ1A0NUI4";
-            String url = new String(Base64.decode(encoded, Base64.DEFAULT));
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-            startActivity(intent);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     private void setupNavBar() {
         setActiveNavTab(R.id.nav_tab_settings);

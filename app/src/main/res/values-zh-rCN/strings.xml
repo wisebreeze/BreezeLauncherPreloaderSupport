@@ -617,7 +617,6 @@
     <string name="settings_tab_basic">基础设置</string>
     <string name="settings_tab_personalize">个性化</string>
     <string name="settings_tab_updates">更新</string>
-    <string name="settings_tab_about">关于</string>
     <string name="settings_theme_desc">选择应用主题</string>
     <string name="launch_vertically">竖屏启动</string>
     <string name="launch_vertically_desc">强制游戏以竖屏模式启动</string>
@@ -694,7 +693,6 @@
     <string name="tag_custom">自定义</string>
     <string name="vanilla_prefix">原版 %s</string>
     <string name="about_page_title">关于</string>
-    <string name="about_subtitle">LeviLauncher — 现代 Minecraft 基岩版启动器</string>
     <string name="about_authors_title">👥 作者与维护者</string>
     <string name="about_author_name">DreamGuXiang</string>
     <string name="about_author_badge">作者</string>
@@ -725,14 +723,6 @@
     <string name="theme_color_desc">应用的主强调色</string>
     <string name="preset_colors">预设颜色</string>
     <string name="more_colors">更多颜色</string>
-    <string name="bg_image_title">背景图片</string>
-    <string name="bg_image_desc">选择一张图片作为背景</string>
-    <string name="bg_image_none">未选择图片</string>
-    <string name="bg_image_selected">自定义背景已启用</string>
-    <string name="bg_image_blur">模糊</string>
-    <string name="bg_image_blur_value">%1$dpx</string>
-    <string name="bg_image_brightness">亮度</string>
-    <string name="bg_image_brightness_value">%1$d%%</string>
     <string name="select_image">选择图片</string>
     <string name="clear">清除</string>
 

@@ -540,7 +540,6 @@
     <string name="settings_tab_basic">Pengaturan Dasar</string>
     <string name="settings_tab_personalize">Personalisasi</string>
     <string name="settings_tab_updates">Pembaruan</string>
-    <string name="settings_tab_about">Tentang</string>
     <string name="settings_theme_desc">Pilih tema aplikasi</string>
     <string name="launch_vertically">Luncurkan Vertikal</string>
     <string name="launch_vertically_desc">Paksa game diluncurkan dalam mode potret</string>
@@ -596,7 +595,6 @@
     <string name="tag_custom">Kustom</string>
     <string name="vanilla_prefix">Vanilla %s</string>
     <string name="about_page_title">Tentang</string>
-    <string name="about_subtitle">LeviLauncher — Launcher Minecraft Bedrock Modern</string>
     <string name="about_authors_title">👥 Penulis &amp; Pemelihara</string>
     <string name="about_author_name">DreamGuXiang</string>
     <string name="about_author_badge">Penulis</string>
@@ -627,14 +625,6 @@
     <string name="theme_color_desc">Warna aksen utama aplikasi</string>
     <string name="preset_colors">WARNA PRESET</string>
     <string name="more_colors">WARNA LAINNYA</string>
-    <string name="bg_image_title">Gambar Latar Belakang</string>
-    <string name="bg_image_desc">Pilih gambar untuk digunakan sebagai latar belakang</string>
-    <string name="bg_image_none">Tidak ada gambar yang dipilih</string>
-    <string name="bg_image_selected">Latar belakang kustom aktif</string>
-    <string name="bg_image_blur">Keburaman</string>
-    <string name="bg_image_blur_value">%1$dpx</string>
-    <string name="bg_image_brightness">Kecerahan</string>
-    <string name="bg_image_brightness_value">%1$d%%</string>
     <string name="select_image">Pilih Gambar</string>
     <string name="clear">Bersihkan</string>
 

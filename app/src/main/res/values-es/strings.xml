@@ -96,7 +96,6 @@
     <string name="settings_tab_basic">Ajustes Básicos</string>
     <string name="settings_tab_personalize">Personalización</string>
     <string name="settings_tab_updates">Actualizaciones</string>
-    <string name="settings_tab_about">Acerca de</string>
     <string name="settings_theme_desc">Elige el tema de la aplicación</string>
 
     <string name="unknown_sources_permission_title">Permiso de Instalación</string>
@@ -575,7 +574,6 @@
     <string name="vanilla_prefix">Vanilla %s</string>
 
     <string name="about_page_title">Acerca de</string>
-    <string name="about_subtitle">LeviLauncher — Un moderno Launcher para Minecraft Bedrock</string>
     <string name="about_authors_title">👥 Autores y Mantenedores</string>
     <string name="about_author_name">DreamGuXiang</string>
     <string name="about_author_badge">Autor</string>
@@ -608,14 +606,6 @@
     <string name="theme_color_desc">El color de acento primario de la aplicación</string>
     <string name="preset_colors">COLORES PREDETERMINADOS</string>
     <string name="more_colors">MÁS COLORES</string>
-    <string name="bg_image_title">Imagen de Fondo</string>
-    <string name="bg_image_desc">Selecciona una imagen como fondo</string>
-    <string name="bg_image_none">Ninguna imagen seleccionada</string>
-    <string name="bg_image_selected">Fondo personalizado activo</string>
-    <string name="bg_image_blur">Desenfoque</string>
-    <string name="bg_image_blur_value">%1$dpx</string>
-    <string name="bg_image_brightness">Brillo</string>
-    <string name="bg_image_brightness_value">%1$d%%</string>
     <string name="select_image">Seleccionar Imagen</string>
     <string name="clear">Limpiar</string>
 

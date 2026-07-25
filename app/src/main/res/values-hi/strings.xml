@@ -96,7 +96,6 @@
     <string name="settings_tab_basic">मूल सेटिंग्स</string>
     <string name="settings_tab_personalize">वैयक्तिकरण</string>
     <string name="settings_tab_updates">अपडेट्स</string>
-    <string name="settings_tab_about">बारे में</string>
     <string name="settings_theme_desc">एप्लिकेशन थीम चुनें</string>
 
     <string name="unknown_sources_permission_title">इंस्टॉल अनुमति</string>
@@ -600,7 +599,6 @@
     <string name="vanilla_prefix">वैनिला %s</string>
 
     <string name="about_page_title">बारे में</string>
-    <string name="about_subtitle">LeviLauncher — एक आधुनिक Minecraft Bedrock लॉन्चर</string>
     <string name="about_authors_title">👥 लेखक और मेंटेनर</string>
     <string name="about_author_name">DreamGuXiang</string>
     <string name="about_author_badge">लेखक</string>
@@ -633,14 +631,6 @@
     <string name="theme_color_desc">एप्लिकेशन का प्राथमिक उच्चारण रंग</string>
     <string name="preset_colors">प्रीसेट रंग</string>
     <string name="more_colors">अधिक रंग</string>
-    <string name="bg_image_title">पृष्ठभूमि छवि</string>
-    <string name="bg_image_desc">पृष्ठभूमि के रूप में उपयोग करने के लिए एक छवि चुनें</string>
-    <string name="bg_image_none">कोई छवि नहीं चुनी गई</string>
-    <string name="bg_image_selected">कस्टम पृष्ठभूमि सक्रिय</string>
-    <string name="bg_image_blur">धुंधलापन</string>
-    <string name="bg_image_blur_value">%1$dpx</string>
-    <string name="bg_image_brightness">चमक</string>
-    <string name="bg_image_brightness_value">%1$d%%</string>
     <string name="select_image">छवि चुनें</string>
     <string name="clear">साफ़ करें</string>
 

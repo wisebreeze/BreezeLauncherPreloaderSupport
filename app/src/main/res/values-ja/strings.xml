@@ -96,7 +96,6 @@
     <string name="settings_tab_basic">基本設定</string>
     <string name="settings_tab_personalize">カスタマイズ</string>
     <string name="settings_tab_updates">アップデート</string>
-    <string name="settings_tab_about">アプリについて</string>
     <string name="settings_theme_desc">アプリのテーマを選択</string>
 
     <string name="unknown_sources_permission_title">インストールの許可</string>
@@ -575,7 +574,6 @@
     <string name="vanilla_prefix">バニラ %s</string>
 
     <string name="about_page_title">アプリについて</string>
-    <string name="about_subtitle">LeviLauncher — 最新の Minecraft Bedrock ランチャー</string>
     <string name="about_authors_title">👥 開発者 &amp; メンテナー</string>
     <string name="about_author_name">DreamGuXiang</string>
     <string name="about_author_badge">開発者</string>
@@ -608,14 +606,6 @@
     <string name="theme_color_desc">アプリのプライマリアクセントカラー</string>
     <string name="preset_colors">プリセットカラー</string>
     <string name="more_colors">その他の色</string>
-    <string name="bg_image_title">背景画像</string>
-    <string name="bg_image_desc">背景として使用する画像を選択してください</string>
-    <string name="bg_image_none">画像が選択されていません</string>
-    <string name="bg_image_selected">カスタム背景がアクティブです</string>
-    <string name="bg_image_blur">ぼかし</string>
-    <string name="bg_image_blur_value">%1$dpx</string>
-    <string name="bg_image_brightness">明るさ</string>
-    <string name="bg_image_brightness_value">%1$d%%</string>
     <string name="select_image">画像を選択</string>
     <string name="clear">クリア</string>
 
