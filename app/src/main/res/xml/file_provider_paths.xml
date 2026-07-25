@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <paths>
+    <!-- Screenshots (legacy paths) -->
     <files-path
         name="screenshots"
         path="../games/com.mojang/Screenshots/"/>
@@ -12,6 +13,7 @@
     <files-path
         name="screenshotsVrTrial"
         path="../games/com.mojang.trial/vr/Screenshots/"/>
+
     <external-files-path
         name="screenshotsExternal"
         path="games/com.mojang/Screenshots"/>
@@ -24,6 +26,7 @@
     <external-files-path
         name="screenshotsExternalVrTrial"
         path="games/com.mojang.trial/vr/Screenshots"/>
+
     <external-path
         name="screenshotsExternalLegacy"
         path="games/com.mojang/Screenshots"/>
@@ -36,6 +39,8 @@
     <external-path
         name="screenshotsExternalLegacyVrTrial"
         path="games/com.mojang.trial/vr/Screenshots"/>
+
+    <!-- Full internal/external storage access for other apps -->
     <external-cache-path
         name="external_cache"
         path="."/>
@@ -48,4 +53,14 @@
     <files-path
         name="files"
         path="."/>
+
+    <!-- Android/media app root (mods, resources, minecraft data) -->
+    <external-path
+        name="media_root"
+        path="."/>
+
+    <!-- Legacy games/org.levimc directory -->
+    <external-path
+        name="legacy_root"
+        path="games/org.levimc/"/>
 </paths>

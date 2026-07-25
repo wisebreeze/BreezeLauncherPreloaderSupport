@@ -430,14 +430,20 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:exported="false"
             android:authorities="${applicationId}.fileprovider"
-            android:grantUriPermissions="true">
+            android:exported="true"
+            android:grantUriPermissions="true"
+            android:permission="org.levimc.launcher.permission.ACCESS_FILES"
+            android:readPermission="org.levimc.launcher.permission.ACCESS_FILES">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_provider_paths" />
         </provider>
 
     </application>
+
+    <permission
+        android:name="org.levimc.launcher.permission.ACCESS_FILES"
+        android:protectionLevel="signature" />
 
 </manifest>
