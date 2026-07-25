@@ -583,21 +583,7 @@
     <string name="about_contribute_desc">Contribuciones vía Issues o Pull Requests son bienvenidas.</string>
     <string name="about_issues">Issue</string>
     <string name="about_star_fork">Dar Estrella / Hacer Fork</string>
-
-    <string-array name="launcher_tips">
-        <item>Los Ajustes te permiten cambiar el tema, color, fondo y otras opciones para adaptar tu launcher.</item>
-        <item>LeviLauncher es de código abierto. Usa los issues en GitHub para informar de problemas o sugerir mejoras.</item>
-        <item>Usa el menú de versión para cambiar de instancia rápidamente.</item>
-        <item>¿Alguien lee realmente estos consejos?</item>
-        <item>Puedes arrastrar los mods para reordenar su prioridad de carga.</item>
-        <item>¡Prueba el Aislamiento de Versión!</item>
-        <item>Usa el Lanzamiento Rápido para conectarte a un servidor sin abrir primero el juego.</item>
-        <item>Puedes importar archivos .mcworld, .mcpack y .mcaddon desde la página de Gestión de Contenido.</item>
-        <item>Gestiona varias cuentas Xbox dentro del launcher y cambia entre ellas sin problemas.</item>
-        <item>Carga módulos SO externos para extender o mejorar el rendimiento de Minecraft.</item>
-    </string-array>
-
-    <string name="theme_color_title">Color del Tema</string>
+<string name="theme_color_title">Color del Tema</string>
     <string name="theme_color_desc">El color de acento primario de la aplicación</string>
     <string name="preset_colors">COLORES PREDETERMINADOS</string>
     <string name="more_colors">MÁS COLORES</string>

@@ -604,19 +604,7 @@
     <string name="about_contribute_desc">Вклад через Issues или Pull Requests приветствуется и помогает улучшать LeviLauncher.</string>
     <string name="about_issues">Issue</string>
     <string name="about_star_fork">Star / Fork</string>
-    <string-array name="launcher_tips">
-        <item>В настройках можно изменить тему, цвет, фон и другие параметры внешнего вида под ваш стиль.</item>
-        <item>LeviLauncher имеет открытый исходный код. Используйте GitHub issues, чтобы сообщить о проблемах лаунчера или предложить улучшения.</item>
-        <item>Используйте выпадающий список версий, чтобы быстро переключать текущий экземпляр.</item>
-        <item>Кто-нибудь вообще читает эти подсказки?</item>
-        <item>Вы можете перетаскивать моды, чтобы менять их приоритет загрузки.</item>
-        <item>Попробуйте изоляцию версий!</item>
-        <item>Используйте быстрый запуск, чтобы подключаться к серверу без предварительного открытия игры.</item>
-        <item>На странице управления контентом можно импортировать файлы .mcworld, .mcpack и .mcaddon.</item>
-        <item>Управляйте несколькими аккаунтами Xbox внутри лаунчера и легко переключайтесь между ними.</item>
-        <item>Загружайте внешние нативные SO-модули, чтобы расширять или улучшать возможности и производительность Minecraft.</item>
-    </string-array>
-    <string name="theme_color_title">Цвет темы</string>
+<string name="theme_color_title">Цвет темы</string>
     <string name="theme_color_desc">Основной акцентный цвет приложения</string>
     <string name="preset_colors">ГОТОВЫЕ ЦВЕТА</string>
     <string name="more_colors">ДРУГИЕ ЦВЕТА</string>

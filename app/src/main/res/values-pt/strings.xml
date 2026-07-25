@@ -583,21 +583,7 @@
     <string name="about_contribute_desc">Contribuições via Issues ou Pull Requests são bem-vindas.</string>
     <string name="about_issues">Issue</string>
     <string name="about_star_fork">Dar Estrela / Fazer Fork</string>
-
-    <string-array name="launcher_tips">
-        <item>As Configurações permitem que você ajuste tema, cor, fundo e outras opções para combinar com você.</item>
-        <item>O LeviLauncher é open source. Use o GitHub para relatar problemas ou sugerir melhorias.</item>
-        <item>Use o menu suspenso para alternar a instância atual rapidamente.</item>
-        <item>As pessoas realmente leem isso?</item>
-        <item>Você pode arrastar os mods para alterar a prioridade de carregamento.</item>
-        <item>Experimente o Isolamento de Versão!</item>
-        <item>Use o Início Rápido para conectar-se diretamente a um servidor sem precisar abrir o jogo primeiro.</item>
-        <item>Você pode importar arquivos .mcworld, .mcpack e .mcaddon do Gerenciador de Conteúdo.</item>
-        <item>Gerencie várias contas Xbox dentro do launcher e alterne entre elas com facilidade.</item>
-        <item>Carregue módulos SO para estender ou melhorar os recursos e o desempenho do Minecraft.</item>
-    </string-array>
-
-    <string name="theme_color_title">Cor do Tema</string>
+<string name="theme_color_title">Cor do Tema</string>
     <string name="theme_color_desc">A cor de destaque principal do app</string>
     <string name="preset_colors">CORES PRÉ-DEFINIDAS</string>
     <string name="more_colors">MAIS CORES</string>

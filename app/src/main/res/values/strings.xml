@@ -716,18 +716,6 @@
     <string name="about_issues">Issue</string>
     <string name="about_star_fork">Star / Fork</string>
 
-    <string-array name="launcher_tips">
-       <item>Settings lets you adjust theme, color, background, and other appearance options to match your setup.</item>
-        <item>LeviLauncher is open source. Use GitHub issues to report launcher problems or suggest improvements.</item>
-        <item>Use the version dropdown to switch the current instance quickly.</item>
-        <item>Do people actually read these?</item>
-        <item>You can drag mods to reorder their load priority.</item>
-        <item>Try Version Isolation!</item>
-        <item>Use Quick Launch to connect directly to a server without opening the game first.</item>
-        <item>You can import .mcworld, .mcpack, and .mcaddon files from the Content Management page.</item>
-        <item>Manage multiple Xbox accounts inside the launcher and switch between them seamlessly.</item>
-        <item>Import mods to extend or enhance Minecraft features and performance.</item>
-    </string-array>
 
     <string name="theme_color_title">Theme Color</string>
     <string name="theme_color_desc">The primary accent color of the application</string>

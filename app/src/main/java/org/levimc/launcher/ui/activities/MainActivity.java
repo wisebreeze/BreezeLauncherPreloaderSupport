@@ -670,27 +670,6 @@ import okhttp3.OkHttpClient;
         DynamicAnim.applyPressScale(binding.selectVersionButton);
 
         FeatureSettings.init(getApplicationContext());
-        showRandomTip();
-    }
-
-    private void showRandomTip() {
-        String[] tips = getResources().getStringArray(R.array.launcher_tips);
-        if (tips.length == 0 || binding.tipText == null) return;
-        binding.tipText.setText(tips[new java.util.Random().nextInt(tips.length)]);
-        android.os.Handler handler = new android.os.Handler(getMainLooper());
-        Runnable rotateTip = new Runnable() {
-            @Override
-            public void run() {
-                if (binding == null || binding.tipText == null) return;
-                binding.tipText.animate().alpha(0f).setDuration(300).withEndAction(() -> {
-                    if (binding == null || binding.tipText == null) return;
-                    binding.tipText.setText(tips[new java.util.Random().nextInt(tips.length)]);
-                    binding.tipText.animate().alpha(1f).setDuration(300).start();
-                }).start();
-                handler.postDelayed(this, 8000);
-            }
-        };
-        handler.postDelayed(rotateTip, 8000);
     }
 
     private void initContentManagementSection() {

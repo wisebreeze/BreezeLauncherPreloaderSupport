@@ -673,21 +673,7 @@
     <string name="about_contribute_desc">Chúng tôi hoan nghênh các đóng góp thông qua Issues hoặc Pull Requests để cải thiện LeviLauncher.</string>
     <string name="about_issues">Issue</string>
     <string name="about_star_fork">Star / Fork</string>
-
-    <string-array name="launcher_tips">
-       <item>Phần Cài đặt cho phép bạn điều chỉnh chủ đề, màu sắc, hình nền và các tùy chọn hiển thị khác sao cho phù hợp với thiết lập của mình.</item>
-        <item>LeviLauncher là mã nguồn mở. Vui lòng sử dụng GitHub Issues để báo cáo sự cố hoặc đề xuất cải tiến.</item>
-        <item>Sử dụng menu thả xuống phiên bản để nhanh chóng chuyển đổi giữa các phiên bản hiện tại.</item>
-        <item>Liệu mọi người có thực sự đọc những thứ này không:)?</item>
-        <item>Bạn có thể kéo các mod để thay đổi thứ tự ưu tiên tải của chúng.</item>
-        <item>Hãy Thử Chia Phiên Bản!</item>
-        <item>Sử dụng chức năng Khởi chạy nhanh để kết nối trực tiếp với máy chủ mà không cần mở trò chơi trước.</item>
-        <item>Bạn có thể nhập các file .mcworld, .mcpack và .mcaddon từ trang Quản lý nội dung.</item>
-        <item>Quản lý nhiều tài khoản Xbox ngay trong trình khởi chạy và chuyển đổi giữa chúng một cách liền mạch.</item>
-        <item>Nhập các bản mod để mở rộng hoặc nâng cao các tính năng và hiệu năng của Minecraft.</item>
-    </string-array>
-
-    <string name="theme_color_title">Màu chủ đề</string>
+<string name="theme_color_title">Màu chủ đề</string>
     <string name="theme_color_desc">Màu nhấn chủ đạo của ứng dụng</string>
     <string name="preset_colors">MÀU SẮC CÀI SẴN</string>
     <string name="more_colors">NHIỀU MÀU SẮC HƠN</string>

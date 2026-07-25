@@ -604,19 +604,7 @@
     <string name="about_contribute_desc">Kontribusi melalui Issues atau Pull Requests dipersilakan untuk meningkatkan LeviLauncher.</string>
     <string name="about_issues">Issue</string>
     <string name="about_star_fork">Star / Fork</string>
-    <string-array name="launcher_tips">
-        <item>Pengaturan memungkinkan Anda menyesuaikan tema, warna, latar belakang, dan opsi tampilan lain agar sesuai dengan setup Anda.</item>
-        <item>LeviLauncher bersifat open source. Gunakan GitHub issues untuk melaporkan masalah launcher atau menyarankan perbaikan.</item>
-        <item>Gunakan dropdown versi untuk mengganti instans saat ini dengan cepat.</item>
-        <item>Apakah ada yang benar-benar membaca ini?</item>
-        <item>Anda dapat menyeret mod untuk mengubah prioritas pemuatannya.</item>
-        <item>Coba Isolasi Versi!</item>
-        <item>Gunakan Peluncuran Cepat untuk langsung terhubung ke server tanpa membuka game terlebih dahulu.</item>
-        <item>Anda dapat mengimpor file .mcworld, .mcpack, dan .mcaddon dari halaman Manajemen Konten.</item>
-        <item>Kelola beberapa akun Xbox di dalam launcher dan beralih antar akun dengan mudah.</item>
-        <item>Muat modul SO native eksternal untuk memperluas atau meningkatkan fitur dan performa Minecraft.</item>
-    </string-array>
-    <string name="theme_color_title">Warna Tema</string>
+<string name="theme_color_title">Warna Tema</string>
     <string name="theme_color_desc">Warna aksen utama aplikasi</string>
     <string name="preset_colors">WARNA PRESET</string>
     <string name="more_colors">WARNA LAINNYA</string>

@@ -702,19 +702,7 @@
     <string name="about_contribute_desc">欢迎通过 Issues 或 Pull Requests 改进 LeviLauncher。</string>
     <string name="about_issues">Issue</string>
     <string name="about_star_fork">Star / Fork</string>
-    <string-array name="launcher_tips">
-        <item>在设置中可以调整主题、颜色、背景和其他外观选项，让启动器更符合你的使用习惯。</item>
-        <item>LeviLauncher 是开源项目。你可以通过 GitHub Issues 反馈启动器问题或提出改进建议。</item>
-        <item>使用版本下拉菜单可以快速切换当前实例。</item>
-        <item>真的有人会读这些提示吗？</item>
-        <item>你可以拖动模组来调整加载优先级。</item>
-        <item>试试版本隔离吧！</item>
-        <item>使用快速启动可以不先打开游戏，直接连接到服务器。</item>
-        <item>你可以在内容管理页面导入 .mcworld、.mcpack 和 .mcaddon 文件。</item>
-        <item>在启动器中管理多个 Xbox 账号，并在它们之间无缝切换。</item>
-        <item>导入模组以扩展或增强 Minecraft 功能和性能。</item>
-    </string-array>
-    <string name="theme_color_title">主题颜色</string>
+<string name="theme_color_title">主题颜色</string>
     <string name="theme_color_desc">应用的主强调色</string>
     <string name="preset_colors">预设颜色</string>
     <string name="more_colors">更多颜色</string>

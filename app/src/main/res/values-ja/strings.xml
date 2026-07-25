@@ -583,21 +583,7 @@
     <string name="about_contribute_desc">Issues や Pull Requests を通じた貢献を歓迎します。</string>
     <string name="about_issues">Issue</string>
     <string name="about_star_fork">スター / フォーク</string>
-
-    <string-array name="launcher_tips">
-        <item>設定でテーマ、色、背景などの外観オプションを調整できます。</item>
-        <item>LeviLauncher はオープンソースです。GitHub で問題の報告や改善の提案ができます。</item>
-        <item>バージョンのドロップダウンを使用して、現在のインスタンスをすばやく切り替えます。</item>
-        <item>誰かこれを本当に読んでいるのでしょうか？</item>
-        <item>モッドをドラッグしてロードの優先度を変更できます。</item>
-        <item>バージョン分離をお試しください！</item>
-        <item>クイック起動を使用すると、ゲームを開かずに直接サーバーに接続できます。</item>
-        <item>コンテンツ管理ページから .mcworld、.mcpack、.mcaddon ファイルをインポートできます。</item>
-        <item>ランチャー内で複数の Xbox アカウントを管理し、シームレスに切り替えます。</item>
-        <item>外部の SO モジュールをロードして、Minecraft の機能とパフォーマンスを向上させます。</item>
-    </string-array>
-
-    <string name="theme_color_title">テーマの色</string>
+<string name="theme_color_title">テーマの色</string>
     <string name="theme_color_desc">アプリのプライマリアクセントカラー</string>
     <string name="preset_colors">プリセットカラー</string>
     <string name="more_colors">その他の色</string>
