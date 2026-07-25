@@ -1,119 +1,198 @@
 <div align="center">
 
-# Breeze Launcher 兼容框架
+![LeviLauncher Logo](https://avatars.githubusercontent.com/u/78095377?s=200&v=4)
 
-**Breeze Launcher Preloader Support — 为 BreezeLauncher 提供 LeviLaunchroid preloader 兼容层**
+# LeviLauncher Unlocked
 
-[![License: Apache 2.0](https://img.shields.io/github/license/wisebreeze/BreezeLauncherPreloaderSupport)](https://github.com/wisebreeze/BreezeLauncherPreloaderSupport/blob/main/LICENSE)
+![Banner](https://camo.githubusercontent.com/bd7bd77cb422a267057d9863095b239b096d4f46dc831a37b45867a9acfad697/68747470733a2f2f63617073756c652d72656e6465722e76657263656c2e6170702f6170693f747970653d576176696e6726636f6c6f723d74696d654772616469656e74266865696768743d33303026616e696d6174696f6e3d66616465496e2673656374696f6e3d68656164657226746578743d4c6576694d4326666f6e7453697a653d313230)
+
+**A lightweight Android launcher for Minecraft: Bedrock Edition**
+
+[![GitHub Release](https://img.shields.io/github/v/release/LiteLDev/LeviLaunchroid?style=flat-square&color=blue)](https://github.com/LiteLDev/LeviLaunchroid/releases)
+[![License: Apache 2.0](https://img.shields.io/github/license/LiteLDev/LeviLaunchroid)](https://github.com/LiteLDev/LeviLaunchroid/blob/main/LICENSE)
+[![Issues](https://img.shields.io/github/issues/LiteLDev/LeviLaunchroid?style=flat-square&color=red)](https://github.com/LiteLDev/LeviLaunchroid/issues)
+[![Stars](https://img.shields.io/github/stars/LiteLDev/LeviLaunchroid?style=flat-square&color=yellow)](https://github.com/LiteLDev/LeviLaunchroid)
+[![Downloads](https://img.shields.io/github/downloads/LiteLDev/LeviLaunchroid/total.svg)](https://github.com/LiteLDev/LeviLaunchroid/releases)
 [![Android](https://img.shields.io/badge/Android-9.0%2B-green?style=flat-square&logo=android)](https://www.android.com/)
-[![NDK](https://img.shields.io/badge/NDK-r29-orange?style=flat-square)](https://developer.android.com/ndk)
-[![Kotlin](https://img.shields.io/badge/Kotlin-2.3.0-purple?style=flat-square&logo=kotlin)](https://kotlinlang.org/)
 
 </div>
 
 ---
 
-## 简介
+## Introduction
 
-Breeze Launcher 兼容框架是 [BreezeLauncher](https://github.com/wisebreeze/BreezeLauncher) 的配套项目，为其提供完整的 LeviLaunchroid preloader 兼容环境。它让为 LeviLaunchroid 开发的原生 C++ 模组（如 LeviMap、BreezeMap 等）能够无需修改直接在 BreezeLauncher 上运行。
+LeviLauncher is a lightweight, open-source Android launcher specifically designed for players of Minecraft: Bedrock Edition (MCBE). It provides a flexible and user-friendly alternative to the standard Google Play installation, allowing you to manage multiple game versions and extend functionality with external modules.
 
-本框架基于 LeviLaunchroid 的 preloader-android 子系统，保留了模组加载、游戏 Hook、Mod Menu 注册、输入事件转发等全部核心接口，同时适配了 BreezeLauncher 的 `com.wisebreeze.launcher` 包名结构。
+LeviLauncher enables you to import your official Minecraft APK and run it directly without requiring system installation. The launcher supports loading external native modules to enhance gameplay, provides robust multi-version management with complete isolation between installations, and includes built-in tools for managing resource packs and worlds. Whether you're looking to organize different game versions, test modifications, or optimize your gaming experience, LeviLauncher offers the flexibility you need.
 
-### 核心能力
+### Key Features
 
-- **Preloader 兼容层** — 完整移植 `libpreloader.so` 及其 JNI 绑定，支持 `PL_REGISTER_MOD` 生命周期、`pl::memory::hook`、`pl::input` 输入回调、`pl::modmenu` Mod Menu 注册等全部 API
-- **签名规则系统** — 内置 `PreloaderSignatureRulesManager`，通过模式扫描定位 `libminecraftpe.so` 中的暂停菜单 / HUD 界面函数，使游戏内 Mod Menu 按钮能正确感知菜单状态
-- **输入事件转发** — 触摸、按键、鼠标、文本输入全部转发给 preloader，原生模组可注册回调接收
-- **模组加载链** — `ModNativeLoader` → `System.load` → `initializeLoadedMod` → `enableLoadedMods`，完整支持 `.levipack` 包格式
-- **Firebase 集成** — Crashlytics 崩溃上报 + FCM 推送通知
+- **APK Import & Installation-Free Launching** – Import your official Minecraft APK and run it directly without system installation
+- **SO Module Loading** – Load external native SO modules to extend or enhance Minecraft features and performance
+- **Multi-Version Management & Version Isolation** – Manage multiple Minecraft versions independently, with separated configurations and data
+- **Multiple Xbox Account Management** – Manage multiple Xbox accounts inside the launcher and switch between them seamlessly
+- **Resource Pack & World Management** – Import, export, and back up your resource packs and worlds with the built-in manager
 
-### 技术栈
+---
 
-| 组件 | 版本 |
-|------|------|
-| Android minSdk | 28 (Android 9.0) |
-| targetSdk | 35 |
-| compileSdk | 36 |
-| AGP | 8.13.2 |
-| Kotlin | 2.3.0 |
-| NDK | 29.0.14206865 |
-| CMake | 3.22 |
-| Java | 21 |
+## System Requirements
 
-## 构建
+Before installing LeviLauncher, ensure your device meets the following minimum specifications:
 
-### 环境要求
+- **Operating System:** Android 9.0 (API 28) or higher
+- **Device Architecture:** ARM64 (v8a)
+- **RAM:** Minimum 1 GB available RAM (2 GB or more recommended)
+- **Storage:** At least 2 GB of available storage for Minecraft and game data
 
-- Android Studio Ladybug 或更高
-- JDK 21
-- Android SDK（compileSdk 36）
-- Android NDK r29（29.0.14206865）
-- CMake 3.22+
+> **Note:** For optimal performance and stability, we recommend Android 9.0 or higher with at least 3 GB of available RAM and 5 GB of free storage.
 
-### 本地构建
+---
 
-```bash
-git clone --recursive https://github.com/wisebreeze/BreezeLauncherPreloaderSupport.git
-cd BreezeLauncherPreloaderSupport
-./gradlew assembleDebug
-```
+## Installation
 
-APK 输出路径：`app/build/outputs/apk/debug/app-debug.apk`
+### Prerequisites
 
-### CI 构建
+Before proceeding with LeviLauncher installation, ensure that you have the official Minecraft Bedrock Edition app installed on your device from Google Play. This is required for LeviLauncher to function properly.
 
-项目配置了 GitHub Actions 工作流（`.github/workflows/android.yml`），支持：
+### Installation Steps
 
-- **手动触发**（`workflow_dispatch`）— 构建 debug APK 并上传到 `artifact` release
-- **Tag 推送触发** — 构建 release APK，签名后发布到 GitHub Release
+1. Visit the [Releases Page](https://github.com/LiteLDev/LeviLaunchroid/releases) and download the latest APK build
+2. Open your device Settings and navigate to Security or Applications
+3. Enable "Unknown Sources" or "Allow installation from unknown sources" to permit APK installation
+4. Locate the downloaded APK file using your file manager and tap to install
+5. Grant the necessary permissions when prompted during installation
+6. Once installed, open LeviLauncher from your application drawer
 
-构建产物下载：https://github.com/wisebreeze/BreezeLauncherPreloaderSupport/releases/tag/artifact
 
-## 架构
+---
 
-```
-BreezeLauncherPreloaderSupport/
-├── app/                              # 主应用模块
-│   ├── src/main/cpp/
-│   │   ├── preloader/                # preloader-android 子模块（LiteLDev）
-│   │   ├── libHttpClient/            # Microsoft libHttpClient 子模块
-│   │   └── CMakeLists.txt
-│   ├── src/main/java/org/levimc/launcher/
-│   │   ├── core/minecraft/           # MinecraftActivity、运行时准备、游戏包管理
-│   │   ├── core/mods/                # 模组管理器、原生加载器
-│   │   ├── core/preloader/           # 签名规则管理器
-│   │   ├── preloader/                # PreloaderInput JNI 兼容 shim
-│   │   └── ui/                       # Activity、对话框、悬浮窗
-│   └── google-services.json          # Firebase 配置（已提交）
-├── minecraft/                        # minecraft 库模块（org.levimc 兼容类）
-├── minecraft-msftauth/               # 微软认证库模块
-└── resources/preloader/              # 签名规则源 JSON
-```
+## Development Setup
 
-### Preloader 兼容设计
+If you want to build LeviLauncher from source or contribute to development, follow these steps to set up your development environment:
 
-BreezeLauncher 使用 `com.wisebreeze.launcher` 包名，而 `libpreloader.so` 的 JNI 符号绑定到 `org.levimc.launcher` 包路径。兼容方案：
+### Prerequisites
 
-1. **minecraft 模块** 提供 `org.levimc.launcher.*` 包下的 shim 类（`ModManager`、`ExternalModBridge`、`PreloaderInput`、`MinecraftRuntimePreparer`），声明与 preloader JNI 符号匹配的 native 方法
-2. **app 模块** 的对应类（`com.wisebreeze.launcher.*`）不声明 native 方法，而是委托给 minecraft 模块的 shim
-3. **Application 启动时** 注册 `ModManagerDelegate`，桥接两个包名空间的 Mod 对象转换
+- Git installed on your system
+- Android Studio (latest version recommended)
+- Java Development Kit (JDK) 21 or higher
+- Android SDK with API level 28 or higher
 
-## 模组开发
+### Setup Instructions
 
-本框架兼容 LeviLaunchroid 的全部原生模组 API。模组使用 `PL_REGISTER_MOD` 宏注册生命周期，通过 `pl::modmenu::ModuleBuilder` / `ButtonBuilder` 注册 Mod Menu 控件，通过 `pl::memory::hook` 安装游戏 Hook。
+1. Clone the LeviLauncher repository:
 
-示例模组参考：
-- [full-cpp-mod](examples/full-cpp-mod/) — 完整 C++ 生命周期模组示例
-- [LeviMap](https://github.com/wisebreeze/breezeMap) — 小地图模组
+   ```bash
+   git clone https://github.com/0Sombra666/LeviLaunchroidUnlocked.git
+   ```
 
-模组打包为 `.levipack` 格式（ZIP），包含 `manifest.json` + `lib*.so` + 可选资源。
+2. Open the project directory in Android Studio
 
-## 许可证
+3. Allow Android Studio to download and install required dependencies and build tools
 
-Apache License 2.0 — 详见 [LICENSE](LICENSE)
+4. Wait for Gradle to complete the initial sync process
 
-## 致谢
+5. Connect your Android device or start an emulator (API 28+)
 
-- [LiteLDev/LeviLaunchroid](https://github.com/LiteLDev/LeviLaunchroid) — 原始 LeviLaunchroid 项目
-- [LiteLDev/preloader-android](https://github.com/LiteLDev/preloader-android) — preloader 运行时
-- [microsoft/libHttpClient](https://github.com/microsoft/libHttpClient) — HTTP 客户端库
+6. Click the "Run" button in Android Studio to build and deploy to your device
+
+7. The app will launch automatically on successful build completion
+
+> **Build Tip:** For faster builds during development, use `Build > Make Project` to compile incrementally instead of full rebuilds.
+
+---
+
+## Contribution Guidelines
+
+We welcome contributions from the community to improve LeviLauncher. To ensure a high-quality codebase and smooth collaboration, please adhere to the following guidelines:
+
+### Code Quality
+
+Write clean, modular code with descriptive variable names and consistent formatting. Follow Kotlin and Java style guidelines established in the project. Ensure your code is readable and well-structured for future maintainers.
+
+### Commit Structure
+
+Use small, focused commits with clear and descriptive messages. Each commit should address a single feature or bug fix. Example: "Fixed memory leak in version manager" or "Added support for ARM32 architecture".
+
+### Documentation
+
+Add comments for complex logic and update relevant documentation in the repository. If you add new features, update the README and any related documentation files.
+
+### Performance
+
+Optimize all additions to maintain low latency and smooth performance. Test your changes thoroughly to ensure they don't introduce lag or performance regressions.
+
+### Testing
+
+Test all changes on multiple devices and Android versions to ensure compatibility and stability.
+
+### Pull Requests
+
+Submit PRs with a detailed description of changes, including the problem solved or feature added. Reference any related issues and provide screenshots or videos if your changes affect the UI.
+
+### Community Standards
+
+Follow our Code of Conduct to maintain a respectful and inclusive environment. Be constructive in feedback, respect others' work, and communicate professionally with all contributors.
+
+**Before Submitting:** Run a full build cycle and test on at least one device to minimize errors. We review all contributions promptly and appreciate your efforts to enhance LeviLauncher.
+
+---
+
+## Usage Guidelines
+
+LeviLauncher is designed for players of Minecraft Bedrock Edition. Please respect the following guidelines and terms of use:
+
+### Permitted Uses
+
+- Modify LeviLauncher for personal gameplay and to test new features
+- Create educational content (videos, tutorials, blog posts) showcasing LeviLauncher's capabilities
+- Fork the repository for learning purposes or to create derivative projects, provided you comply with the Apache License 2.0
+- Share your modified versions with others as long as you comply with the Apache License 2.0 terms
+
+### Prohibited Uses
+
+- Do not claim LeviLauncher as your own without crediting the LeviMC team and its contributors
+- Do not use LeviLauncher to violate Mojang or Microsoft's user agreements
+
+> **Disclaimer:** The authors and contributors of LeviLauncher are not responsible for bans, damages, or issues arising from the use of this software. Use it at your own risk and in accordance with Minecraft's terms of service.
+
+For full legal details, see the LICENSE and NOTICE files in the repository.
+
+---
+
+## Credits & Acknowledgements
+
+LeviLauncher would not be possible without the contributions and support of many talented individuals and organizations:
+
+### Special Thanks To
+
+- **LeviMC Organization** – For maintaining the LeviLauncher project and providing infrastructure support
+- **Android Community** – For excellent documentation, libraries, and tools that made this launcher possible
+- **Open Source Community** – For all the libraries, frameworks, and tools that power this project
+- **Contributors** – A heartfelt thank you to all [contributors](https://github.com/LiteLDev/LeviLaunchroid/graphs/contributors) who have continuously improved and maintained LeviLauncher through their time and expertise
+
+---
+
+## Contact & Support
+
+**Author / Team:** LeviMC Team
+
+**Project Repository:** [https://github.com/LiteLDev/LeviLaunchroid](https://github.com/LiteLDev/LeviLaunchroid)
+
+**Report Issues:** [GitHub Issues Page](https://github.com/LiteLDev/LeviLaunchroid/issues)
+
+**For support and questions:** Please create an issue on the GitHub repository or contact the LeviMC team directly
+
+---
+
+<div align="center">
+
+[![GitHub Release](https://img.shields.io/github/v/release/LiteLDev/LeviLaunchroid?style=flat-square&color=blue)](https://github.com/0Sombra666/LeviLaunchroidUnlocked/releases)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0)
+[![Issues](https://img.shields.io/github/issues/LiteLDev/LeviLaunchroid?style=flat-square&color=red)](https://github.com/LiteLDev/LeviLaunchroid/issues)
+[![Stars](https://img.shields.io/github/stars/LiteLDev/LeviLaunchroid?style=flat-square&color=yellow)](https://github.com/LiteLDev/LeviLaunchroid)
+[![Downloads](https://img.shields.io/github/downloads/LiteLDev/LeviLaunchroid/total.svg)](https://github.com/0Sombra666/LeviLaunchroidUnlocked/releases)
+[![Android](https://img.shields.io/badge/Android-9.0%2B-green?style=flat-square&logo=android)](https://www.android.com/)
+
+**Made with ❤️ by the LeviMC Community**
+
+</div>
