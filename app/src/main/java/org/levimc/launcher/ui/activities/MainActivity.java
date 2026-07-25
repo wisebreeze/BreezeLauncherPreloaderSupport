@@ -632,6 +632,8 @@ import okhttp3.OkHttpClient;
         SharedPreferences prefs = getSharedPreferences("LauncherPrefs", MODE_PRIVATE);
         if (!prefs.getBoolean("eula_accepted", false)) {
             showEulaDialog();
+        } else {
+            initializeAfterMigrationGate();
         }
     }
 
