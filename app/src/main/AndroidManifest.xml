@@ -346,11 +346,16 @@
             android:alwaysRetainTaskState="true"
             android:configChanges="fontScale|density|smallestScreenSize|screenSize|uiMode|screenLayout|orientation|navigation|keyboardHidden|keyboard|touchscreen|locale|mnc|mcc"
             android:excludeFromRecents="false"
-            android:exported="false"
+            android:exported="true"
             android:launchMode="standard"
             android:screenOrientation="sensorLandscape"
             android:theme="@style/MinecraftLoadingTheme"
-            tools:ignore="DiscouragedApi" />
+            tools:ignore="DiscouragedApi">
+            <intent-filter>
+                <action android:name="org.levimc.launcher.action.LAUNCH_MINECRAFT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".core.minecraft.MinecraftActivity"
