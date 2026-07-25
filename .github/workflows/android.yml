@@ -2,8 +2,17 @@ name: 'Android CI'
 
 on:
   push:
+    branches:
+      - main
     tags:
       - '*'
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - '.github/**.md'
+      - 'LICENSE'
+      - '.gitattributes'
+      - '.gitignore'
   workflow_dispatch:
 
 env:
