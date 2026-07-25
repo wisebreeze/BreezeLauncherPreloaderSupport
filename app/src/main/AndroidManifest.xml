@@ -422,7 +422,7 @@
             android:configChanges="fontScale|density|smallestScreenSize|screenSize|uiMode|screenLayout|orientation|navigation|keyboardHidden|keyboard|touchscreen|locale|mnc|mcc" />
 
         <provider
-            android:name="androidx.core.content.FileProvider"
+            android:name="org.levimc.launcher.core.content.ExportedFileProvider"
             android:authorities="${applicationId}.fileprovider"
             android:exported="true"
             android:grantUriPermissions="true"
