@@ -557,14 +557,6 @@
     <string name="quick_launch">Início Rápido</string>
     <string name="quick_launch_menu_subtitle">Inicie com ações URI</string>
 
-    <string name="curseforge_title">CurseForge</string>
-    <string name="curseforge_subtitle">Pesquise e baixe conteúdos</string>
-    <string name="curseforge_search_hint">Procurar conteúdos…</string>
-    <string name="curseforge_download">Baixar</string>
-    <string name="curseforge_downloading">Baixando…</string>
-    <string name="curseforge_importing">Importando…</string>
-    <string name="curseforge_download_failed">Falha no download</string>
-    <string name="curseforge_available_files">Arquivos Disponíveis</string>
 
     <string name="nav_launch">Iniciar</string>
     <string name="nav_import">Importar</string>
@@ -609,7 +601,6 @@
         <item>Use o Início Rápido para conectar-se diretamente a um servidor sem precisar abrir o jogo primeiro.</item>
         <item>Você pode importar arquivos .mcworld, .mcpack e .mcaddon do Gerenciador de Conteúdo.</item>
         <item>Gerencie várias contas Xbox dentro do launcher e alterne entre elas com facilidade.</item>
-        <item>O CurseForge permite que você baixe conteúdo da comunidade diretamente.</item>
         <item>Carregue módulos SO para estender ou melhorar os recursos e o desempenho do Minecraft.</item>
     </string-array>
 

@@ -647,15 +647,6 @@
     <string name="quick_launch">Hızlı Başlat</string>
     <string name="quick_launch_menu_subtitle">URI işlemleriyle başlat</string>
 
-    <!-- CurseForge -->
-    <string name="curseforge_title">CurseForge</string>
-    <string name="curseforge_subtitle">İçeriklere göz at ve indir</string>
-    <string name="curseforge_search_hint">İçerik ara…</string>
-    <string name="curseforge_download">İndir</string>
-    <string name="curseforge_downloading">İndiriliyor…</string>
-    <string name="curseforge_importing">İçe aktarılıyor…</string>
-    <string name="curseforge_download_failed">İndirme başarısız</string>
-    <string name="curseforge_available_files">Mevcut Dosyalar</string>
 
     <!-- Navigation Bar -->
     <string name="nav_launch">Başlat</string>
@@ -701,7 +692,6 @@
         <item>Oyunu açmadan doğrudan bir sunucuya bağlanmak için Hızlı Başlat\'ı kullanın.</item>
         <item>İçerik Yönetimi sayfasından .mcworld, .mcpack ve .mcaddon dosyalarını içe aktarabilirsiniz.</item>
         <item>Başlatıcı içinde birden fazla Xbox hesabını yönetin ve aralarında sorunsuzca geçiş yapın.</item>
-        <item>CurseForge, topluluk içeriklerine doğrudan göz atmanızı ve indirmenizi sağlar.</item>
         <item>Minecraft özelliklerini ve performansını genişletmek veya geliştirmek için mod içe aktarın.</item>
     </string-array>
 

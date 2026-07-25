@@ -581,15 +581,6 @@
     <string name="quick_launch">त्वरित लॉन्च</string>
     <string name="quick_launch_menu_subtitle">URI कार्यों के साथ लॉन्च करें</string>
 
-    <!-- CurseForge -->
-    <string name="curseforge_title">CurseForge</string>
-    <string name="curseforge_subtitle">सामग्री ब्राउज़ करें और डाउनलोड करें</string>
-    <string name="curseforge_search_hint">सामग्री खोजें…</string>
-    <string name="curseforge_download">डाउनलोड</string>
-    <string name="curseforge_downloading">डाउनलोड हो रहा है…</string>
-    <string name="curseforge_importing">आयात हो रहा है…</string>
-    <string name="curseforge_download_failed">डाउनलोड विफल</string>
-    <string name="curseforge_available_files">उपलब्ध फ़ाइलें</string>
 
     <!-- Navigation Bar -->
     <string name="nav_launch">लॉन्च</string>
@@ -635,7 +626,6 @@
         <item>पहले गेम खोले बिना सर्वर से सीधे कनेक्ट करने के लिए त्वरित लॉन्च का उपयोग करें।</item>
         <item>आप सामग्री प्रबंधन पृष्ठ से .mcworld, .mcpack और .mcaddon फ़ाइलें आयात कर सकते हैं।</item>
         <item>लॉन्चर के अंदर कई Xbox खाते प्रबंधित करें और उनके बीच निर्बाध रूप से स्विच करें।</item>
-        <item>CurseForge आपको सीधे सामुदायिक सामग्री ब्राउज़ और डाउनलोड करने देता है।</item>
         <item>Minecraft सुविधाओं और प्रदर्शन का विस्तार या वृद्धि करने के लिए बाहरी देशी SO मॉड्यूल लोड करें।</item>
     </string-array>
 

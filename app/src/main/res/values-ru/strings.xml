@@ -518,15 +518,6 @@
     <string name="quick_launch">Быстрый запуск</string>
     <string name="quick_launch_menu_subtitle">Запуск с URI-действиями</string>
 
-    <!-- CurseForge -->
-    <string name="curseforge_title">CurseForge</string>
-    <string name="curseforge_subtitle">Просмотр и загрузка контента</string>
-    <string name="curseforge_search_hint">Поиск контента…</string>
-    <string name="curseforge_download">Скачать</string>
-    <string name="curseforge_downloading">Скачивание…</string>
-    <string name="curseforge_importing">Импорт…</string>
-    <string name="curseforge_download_failed">Ошибка скачивания</string>
-    <string name="curseforge_available_files">Доступные файлы</string>
 
     <!-- Missing translations -->
     <string name="cursor">Курсор</string>
@@ -630,7 +621,6 @@
         <item>Используйте быстрый запуск, чтобы подключаться к серверу без предварительного открытия игры.</item>
         <item>На странице управления контентом можно импортировать файлы .mcworld, .mcpack и .mcaddon.</item>
         <item>Управляйте несколькими аккаунтами Xbox внутри лаунчера и легко переключайтесь между ними.</item>
-        <item>CurseForge позволяет просматривать и загружать контент сообщества напрямую.</item>
         <item>Загружайте внешние нативные SO-модули, чтобы расширять или улучшать возможности и производительность Minecraft.</item>
     </string-array>
     <string name="theme_color_title">Цвет темы</string>

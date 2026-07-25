@@ -688,15 +688,6 @@
     <string name="quick_launch">Quick Launch</string>
     <string name="quick_launch_menu_subtitle">Launch with URI actions</string>
 
-    <!-- CurseForge -->
-    <string name="curseforge_title">CurseForge</string>
-    <string name="curseforge_subtitle">Browse and download contents</string>
-    <string name="curseforge_search_hint">Search contents…</string>
-    <string name="curseforge_download">Download</string>
-    <string name="curseforge_downloading">Downloading…</string>
-    <string name="curseforge_importing">Importing…</string>
-    <string name="curseforge_download_failed">Download failed</string>
-    <string name="curseforge_available_files">Available Files</string>
 
     <!-- Navigation Bar -->
     <string name="nav_launch">Launch</string>
@@ -742,7 +733,6 @@
         <item>Use Quick Launch to connect directly to a server without opening the game first.</item>
         <item>You can import .mcworld, .mcpack, and .mcaddon files from the Content Management page.</item>
         <item>Manage multiple Xbox accounts inside the launcher and switch between them seamlessly.</item>
-        <item>CurseForge lets you browse and download community content directly.</item>
         <item>Import mods to extend or enhance Minecraft features and performance.</item>
     </string-array>
 

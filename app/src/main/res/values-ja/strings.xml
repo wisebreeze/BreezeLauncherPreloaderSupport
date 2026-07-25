@@ -557,14 +557,6 @@
     <string name="quick_launch">クイック起動</string>
     <string name="quick_launch_menu_subtitle">URI アクションで起動</string>
 
-    <string name="curseforge_title">CurseForge</string>
-    <string name="curseforge_subtitle">コンテンツを閲覧してダウンロード</string>
-    <string name="curseforge_search_hint">コンテンツを検索…</string>
-    <string name="curseforge_download">ダウンロード</string>
-    <string name="curseforge_downloading">ダウンロード中…</string>
-    <string name="curseforge_importing">インポート中…</string>
-    <string name="curseforge_download_failed">ダウンロード失敗</string>
-    <string name="curseforge_available_files">利用可能なファイル</string>
 
     <string name="nav_launch">起動</string>
     <string name="nav_import">インポート</string>
@@ -609,7 +601,6 @@
         <item>クイック起動を使用すると、ゲームを開かずに直接サーバーに接続できます。</item>
         <item>コンテンツ管理ページから .mcworld、.mcpack、.mcaddon ファイルをインポートできます。</item>
         <item>ランチャー内で複数の Xbox アカウントを管理し、シームレスに切り替えます。</item>
-        <item>CurseForge からコミュニティコンテンツを直接ダウンロードできます。</item>
         <item>外部の SO モジュールをロードして、Minecraft の機能とパフォーマンスを向上させます。</item>
     </string-array>
 
