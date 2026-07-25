@@ -160,10 +160,6 @@
 
     <string name="error_no_browser">Kullanılabilir tarayıcı yok</string>
 
-    <string name="eula_title">LeviLauncher Lisans Sözleşmesi</string>
-    <string name="eula_message"><b>LeviLauncher\'a Hoş Geldiniz</b>\n\nBu yazılımı kullanarak aşağıdakileri kabul etmiş olursunuz:\n\n• Bu <b>resmi olmayan</b> bir Minecraft başlatıcısıdır\n• <b>Lisanslı</b> bir Minecraft kopyasına sahip olmanız gerekir\n• Her türlü korsan kullanım veya hile yasaktır\n• Modlar/kaynak paketleri kendi sorumluluğunuzda kullanılır\n• Mojang/Microsoft ile bağlantılı değildir\n\nKullanmaya devam etmek kabul anlamına gelir</string>
-    <string name="eula_agree">Kabul Et</string>
-    <string name="eula_exit">Reddet</string>
 
     <string name="allow_unknown_sources">Devam etmeden önce lütfen bilinmeyen kaynaklardan yüklemeye izin verin</string>
 

@@ -161,10 +161,6 @@
 
     <string name="error_no_browser">कोई ब्राउज़र उपलब्ध नहीं है</string>
 
-    <string name="eula_title">LeviLauncher लाइसेंस समझौता</string>
-    <string name="eula_message"><b>LeviLauncher में आपका स्वागत है</b>\n\nइस सॉफ़्टवेयर का उपयोग करके आप सहमत हैं:\n\n• यह एक <b>अनौपचारिक</b> Minecraft लॉन्चर है\n• आपके पास Minecraft की एक <b>लाइसेंस प्राप्त</b> प्रति होनी चाहिए\n• किसी भी प्रकार की पायरेसी या धोखाधड़ी निषिद्ध है\n• मॉड्स/रिसोर्स पैक्स का उपयोग आपके अपने जोखिम पर है\n• Mojang/Microsoft से संबद्ध नहीं है\n\nनिरंतर उपयोग समझौते का गठन करता है</string>
-    <string name="eula_agree">स्वीकार करें</string>
-    <string name="eula_exit">अस्वीकार करें</string>
 
     <string name="allow_unknown_sources">कृपया आगे बढ़ने से पहले अज्ञात स्रोतों से इंस्टॉलेशन की अनुमति दें</string>
 

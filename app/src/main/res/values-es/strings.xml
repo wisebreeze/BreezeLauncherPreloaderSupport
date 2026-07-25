@@ -161,10 +161,6 @@
 
     <string name="error_no_browser">No hay navegador disponible</string>
 
-    <string name="eula_title">Acuerdo de Licencia de LeviLauncher</string>
-    <string name="eula_message"><b>Bienvenido a LeviLauncher</b>\n\nAl usar este software aceptas que:\n\n• Este es un launcher <b>no oficial</b> de Minecraft\n• Debes poseer una copia <b>con licencia</b> de Minecraft\n• Se prohíbe cualquier forma de piratería o trampa\n• Los mods/packs se usan bajo tu propio riesgo\n• No está afiliado con Mojang/Microsoft\n\nEl uso continuo constituye un acuerdo</string>
-    <string name="eula_agree">Aceptar</string>
-    <string name="eula_exit">Rechazar</string>
 
     <string name="allow_unknown_sources">Por favor permite la instalación desde orígenes desconocidos antes de continuar</string>
 

@@ -161,10 +161,6 @@
 
     <string name="error_no_browser">利用可能なブラウザがありません</string>
 
-    <string name="eula_title">LeviLauncher 使用許諾契約</string>
-    <string name="eula_message"><b>LeviLauncher へようこそ</b>\n\nこのソフトウェアを使用することにより、以下に同意したとみなされます：\n\n• これは<b>非公式</b>の Minecraft ランチャーです\n• <b>ライセンスされた</b> Minecraft のコピーを所有している必要があります\n• いかなる形式の海賊版やチートも禁止されています\n• モッドやリソースパックの使用は自己責任です\n• Mojang / Microsoft とは提携していません\n\n継続使用は同意を構成します</string>
-    <string name="eula_agree">同意する</string>
-    <string name="eula_exit">拒否する</string>
 
     <string name="allow_unknown_sources">続行する前に、提供元不明のアプリのインストールを許可してください</string>
 

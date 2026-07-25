@@ -127,7 +127,7 @@ import okhttp3.OkHttpClient;
         setupNavBar();
         setupManagersAndHandlers();
         new GithubReleaseUpdater(this, "LiteLDev", "LeviLaunchroid", permissionResultLauncher).checkUpdateOnLaunch();
-        showEulaIfNeeded();
+        initializeAfterMigrationGate();
         setupOnBackPressedCallback();
 
         accountLoginLauncher = registerForActivityResult(new androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult(), result -> {
@@ -628,30 +628,6 @@ import okhttp3.OkHttpClient;
         }
     }
 
-    private void showEulaIfNeeded() {
-        SharedPreferences prefs = getSharedPreferences("LauncherPrefs", MODE_PRIVATE);
-        if (!prefs.getBoolean("eula_accepted", false)) {
-            showEulaDialog();
-        } else {
-            initializeAfterMigrationGate();
-        }
-    }
-
-    private void showEulaDialog() {
-        CustomAlertDialog dia = new CustomAlertDialog(this)
-                .setTitleText(getString(R.string.eula_title))
-                .setMessage(getString(R.string.eula_message))
-                .setUseBorderedBackground(true)
-                .setBlurBackground(true)
-                .setPositiveButton(getString(R.string.eula_agree), v -> {
-                    getSharedPreferences("LauncherPrefs", MODE_PRIVATE)
-                            .edit().putBoolean("eula_accepted", true).apply();
-                    initializeAfterMigrationGate();
-                })
-                .setNegativeButton(getString(R.string.eula_exit), v -> finishAffinity());
-        dia.setCancelable(false);
-        dia.show();
-    }
 
     @Override
     protected void onResume() {

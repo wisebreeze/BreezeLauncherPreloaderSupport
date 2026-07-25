@@ -144,10 +144,6 @@
 
     <string name="error_no_browser">Tidak ada peramban yang tersedia.</string>
 
-    <string name="eula_title">LeviLauncher License Agreement</string>
-    <string name="eula_message"><b>Selamat datang di LeviLauncher</b>\n\nBy using this software you agree to:\n\n• This is an <b>unofficial</b> Minecraft launcher\n• You must own a <b>licensed</b> copy of Minecraft\n• Any form of piracy or cheating is prohibited\n• Mods/resource packs are used at your own risk\n• Not affiliated with Mojang/Microsoft\n\nContinued use constitutes agreement</string>
-    <string name="eula_agree">Terima</string>
-    <string name="eula_exit">Tolak</string>
 
     <string name="allow_unknown_sources">Harap izinkan instalasi dari sumber yang tidak dikenal sebelum melanjutkan.</string>
 

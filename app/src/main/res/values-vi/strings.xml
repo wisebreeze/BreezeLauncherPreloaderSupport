@@ -160,10 +160,6 @@
 
     <string name="error_no_browser">Không có trình duyệt nào khả dụng</string>
 
-    <string name="eula_title">Thỏa thuận cấp phép LeviLauncher</string>
-    <string name="eula_message"><b>Chào mừng bạn đến với LeviLauncher</b>\n\nBằng cách sử dụng phần mềm này, bạn đồng ý với các điều khoản sau:\n\n• Đây là trình khởi chạy Minecraft  <b>không chính thức</b>\n• Bạn phải sở hữu một bản sao Minecraft <b>được cấp phép</b> \n• Mọi hình thức vi phạm bản quyền hoặc gian lận đều bị nghiêm cấm\n• Việc sử dụng các bản Mods/gói tài nguyên là do bạn tự chịu rủi ro\n• Không liên kết với Mojang/Microsoft\n\nViệc tiếp tục sử dụng đồng nghĩa với việc bạn đồng ý</string>
-    <string name="eula_agree">Đồng ý</string>
-    <string name="eula_exit">Từ chối</string>
 
     <string name="allow_unknown_sources">Vui lòng cho phép cài đặt từ nguồn không xác định trước khi tiếp tục. </string>
 
