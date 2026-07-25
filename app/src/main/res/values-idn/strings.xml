@@ -583,7 +583,6 @@
     <string name="nav_launch">Luncurkan</string>
     <string name="nav_import">Impor</string>
     <string name="nav_instances">Instans</string>
-    <string name="nav_about">Tentang</string>
     <string name="nav_settings">Pengaturan</string>
     <string name="search_instances_hint">Cari…</string>
     <string name="instances_label">Instans</string>

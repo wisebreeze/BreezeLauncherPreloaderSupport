@@ -560,7 +560,6 @@
     <string name="nav_launch">Lancer</string>
     <string name="nav_import">Importer</string>
     <string name="nav_instances">Instances</string>
-    <string name="nav_about">À propos</string>
     <string name="nav_settings">Paramètres</string>
 
     <string name="search_instances_hint">Rechercher…</string>

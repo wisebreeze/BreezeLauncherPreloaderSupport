@@ -560,7 +560,6 @@
     <string name="nav_launch">起動</string>
     <string name="nav_import">インポート</string>
     <string name="nav_instances">インスタンス</string>
-    <string name="nav_about">アプリについて</string>
     <string name="nav_settings">設定</string>
 
     <string name="search_instances_hint">検索…</string>

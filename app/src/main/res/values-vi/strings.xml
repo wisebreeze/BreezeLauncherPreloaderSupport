@@ -650,7 +650,6 @@
     <string name="nav_launch">Khởi chạy</string>
     <string name="nav_import">Nhập</string>
     <string name="nav_instances">Các phiên bản</string>
-    <string name="nav_about">Về</string>
     <string name="nav_settings">Cài đặt</string>
 
     <string name="search_instances_hint">Tìm kiếm…</string>

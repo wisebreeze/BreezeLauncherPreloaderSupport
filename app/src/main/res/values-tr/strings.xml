@@ -651,7 +651,6 @@
     <string name="nav_launch">Başlat</string>
     <string name="nav_import">İçe Aktar</string>
     <string name="nav_instances">Örnekler</string>
-    <string name="nav_about">Hakkında</string>
     <string name="nav_settings">Ayarlar</string>
 
     <string name="search_instances_hint">Ara…</string>
