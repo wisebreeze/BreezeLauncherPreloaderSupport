@@ -145,8 +145,25 @@ class LauncherRestartActivity : BaseActivity() {
                 hideSystemUI()
                 val returnPackage = intent.getStringExtra(EXTRA_RETURN_TO_PACKAGE)
                 if (!returnPackage.isNullOrEmpty()) {
-                    // 兼容模式：退出后返回调用方启动器（如 BreezeLauncher）
-                    val returnIntent = packageManager.getLaunchIntentForPackage(returnPackage)
+                    // 兼容模式：退出后返回调用方启动器（如 BreezeLauncher）的 MainActivity。
+                    // 先用 getLaunchIntentForPackage（依赖 <queries> 声明），返回 null 时
+                    // 用显式 component 指向 <returnPackage>.ui.activities.MainActivity 兜底，
+                    // 确保始终返回到微风启动器，而不是回退到 PreloaderSupport 自己的 MainActivity。
+                    var returnIntent = packageManager.getLaunchIntentForPackage(returnPackage)
+                    if (returnIntent == null) {
+                        val fallbackClass = "$returnPackage.ui.activities.MainActivity"
+                        try {
+                            packageManager.getActivityInfo(
+                                android.content.ComponentName(returnPackage, fallbackClass),
+                                0
+                            )
+                            returnIntent = Intent().apply {
+                                setClassName(returnPackage, fallbackClass)
+                            }
+                        } catch (_: Exception) {
+                            // 调用方 MainActivity 不可见/不存在，下面会落到自带 MainActivity
+                        }
+                    }
                     if (returnIntent != null) {
                         returnIntent.addFlags(
                             Intent.FLAG_ACTIVITY_NEW_TASK or
