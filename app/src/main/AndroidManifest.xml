@@ -445,14 +445,12 @@
 
         <!-- 把兼容框架的游戏数据目录（worlds/resource_packs/behavior_packs 等）
              暴露给微风启动器，让微风启动器在兼容模式下能查询内容数量、列表并读取文件。
-             签名级权限，只有同签名的微风启动器能访问。 -->
+             不设自定义权限（避免签名不一致时 SecurityException），仅导出。 -->
         <provider
             android:name="org.levimc.launcher.core.content.ContentSharingProvider"
             android:authorities="org.levimc.launcher.content"
             android:exported="true"
-            android:grantUriPermissions="true"
-            android:readPermission="org.levimc.launcher.permission.ACCESS_FILES"
-            android:writePermission="org.levimc.launcher.permission.ACCESS_FILES" />
+            android:grantUriPermissions="true" />
 
     </application>
 
