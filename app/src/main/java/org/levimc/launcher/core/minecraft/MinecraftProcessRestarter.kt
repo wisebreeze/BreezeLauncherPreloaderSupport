@@ -33,7 +33,7 @@ import org.levimc.launcher.util.PersonalizationManager
 import kotlin.system.exitProcess
 
 private const val EXTRA_OLD_MAIN_PROCESS_PID = "org.levimc.launcher.extra.OLD_MAIN_PROCESS_PID"
-const val EXTRA_RETURN_TO_PACKAGE = "org.levimc.launcher.extra.RETURN_TO_PACKAGE"
+private const val EXTRA_RETURN_TO_PACKAGE = "org.levimc.launcher.extra.RETURN_TO_PACKAGE"
 const val EXTRA_CLOSE_RESTART_ACTIVITY_ON_FIRST_DRAW =
     "org.levimc.launcher.extra.CLOSE_RESTART_ACTIVITY_ON_FIRST_DRAW"
 const val ACTION_MAIN_ACTIVITY_FIRST_DRAWN =
@@ -43,6 +43,8 @@ private const val KILL_OLD_PROCESS_DELAY_MS = 300L
 private const val RELAUNCH_AFTER_KILL_DELAY_MS = 700L
 
 object MinecraftProcessRestarter {
+    const val EXTRA_RETURN_TO_PACKAGE = "org.levimc.launcher.extra.RETURN_TO_PACKAGE"
+
     fun restartLauncherAfterMinecraftExit(context: Context, returnToPackage: String? = null) {
         val appContext = context.applicationContext
         val oldPid = Process.myPid()
