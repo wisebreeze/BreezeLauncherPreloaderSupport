@@ -187,12 +187,12 @@ class LauncherRestartActivity : BaseActivity() {
                                 Intent.FLAG_ACTIVITY_REORDER_TO_FRONT
                         )
                         // 把本次游玩时长透传给调用方启动器（BreezeLauncher 的 PlayTimeStore）
-                        val durationMs = intent.getLongExtra(EXTRA_PLAY_TIME_DURATION_MS, 0L)
+                        val durationMs = intent.getLongExtra(MinecraftProcessRestarter.EXTRA_PLAY_TIME_DURATION_MS, 0L)
                         if (durationMs > 0L) {
-                            returnIntent.putExtra(EXTRA_PLAY_TIME_START_MS, intent.getLongExtra(EXTRA_PLAY_TIME_START_MS, 0L))
-                            returnIntent.putExtra(EXTRA_PLAY_TIME_DURATION_MS, durationMs)
-                            intent.getStringExtra(EXTRA_PLAY_TIME_INSTANCE_NAME)?.let {
-                                returnIntent.putExtra(EXTRA_PLAY_TIME_INSTANCE_NAME, it)
+                            returnIntent.putExtra(MinecraftProcessRestarter.EXTRA_PLAY_TIME_START_MS, intent.getLongExtra(MinecraftProcessRestarter.EXTRA_PLAY_TIME_START_MS, 0L))
+                            returnIntent.putExtra(MinecraftProcessRestarter.EXTRA_PLAY_TIME_DURATION_MS, durationMs)
+                            intent.getStringExtra(MinecraftProcessRestarter.EXTRA_PLAY_TIME_INSTANCE_NAME)?.let {
+                                returnIntent.putExtra(MinecraftProcessRestarter.EXTRA_PLAY_TIME_INSTANCE_NAME, it)
                             }
                         }
                         startActivity(returnIntent)
