@@ -161,8 +161,8 @@ public class InstanceSettingsActivity extends BaseActivity {
     private void saveAndFinish() {
         String newName = editName.getText().toString().trim();
 
-        if (!newName.isEmpty() && !version.isInstalled && !newName.equals(originalDisplayName)) {
-            versionManager.renameCustomVersion(version, newName, new VersionManager.OnRenameVersionCallback() {
+        if (!newName.isEmpty() && !newName.equals(originalDisplayName)) {
+            versionManager.renameVersion(version, newName, new VersionManager.OnRenameVersionCallback() {
                 @Override
                 public void onRenameCompleted(boolean success) {}
 

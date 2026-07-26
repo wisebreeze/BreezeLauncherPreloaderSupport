@@ -27,6 +27,7 @@ public class InbuiltOverlayManager {
     private ChickPetOverlay chickPetOverlay;
     private ZoomOverlay zoomOverlay;
     private SnaplookOverlay snaplookOverlay;
+    private GyroOverlay gyroOverlay;
     private FpsDisplayOverlay fpsDisplayOverlay;
     private CpsDisplayOverlay cpsDisplayOverlay;
     private ModMenuButton modMenuButton;
@@ -69,6 +70,7 @@ public class InbuiltOverlayManager {
         modActiveStates.put(ModIds.CPS_DISPLAY, false);
         modActiveStates.put(ModIds.SNAPLOOK, false);
         modActiveStates.put(ModIds.VIRTUAL_CURSOR, false);
+        modActiveStates.put(ModIds.GYRO, false);
 
         modPositionMap.put(ModIds.QUICK_DROP, nextY + SPACING);
         modPositionMap.put(ModIds.CAMERA_PERSPECTIVE, nextY + SPACING * 2);
@@ -79,6 +81,7 @@ public class InbuiltOverlayManager {
         modPositionMap.put(ModIds.CPS_DISPLAY, nextY + SPACING * 7);
         modPositionMap.put(ModIds.SNAPLOOK, nextY + SPACING * 8);
         modPositionMap.put(ModIds.VIRTUAL_CURSOR, nextY + SPACING * 9);
+        modPositionMap.put(ModIds.GYRO, nextY + SPACING * 10);
 
         if (zoomOverlay == null) {
             zoomOverlay = new ZoomOverlay(activity);
@@ -88,6 +91,11 @@ public class InbuiltOverlayManager {
         if (snaplookOverlay == null) {
             snaplookOverlay = new SnaplookOverlay(activity);
             snaplookOverlay.initializeForKeyboard();
+        }
+
+        if (gyroOverlay == null) {
+            gyroOverlay = new GyroOverlay(activity);
+            gyroOverlay.initializeForKeyboard();
         }
 
         restorePersistedInbuiltModState(manager, ModIds.QUICK_DROP);
@@ -100,6 +108,7 @@ public class InbuiltOverlayManager {
         restorePersistedInbuiltModState(manager, ModIds.CPS_DISPLAY);
         restorePersistedInbuiltModState(manager, ModIds.SNAPLOOK);
         restorePersistedInbuiltModState(manager, ModIds.VIRTUAL_CURSOR);
+        restorePersistedInbuiltModState(manager, ModIds.GYRO);
 
         modMenuButton = new ModMenuButton(activity);
         modMenuButton.show(START_X, nextY);
@@ -253,7 +262,19 @@ public class InbuiltOverlayManager {
             }
             return;
         }
-        
+
+        if (modId.equals(ModIds.GYRO)) {
+            if (gyroOverlay != null) {
+                if (gyroOverlay == selectedHudEditorOverlay) {
+                    selectHudEditorOverlay(null);
+                }
+                gyroOverlay.hide();
+                overlays.remove(gyroOverlay);
+                modOverlayMap.remove(modId);
+            }
+            return;
+        }
+
         BaseOverlayButton overlay = modOverlayMap.get(modId);
         if (overlay != null) {
             if (overlay == selectedHudEditorOverlay) {
@@ -392,6 +413,10 @@ public class InbuiltOverlayManager {
             snaplookOverlay.hide();
             snaplookOverlay = null;
         }
+        if (gyroOverlay != null) {
+            gyroOverlay.hide();
+            gyroOverlay = null;
+        }
         if (modMenuButton != null) {
             modMenuButton.hide();
             modMenuButton = null;
@@ -476,6 +501,9 @@ public class InbuiltOverlayManager {
         }
         if (modId.equals(ModIds.SNAPLOOK) && snaplookOverlay != null) {
             snaplookOverlay.applyConfigurationChanges();
+        }
+        if (modId.equals(ModIds.GYRO) && gyroOverlay != null) {
+            gyroOverlay.applyConfigurationChanges();
         }
         if (modId.equals(ModIds.FPS_DISPLAY) && fpsDisplayOverlay != null) {
             fpsDisplayOverlay.applyConfigurationChanges();
@@ -688,11 +716,15 @@ public class InbuiltOverlayManager {
             }
 
             if (fpsDisplayOverlay != null) {
-                fpsDisplayOverlay.setVisibility(inbuiltVis);
+                boolean showEverywhere = manager.isOverlayShowEverywhere(ModIds.FPS_DISPLAY);
+                int vis = (inbuiltVisible || showEverywhere) ? android.view.View.VISIBLE : android.view.View.GONE;
+                fpsDisplayOverlay.setVisibility(vis);
             }
 
             if (cpsDisplayOverlay != null) {
-                cpsDisplayOverlay.setVisibility(inbuiltVis);
+                boolean showEverywhere = manager.isOverlayShowEverywhere(ModIds.CPS_DISPLAY);
+                int vis = (inbuiltVisible || showEverywhere) ? android.view.View.VISIBLE : android.view.View.GONE;
+                cpsDisplayOverlay.setVisibility(vis);
             }
 
 
