@@ -66,7 +66,7 @@ class GamePackageManager private constructor(
     init {
         report("GamePackageManager init started")
         val packageName = detectGamePackage() ?: throw IllegalStateException("Minecraft not found")
-        report("Detected Minecraft package: $packageName")
+        report("Using Minecraft package: $packageName")
         packageContext = context.createPackageContext(
             packageName,
             Context.CONTEXT_IGNORE_SECURITY or Context.CONTEXT_INCLUDE_CODE
@@ -88,7 +88,19 @@ class GamePackageManager private constructor(
         report("GamePackageManager init finished")
     }
 
+    /**
+     * 决定用哪个已安装的 Minecraft 包来 createPackageContext。
+     *
+     * 优先用微风启动器选中的实例包名（version.packageName，可能是
+     * com.mojang.minecraftpe / .beta / .preview），这样兼容框架启动的就是
+     * 微风启动器选的那个实例，而不是固定 com.mojang.minecraftpe。
+     * 仅当未指定或该包未安装时，才回退到 knownPackages 扫描。
+     */
     private fun detectGamePackage(): String? {
+        val selected = version?.packageName?.takeIf { it.isNotEmpty() }
+        if (selected != null && isPackageInstalled(selected)) {
+            return selected
+        }
         return knownPackages.firstOrNull { isPackageInstalled(it) }
     }
 

@@ -30,6 +30,8 @@
         tools:ignore="RequestInstallPackagesPolicy" />
     <queries>
         <package android:name="com.mojang.minecraftpe" />
+        <package android:name="com.mojang.minecraftpe.beta" />
+        <package android:name="com.mojang.minecraftpe.preview" />
     </queries>
 
     <application

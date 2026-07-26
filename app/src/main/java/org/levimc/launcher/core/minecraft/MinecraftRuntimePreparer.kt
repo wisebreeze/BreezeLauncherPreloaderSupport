@@ -116,6 +116,11 @@ object MinecraftRuntimePreparer {
         val versionCode = intent.getStringExtra("MINECRAFT_VERSION") ?: ""
         val versionDirName = intent.getStringExtra("MINECRAFT_VERSION_DIR") ?: ""
         val isInstalled = intent.getBooleanExtra("IS_INSTALLED", false)
+        // 微风启动器传来的选中实例包名（已安装版本时为 com.mojang.minecraftpe / .beta /
+        // .preview）。为空时回退到 MC_PACKAGE_NAME 常量，保持旧行为。
+        val packageName = intent.getStringExtra("MC_PACKAGE_NAME")
+            ?.takeIf { it.isNotEmpty() }
+            ?: MinecraftLauncher.MC_PACKAGE_NAME
 
         return if (!versionDir.isNullOrEmpty()) {
             GameVersion(
@@ -124,7 +129,7 @@ object MinecraftRuntimePreparer {
                 versionCode,
                 File(versionDir),
                 isInstalled,
-                MinecraftLauncher.MC_PACKAGE_NAME,
+                packageName,
                 ""
             )
         } else if (versionCode.isNotEmpty()) {
@@ -134,7 +139,7 @@ object MinecraftRuntimePreparer {
                 versionCode,
                 null,
                 isInstalled,
-                MinecraftLauncher.MC_PACKAGE_NAME,
+                packageName,
                 ""
             )
         } else {
