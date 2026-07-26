@@ -94,8 +94,13 @@ public class ContentSharingProvider extends ContentProvider {
         String rel = uri.getPath();
         if (rel == null || rel.isEmpty()) throw new FileNotFoundException("no path");
         if (rel.startsWith("/")) rel = rel.substring(1);
-        File base = LauncherStorage.getSharedGameDataDir(context, false);
-        File target = new File(base, rel);
+        // 优先外部存储，回退内部
+        File externalBase = LauncherStorage.getSharedGameDataDir(context, true);
+        File target = new File(externalBase, rel);
+        if (!target.exists()) {
+            File internalBase = LauncherStorage.getSharedGameDataDir(context, false);
+            target = new File(internalBase, rel);
+        }
         if (!target.exists()) throw new FileNotFoundException(target.getAbsolutePath());
         return ParcelFileDescriptor.open(target, ParcelFileDescriptor.MODE_READ_ONLY);
     }
@@ -103,15 +108,24 @@ public class ContentSharingProvider extends ContentProvider {
     @Nullable
     private File resolveContentDir(Context context, Uri uri) {
         String first = uri.getPathSegments().isEmpty() ? "" : uri.getPathSegments().get(0);
-        File base = LauncherStorage.getSharedGameDataDir(context, false);
+        String dirName;
         switch (first) {
-            case "worlds": return new File(base, "minecraftWorlds");
-            case "resource_packs": return new File(base, "resource_packs");
-            case "behavior_packs": return new File(base, "behavior_packs");
-            case "skin_packs": return new File(base, "skin_packs");
-            case "screenshots": return new File(base, "Screenshots");
+            case "worlds": dirName = "minecraftWorlds"; break;
+            case "resource_packs": dirName = "resource_packs"; break;
+            case "behavior_packs": dirName = "behavior_packs"; break;
+            case "skin_packs": dirName = "skin_packs"; break;
+            case "screenshots": dirName = "Screenshots"; break;
             default: return null;
         }
+        // Minecraft 把游戏数据存在外部存储（Android/data/.../files/games/com.mojang/），
+        // 优先用外部；外部不存在时回退内部。
+        File externalBase = LauncherStorage.getSharedGameDataDir(context, true);
+        File externalDir = new File(externalBase, dirName);
+        if (externalDir.exists() && externalDir.isDirectory()) {
+            return externalDir;
+        }
+        File internalBase = LauncherStorage.getSharedGameDataDir(context, false);
+        return new File(internalBase, dirName);
     }
 
     private String relativize(File base, File f) {
