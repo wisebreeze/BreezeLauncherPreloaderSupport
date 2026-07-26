@@ -44,8 +44,18 @@ private const val RELAUNCH_AFTER_KILL_DELAY_MS = 700L
 
 object MinecraftProcessRestarter {
     const val EXTRA_RETURN_TO_PACKAGE = "org.levimc.launcher.extra.RETURN_TO_PACKAGE"
+    // 游戏时长回传给调用方启动器（如 BreezeLauncher 的 PlayTimeStore）
+    const val EXTRA_PLAY_TIME_START_MS = "org.levimc.launcher.extra.PLAY_TIME_START_MS"
+    const val EXTRA_PLAY_TIME_DURATION_MS = "org.levimc.launcher.extra.PLAY_TIME_DURATION_MS"
+    const val EXTRA_PLAY_TIME_INSTANCE_NAME = "org.levimc.launcher.extra.PLAY_TIME_INSTANCE_NAME"
 
-    fun restartLauncherAfterMinecraftExit(context: Context, returnToPackage: String? = null) {
+    fun restartLauncherAfterMinecraftExit(
+        context: Context,
+        returnToPackage: String? = null,
+        playTimeStartMs: Long = 0L,
+        playTimeDurationMs: Long = 0L,
+        instanceName: String = ""
+    ) {
         val appContext = context.applicationContext
         val oldPid = Process.myPid()
         cancelLegacyLauncherRestart(appContext)
@@ -55,6 +65,13 @@ object MinecraftProcessRestarter {
             putExtra(EXTRA_OLD_MAIN_PROCESS_PID, oldPid)
             if (!returnToPackage.isNullOrEmpty()) {
                 putExtra(EXTRA_RETURN_TO_PACKAGE, returnToPackage)
+            }
+            if (playTimeDurationMs > 0L) {
+                putExtra(EXTRA_PLAY_TIME_START_MS, playTimeStartMs)
+                putExtra(EXTRA_PLAY_TIME_DURATION_MS, playTimeDurationMs)
+                if (instanceName.isNotEmpty()) {
+                    putExtra(EXTRA_PLAY_TIME_INSTANCE_NAME, instanceName)
+                }
             }
         }
 
@@ -169,6 +186,15 @@ class LauncherRestartActivity : BaseActivity() {
                             Intent.FLAG_ACTIVITY_NEW_TASK or
                                 Intent.FLAG_ACTIVITY_REORDER_TO_FRONT
                         )
+                        // 把本次游玩时长透传给调用方启动器（BreezeLauncher 的 PlayTimeStore）
+                        val durationMs = intent.getLongExtra(EXTRA_PLAY_TIME_DURATION_MS, 0L)
+                        if (durationMs > 0L) {
+                            returnIntent.putExtra(EXTRA_PLAY_TIME_START_MS, intent.getLongExtra(EXTRA_PLAY_TIME_START_MS, 0L))
+                            returnIntent.putExtra(EXTRA_PLAY_TIME_DURATION_MS, durationMs)
+                            intent.getStringExtra(EXTRA_PLAY_TIME_INSTANCE_NAME)?.let {
+                                returnIntent.putExtra(EXTRA_PLAY_TIME_INSTANCE_NAME, it)
+                            }
+                        }
                         startActivity(returnIntent)
                         overridePendingTransition(0, 0)
                         finish()

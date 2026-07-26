@@ -32,6 +32,9 @@ class MinecraftActivity : MainActivity() {
     private var gameRuntimeStarted = false
     private var preloaderTextInput: PreloaderTextInput? = null
     private var previousInputFocus: View? = null
+    // 游戏时长记录：onResume 首次记开始时间，退出时算时长，通过返回 intent 传回微风启动器
+    private var playTimeStartMs: Long = 0L
+    private var instanceDisplayName: String = ""
 
     private class PreloaderTextInput(context: Context) : AppCompatEditText(context) {
         override fun onCreateInputConnection(outAttrs: EditorInfo): InputConnection? {
@@ -170,6 +173,15 @@ class MinecraftActivity : MainActivity() {
         }
         MinecraftActivityState.onResumed(this)
 
+        // 记录游玩开始时间（首次 onResume），并取实例显示名用于回传给微风启动器
+        if (playTimeStartMs == 0L) {
+            playTimeStartMs = System.currentTimeMillis()
+        }
+        if (instanceDisplayName.isEmpty()) {
+            instanceDisplayName = MinecraftLaunchSession.getPreparedRuntime()?.version?.displayName
+                ?: intent?.getStringExtra("MINECRAFT_VERSION_DIR") ?: ""
+        }
+
         if (overlayManager == null) {
             startInbuiltModServices()
         }
@@ -299,7 +311,18 @@ class MinecraftActivity : MainActivity() {
         if (normalExitRestartScheduled) return
         normalExitRestartScheduled = true
 
-        MinecraftProcessRestarter.restartLauncherAfterMinecraftExit(this, intent?.getStringExtra(MinecraftProcessRestarter.EXTRA_RETURN_TO_PACKAGE))
+        // 计算本次游玩时长，通过返回 intent 传回微风启动器记录
+        val startMs = playTimeStartMs
+        val durationMs = if (startMs > 0L) System.currentTimeMillis() - startMs else 0L
+        playTimeStartMs = 0L
+
+        MinecraftProcessRestarter.restartLauncherAfterMinecraftExit(
+            this,
+            intent?.getStringExtra(MinecraftProcessRestarter.EXTRA_RETURN_TO_PACKAGE),
+            playTimeStartMs = startMs,
+            playTimeDurationMs = durationMs,
+            instanceName = instanceDisplayName
+        )
     }
 
     override fun getAssets(): AssetManager {
