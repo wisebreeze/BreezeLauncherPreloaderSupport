@@ -38,7 +38,7 @@ public class ContentSharingProvider extends ContentProvider {
     private static final String AUTHORITY = "org.levimc.launcher.content";
 
     private static final String[] COLUMNS = {
-            OpenableColumns._ID,
+            "_id",
             OpenableColumns.DISPLAY_NAME,
             OpenableColumns.SIZE,
             "last_modified",
