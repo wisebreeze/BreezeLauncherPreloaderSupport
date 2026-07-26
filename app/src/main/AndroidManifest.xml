@@ -32,6 +32,9 @@
         <package android:name="com.mojang.minecraftpe" />
         <package android:name="com.mojang.minecraftpe.beta" />
         <package android:name="com.mojang.minecraftpe.preview" />
+        <!-- BreezeLauncher 调用方：兼容模式退出后用 getLaunchIntentForPackage
+             返回到微风启动器的 MainActivity，必须在此声明才能在 Android 11+ 可见。 -->
+        <package android:name="com.wisebreeze.launcher" />
     </queries>
 
     <application
