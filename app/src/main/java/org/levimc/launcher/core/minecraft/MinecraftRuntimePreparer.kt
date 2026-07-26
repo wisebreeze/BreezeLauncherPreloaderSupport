@@ -261,12 +261,15 @@ object MinecraftRuntimePreparer {
         // 资源导入（.mcpack/.mcworld）：微风启动器兼容模式下点"立即启动"导入资源包时，
         // 把 content/file URI 作为 MC_RESOURCE_URI extra + ClipData 传来（不作为
         // LAUNCH_MINECRAFT intent.data，避免 intent-filter 不匹配）。这里设为
-        // gameIntent.data + type，让 MinecraftActivity（Mojang 代码）启动时导入资源包。
+        // gameIntent.data + type + action=VIEW，让 MinecraftActivity（Mojang 代码）
+        // 启动时识别为资源导入并导入资源包。非兼容模式下 gameIntent 直接复制原始
+        // .mcpack VIEW intent，action 本来就是 VIEW；兼容模式这里补齐。
         // 读权限已由微风启动器通过 FLAG_GRANT_READ_URI_PERMISSION + ClipData 授予本进程。
         launchIntent.getStringExtra(EXTRA_RESOURCE_URI)
             ?.takeIf { it.isNotEmpty() }
             ?.let { uriString ->
                 launchIntent.data = Uri.parse(uriString)
+                launchIntent.action = Intent.ACTION_VIEW
                 launchIntent.getStringExtra(EXTRA_RESOURCE_TYPE)
                     ?.takeIf { it.isNotEmpty() }
                     ?.let { launchIntent.type = it }
