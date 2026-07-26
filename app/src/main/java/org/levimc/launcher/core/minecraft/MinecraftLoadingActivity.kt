@@ -129,12 +129,34 @@ class MinecraftLoadingActivity : BaseActivity(), MinecraftRuntimePreparer.Progre
     }
 
     private fun applyLaunchOrientation() {
-        val version = MinecraftRuntimePreparer.resolveGameVersion(intent)
-        val launchVertically = version?.launchVertically
-            ?: intent.getBooleanExtra("LAUNCH_VERTICALLY", false)
-        if (launchVertically) {
-            requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        // 优先用微风启动器传来的 SCREEN_ORIENTATION（int 0-6，完整映射），
+        // 回退到 LAUNCH_VERTICALLY（boolean，仅竖屏）保持向后兼容。
+        val screenOrientation = intent.getIntExtra("SCREEN_ORIENTATION", -1)
+        if (screenOrientation in 0..6) {
+            val mapped = mapScreenOrientation(screenOrientation)
+            if (mapped != ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED) {
+                requestedOrientation = mapped
+            }
+        } else {
+            val version = MinecraftRuntimePreparer.resolveGameVersion(intent)
+            val launchVertically = version?.launchVertically
+                ?: intent.getBooleanExtra("LAUNCH_VERTICALLY", false)
+            if (launchVertically) {
+                requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+            }
         }
+    }
+
+    /** 与 BreezeLauncher 的 mapOrientation 一致，把 0-6 映射到 ActivityInfo 常量。 */
+    private fun mapScreenOrientation(value: Int): Int = when (value) {
+        0 -> ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
+        1 -> ActivityInfo.SCREEN_ORIENTATION_USER
+        2 -> ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        3 -> ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT
+        4 -> ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+        5 -> ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE
+        6 -> ActivityInfo.SCREEN_ORIENTATION_SENSOR
+        else -> ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
     }
 
     private fun startPreparing() {

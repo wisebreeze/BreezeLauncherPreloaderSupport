@@ -62,6 +62,18 @@ object MinecraftRuntimePreparer {
         // own cache so createFakeApplicationInfo / GamePackageManager can read them locally.
         stageSharedVersionFiles(context.applicationContext, launchIntent, version, listener, trace)
 
+        // 模组菜单开关：微风启动器 ModsActivity 的开关通过 MOD_MENU_ENABLED extra 传来，
+        // 这里同步到本框架的 InbuiltModManager，让微风启动器的设置控制兼容框架的模组菜单。
+        if (launchIntent.hasExtra("MOD_MENU_ENABLED")) {
+            val enabled = launchIntent.getBooleanExtra("MOD_MENU_ENABLED", true)
+            try {
+                org.levimc.launcher.core.mods.inbuilt.manager.InbuiltModManager
+                    .getInstance(context.applicationContext).setModMenuEnabled(enabled)
+            } catch (_: Exception) {
+                // best-effort
+            }
+        }
+
         listener.onProgress(12, "Preparing game files")
         val gameManager = GamePackageManager.getInstance(context.applicationContext, version, trace, null)
         trace.mark("GamePackageManager ready")
