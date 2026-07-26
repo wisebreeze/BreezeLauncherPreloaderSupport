@@ -37,7 +37,9 @@ android {
         minSdkVersion 28
         targetSdkVersion 35
         versionCode getVersionCodeByTimestamp()
-        versionName "1.5.6"
+        // versionName 取 git tag（如 v26.7.26 → 26.7.26），与微风启动器版本号保持一致；
+        // 没有 tag 时回退到默认值。
+        versionName getGitTag() ?: "26.7.26"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         ndk {
             //noinspection ChromeOsAbiSupport
