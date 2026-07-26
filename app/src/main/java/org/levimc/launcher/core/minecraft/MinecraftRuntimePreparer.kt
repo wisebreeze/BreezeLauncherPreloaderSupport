@@ -3,7 +3,9 @@ package org.levimc.launcher.core.minecraft
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ApplicationInfo
+import android.net.Uri
 import android.os.Build
+import android.util.Log
 import org.levimc.launcher.core.mods.Mod
 import org.levimc.launcher.core.mods.ModManager
 import org.levimc.launcher.core.mods.ModNativeLoader
@@ -12,6 +14,7 @@ import org.levimc.launcher.preloader.PreloaderInput
 import org.levimc.launcher.preloader.PreloaderSignatureRulesManager
 import org.levimc.launcher.util.LauncherStorage
 import java.io.File
+import java.io.FileOutputStream
 
 object MinecraftRuntimePreparer {
     data class PreparedRuntime(
@@ -34,6 +37,11 @@ object MinecraftRuntimePreparer {
         override fun onLog(message: String) = Unit
     }
 
+    // Extras pushed by BreezeLauncher's CompatibilityLauncher when sharing version APKs
+    // through its exported FileProvider. Kept in sync with CompatibilityLauncher.kt.
+    private const val EXTRA_BASE_APK_URI = "MC_BASE_APK_URI"
+    private const val EXTRA_SPLIT_URIS = "MC_SPLIT_URIS"
+
     fun prepare(
         context: Context,
         launchIntent: Intent,
@@ -46,6 +54,11 @@ object MinecraftRuntimePreparer {
             ?: throw IllegalArgumentException("No Minecraft version specified")
         listener.onLog("Using ${version.directoryName} (${version.versionCode})")
         trace.mark("Minecraft version resolved", "${version.directoryName} ${version.versionCode}")
+
+        // When launched from BreezeLauncher's compatibility mode, the version APK lives in
+        // BreezeLauncher's sandbox and is shared via content URIs. Stage those files into our
+        // own cache so createFakeApplicationInfo / GamePackageManager can read them locally.
+        stageSharedVersionFiles(context.applicationContext, launchIntent, version, listener, trace)
 
         listener.onProgress(12, "Preparing game files")
         val gameManager = GamePackageManager.getInstance(context.applicationContext, version, trace, null)
@@ -127,6 +140,78 @@ object MinecraftRuntimePreparer {
         } else {
             null
         }
+    }
+
+    /**
+     * 当由 BreezeLauncher 兼容模式启动时，版本 APK 位于微风启动器沙箱内，无法直接读取。
+     * 微风启动器通过导出的 FileProvider 以 content:// URI 共享 base.apk 与分包，并授予读权限。
+     * 这里把共享的文件拷到自身 cacheDir/compat_staging/<versionDir>/ 下，并把
+     * [version.versionDir] 指向本地拷贝，使后续 createFakeApplicationInfo /
+     * GamePackageManager 能用本地路径读取。
+     *
+     * 文件命名差异：微风启动器存的是 base.apk.bak / *.apk.bak，这里统一重命名为
+     * base.apk.levi / *.apk.levi 以匹配 [MinecraftLauncher.createFakeApplicationInfo] 的约定。
+     */
+    private fun stageSharedVersionFiles(
+        context: Context,
+        intent: Intent,
+        version: GameVersion,
+        listener: ProgressListener,
+        trace: LaunchTrace
+    ) {
+        val baseApkUriString = intent.getStringExtra(EXTRA_BASE_APK_URI)
+        if (baseApkUriString.isNullOrEmpty()) {
+            // Not launched via compatibility mode, or no URI provided. Keep the raw MC_PATH.
+            return
+        }
+
+        val versionDirName = version.directoryName.ifEmpty { "shared" }
+        val stagingDir = File(context.cacheDir, "compat_staging/$versionDirName")
+        stagingDir.deleteRecursively()
+        stagingDir.mkdirs()
+
+        listener.onLog("Staging shared version files into ${stagingDir.absolutePath}")
+        trace.mark("Staging shared version", stagingDir.absolutePath)
+
+        // Base APK -> staging/base.apk.levi
+        val baseApkDest = File(stagingDir, "base.apk.levi")
+        copyUriToFile(context, baseApkUriString, baseApkDest, listener)
+
+        // Splits -> staging/splits/<name>.apk.levi
+        val splitUris = intent.getStringArrayListExtra(EXTRA_SPLIT_URIS)
+        if (splitUris != null && splitUris.isNotEmpty()) {
+            val splitsDir = File(stagingDir, "splits")
+            splitsDir.mkdirs()
+            splitUris.forEachIndexed { index, uriString ->
+                val srcName = try {
+                    Uri.parse(uriString).lastPathSegment ?: "split_$index"
+                } catch (e: Exception) {
+                    "split_$index"
+                }
+                val destName = srcName.removeSuffix(".apk.bak").removeSuffix(".apk") + ".apk.levi"
+                copyUriToFile(context, uriString, File(splitsDir, destName), listener)
+            }
+        }
+
+        // Redirect the version directory to the local staging copy so the rest of the
+        // preparation pipeline (createFakeApplicationInfo, GamePackageManager) reads locally.
+        version.versionDir = stagingDir
+        trace.mark("Version dir redirected", stagingDir.absolutePath)
+    }
+
+    private fun copyUriToFile(
+        context: Context,
+        uriString: String,
+        dest: File,
+        listener: ProgressListener
+    ) {
+        val uri = Uri.parse(uriString)
+        context.contentResolver.openInputStream(uri)?.use { input ->
+            FileOutputStream(dest).use { output ->
+                input.copyTo(output)
+            }
+        } ?: throw java.io.FileNotFoundException("Cannot open shared URI: $uriString")
+        listener.onLog("Staged ${dest.name} (${dest.length()} bytes)")
     }
 
     private fun prepareMinecraftIntent(
