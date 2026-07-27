@@ -342,7 +342,7 @@
     <string name="ms_active_badge">Активный</string>
     <string name="ms_account_subtitle_format">ID пользователя: %1$s • Обновлено: %2$s</string>
     <string name="xbox_avatar">Аватар Xbox</string>
-    <string name="launcher_managed_mc_login">Войти в Minecraft с помощью LeviLauncher</string>
+    <string name="launcher_managed_mc_login">Войти в Minecraft с помощью Фреймворк Совместимости</string>
     <string name="dialog_title_login_required">Требуется вход</string>
     <string name="dialog_message_login_required">Включён вход через лаунчер, но ни один аккаунт не авторизован. Перейдите в «Аккаунты», чтобы войти.</string>
     <string name="go_to_accounts">Аккаунты</string>
@@ -593,15 +593,15 @@
     <string name="about_authors_title">👥 Авторы и сопровождающие</string>
     <string name="about_author_name">DreamGuXiang</string>
     <string name="about_author_badge">Автор</string>
-    <string name="about_author_role">Авторы LeviLauncher</string>
+    <string name="about_author_role">Авторы Фреймворк Совместимости</string>
     <string name="about_afdian">Afdian</string>
     <string name="about_patreon">Patreon</string>
     <string name="about_source_title">Исходный код и открытый исходный код</string>
-    <string name="about_github_repo">GitHub · LeviLauncher</string>
+    <string name="about_github_repo">GitHub · Фреймворк Совместимости</string>
     <string name="about_github_org">LiteLDev</string>
     <string name="about_license_note">Подробности лицензии смотрите в файле LICENSE в репозитории.</string>
     <string name="about_contribute_title">Участие в разработке</string>
-    <string name="about_contribute_desc">Вклад через Issues или Pull Requests приветствуется и помогает улучшать LeviLauncher.</string>
+    <string name="about_contribute_desc">Вклад через Issues или Pull Requests приветствуется и помогает улучшать Фреймворк Совместимости.</string>
     <string name="about_issues">Issue</string>
     <string name="about_star_fork">Star / Fork</string>
 <string name="theme_color_title">Цвет темы</string>
@@ -694,7 +694,4 @@
     <string name="overlay_button_size_value">Размер: %1$ddp</string>
     <string name="overlay_button_opacity_value">Непрозрачность: %1$d%%</string>
     <string name="reset">Сбросить</string>
-    <string name="grant">Предоставить</string>
-    <string name="storage_permission_required_title">Требуется разрешение на хранилище</string>
-    <string name="storage_permission_required_msg">Для запуска игры требуется доступ ко всем файлам. Предоставьте его в настройках системы.</string>
 </resources>

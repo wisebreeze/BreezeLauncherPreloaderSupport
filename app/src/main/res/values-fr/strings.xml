@@ -386,7 +386,7 @@
     <string name="ms_active_badge">Actif</string>
     <string name="ms_account_subtitle_format">ID utilisateur : %1$s • Mis à jour : %2$s</string>
     <string name="xbox_avatar">Avatar Xbox</string>
-    <string name="launcher_managed_mc_login">Connectez-vous à Minecraft avec LeviLauncher</string>
+    <string name="launcher_managed_mc_login">Connectez-vous à Minecraft avec Framework de Compatibilité</string>
     <string name="dialog_title_login_required">Connexion requise</string>
     <string name="dialog_message_login_required">La connexion gérée est activée, mais aucun compte n\'est connecté. Allez dans Comptes.</string>
     <string name="go_to_accounts">Comptes</string>
@@ -572,11 +572,11 @@
     <string name="about_authors_title">👥 Auteurs et Mainteneurs</string>
     <string name="about_author_name">DreamGuXiang</string>
     <string name="about_author_badge">Auteur</string>
-    <string name="about_author_role">Auteurs de LeviLauncher</string>
+    <string name="about_author_role">Auteurs de Framework de Compatibilité</string>
     <string name="about_afdian">Afdian</string>
     <string name="about_patreon">Patreon</string>
     <string name="about_source_title">Code Source et Open Source</string>
-    <string name="about_github_repo">GitHub · LeviLauncher</string>
+    <string name="about_github_repo">GitHub · Framework de Compatibilité</string>
     <string name="about_github_org">LiteLDev</string>
     <string name="about_license_note">Voir LICENSE dans le dépôt pour plus de détails.</string>
     <string name="about_contribute_title">Contribuer</string>
@@ -667,7 +667,4 @@
     <string name="overlay_button_size_value">Taille : %1$ddp</string>
     <string name="overlay_button_opacity_value">Opacité : %1$d%%</string>
     <string name="reset">Réinitialiser</string>
-    <string name="grant">Accorder</string>
-    <string name="storage_permission_required_title">Autorisation de stockage requise</string>
-    <string name="storage_permission_required_msg">L'accès à tous les fichiers est requis pour lancer le jeu. Veuillez l'accorder dans les paramètres système.</string>
 </resources>

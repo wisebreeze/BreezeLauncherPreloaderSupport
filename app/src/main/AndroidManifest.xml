@@ -452,6 +452,19 @@
             android:exported="true"
             android:grantUriPermissions="true" />
 
+        <!-- AIDL 绑定服务：让微风启动器通过 IPC 查询兼容框架的游戏内容（数量/列表/文件）。
+             服务跑在框架进程里，能访问自己的 Android/data/，bindService 时自动拉起进程。 -->
+        <service
+            android:name="org.levimc.launcher.core.content.ContentService"
+            android:exported="true" />
+
+        <!-- 透明 Activity，用于在框架进程里触发 ACTION_OPEN_DOCUMENT_TREE，
+             让框架进程获得 games/com.mojang/ 目录的 SAF 持久化权限。 -->
+        <activity
+            android:name="org.levimc.launcher.core.content.SafRequestActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
     </application>
 
     <permission

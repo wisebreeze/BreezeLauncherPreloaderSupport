@@ -200,7 +200,7 @@
     <string name="instance_delete_confirm_title">Örneği Sil</string>
     <string name="instance_delete_confirm_msg">Bu örneği silmek istediğinizden emin misiniz? Dünyalar dahil tüm veriler kalıcı olarak kaldırılacak.</string>
     <string name="instance_backup_title">Örneği Yedekle</string>
-    <string name="instance_backup_desc">Bu örneğin tam yedeklemesini İndirilenler/LeviLauncher/Yedekler konumuna oluştur.</string>
+    <string name="instance_backup_desc">Bu örneğin tam yedeklemesini İndirilenler/Uyumluluk Çerçevesi/Yedekler konumuna oluştur.</string>
     <string name="instance_backup_button">Örneği Yedekle</string>
     <string name="instance_backup_confirm_message">Bu örneğin tam yedeği şimdi oluşturulsun mu? Yedekleme sırasında dosyaların değişmemesi için Minecraft çalışıyorsa önce çıkın.</string>
     <string name="instance_backup_in_progress">Örnek yedekleniyor…</string>
@@ -465,7 +465,7 @@
     <string name="ms_active_badge">Etkin</string>
     <string name="ms_account_subtitle_format">Kullanıcı Kimliği: %1$s • Güncelleme: %2$s</string>
     <string name="xbox_avatar">Xbox avatarı</string>
-    <string name="launcher_managed_mc_login">LeviLauncher ile Minecraft\'ta oturum aç</string>
+    <string name="launcher_managed_mc_login">Uyumluluk Çerçevesi ile Minecraft\'ta oturum aç</string>
     <string name="dialog_title_login_required">Oturum açma gerekli</string>
     <string name="dialog_message_login_required">Başlatıcı yönetimli giriş etkin, ancak oturum açılmamış. Oturum açmak için Hesaplar\'a gidin.</string>
     <string name="go_to_accounts">Hesaplar</string>
@@ -663,15 +663,15 @@
     <string name="about_authors_title">👥 Yazarlar ve Bakımcılar</string>
     <string name="about_author_name">DreamGuXiang</string>
     <string name="about_author_badge">Yazar</string>
-    <string name="about_author_role">LeviLauncher Yazarları</string>
+    <string name="about_author_role">Uyumluluk Çerçevesi Yazarları</string>
     <string name="about_afdian">Afdian</string>
     <string name="about_patreon">Patreon</string>
     <string name="about_source_title">Kaynak Kodu ve Açık Kaynak</string>
-    <string name="about_github_repo">GitHub · LeviLauncher</string>
+    <string name="about_github_repo">GitHub · Uyumluluk Çerçevesi</string>
     <string name="about_github_org">LiteLDev</string>
     <string name="about_license_note">Lisans ayrıntıları için depo içindeki LICENSE dosyasına bakın.</string>
     <string name="about_contribute_title">Katkıda Bulun</string>
-    <string name="about_contribute_desc">LeviLauncher\'ı geliştirmek için Issue veya Pull Request aracılığıyla katkıda bulunabilirsiniz.</string>
+    <string name="about_contribute_desc">Uyumluluk Çerçevesi\'ı geliştirmek için Issue veya Pull Request aracılığıyla katkıda bulunabilirsiniz.</string>
     <string name="about_issues">Sorun Bildir</string>
     <string name="about_star_fork">Yıldızla / Çatalla</string>
 <string name="theme_color_title">Tema Rengi</string>
@@ -721,7 +721,4 @@
     <string name="overlay_button_size_value">Boyut: %1$ddp</string>
     <string name="overlay_button_opacity_value">Opaklık: %1$d%%</string>
     <string name="reset">Sıfırla</string>
-    <string name="grant">Ver</string>
-    <string name="storage_permission_required_title">Depolama izni gerekli</string>
-    <string name="storage_permission_required_msg">Oyunu başlatmak için tüm dosyalara erişim gereklidir. Lütfen sistem ayarlarında verin.</string>
 </resources>

@@ -386,7 +386,7 @@
     <string name="ms_active_badge">アクティブ</string>
     <string name="ms_account_subtitle_format">ユーザー ID: %1$s • 更新: %2$s</string>
     <string name="xbox_avatar">Xbox アバター</string>
-    <string name="launcher_managed_mc_login">LeviLauncher で Minecraft にサインイン</string>
+    <string name="launcher_managed_mc_login">互換フレームワーク で Minecraft にサインイン</string>
     <string name="dialog_title_login_required">サインインが必要です</string>
     <string name="dialog_message_login_required">ランチャー管理のログインが有効ですが、アカウントがサインインしていません。</string>
     <string name="go_to_accounts">アカウント</string>
@@ -572,11 +572,11 @@
     <string name="about_authors_title">👥 開発者 &amp; メンテナー</string>
     <string name="about_author_name">DreamGuXiang</string>
     <string name="about_author_badge">開発者</string>
-    <string name="about_author_role">LeviLauncher 開発者</string>
+    <string name="about_author_role">互換フレームワーク 開発者</string>
     <string name="about_afdian">Afdian</string>
     <string name="about_patreon">Patreon</string>
     <string name="about_source_title">ソースコード &amp; オープンソース</string>
-    <string name="about_github_repo">GitHub · LeviLauncher</string>
+    <string name="about_github_repo">GitHub · 互換フレームワーク</string>
     <string name="about_github_org">LiteLDev</string>
     <string name="about_license_note">ライセンスの詳細はリポジトリの LICENSE をご覧ください。</string>
     <string name="about_contribute_title">貢献</string>
@@ -664,7 +664,4 @@
     <string name="overlay_button_size_value">サイズ: %1$ddp</string>
     <string name="overlay_button_opacity_value">透明度: %1$d%%</string>
     <string name="reset">リセット</string>
-    <string name="grant">許可</string>
-    <string name="storage_permission_required_title">ストレージ権限が必要です</string>
-    <string name="storage_permission_required_msg">ゲームを起動するにはすべてのファイルへのアクセスが必要です。システム設定で許可してください。</string>
 </resources>

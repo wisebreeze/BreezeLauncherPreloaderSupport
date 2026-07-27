@@ -248,6 +248,22 @@ public class SettingsActivity extends BaseActivity {
         SwitchMaterial switchManagedLogin = findViewById(R.id.switch_managed_login);
         switchManagedLogin.setChecked(fs.isLauncherManagedMcLoginEnabled());
         switchManagedLogin.setOnCheckedChangeListener((btn, checked) -> fs.setLauncherManagedMcLoginEnabled(checked));
+
+        // 关于：点击打开 LeviLaunchroid 仓库
+        View aboutCard = findViewById(R.id.about_levilaunchroid_card);
+        if (aboutCard != null) {
+            aboutCard.setOnClickListener(v -> {
+                try {
+                    Intent intent = new Intent(Intent.ACTION_VIEW,
+                            android.net.Uri.parse("https://github.com/LiteLDev/LeviLaunchroid"));
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                } catch (Exception e) {
+                    android.widget.Toast.makeText(this,
+                            getString(R.string.about_open_failed), android.widget.Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
     }
 
     private void setupPersonalizeSection() {

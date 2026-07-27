@@ -60,6 +60,7 @@ android {
     }
     buildFeatures {
         buildConfig true
+        aidl true
     }
     sourceSets {
         main {

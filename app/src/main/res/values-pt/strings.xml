@@ -386,7 +386,7 @@
     <string name="ms_active_badge">Ativa</string>
     <string name="ms_account_subtitle_format">ID do Usuário: %1$s • Atualizado: %2$s</string>
     <string name="xbox_avatar">Avatar do Xbox</string>
-    <string name="launcher_managed_mc_login">Entre no Minecraft usando o LeviLauncher</string>
+    <string name="launcher_managed_mc_login">Entre no Minecraft usando o Estrutura de Compatibilidade</string>
     <string name="dialog_title_login_required">Login necessário</string>
     <string name="dialog_message_login_required">O login está ativado, mas nenhuma conta está conectada. Vá em Contas para entrar.</string>
     <string name="go_to_accounts">Contas</string>
@@ -572,11 +572,11 @@
     <string name="about_authors_title">👥 Autores e Colaboradores</string>
     <string name="about_author_name">DreamGuXiang</string>
     <string name="about_author_badge">Autor</string>
-    <string name="about_author_role">Autores do LeviLauncher</string>
+    <string name="about_author_role">Autores do Estrutura de Compatibilidade</string>
     <string name="about_afdian">Afdian</string>
     <string name="about_patreon">Patreon</string>
     <string name="about_source_title">Código Fonte e Open Source</string>
-    <string name="about_github_repo">GitHub · LeviLauncher</string>
+    <string name="about_github_repo">GitHub · Estrutura de Compatibilidade</string>
     <string name="about_github_org">LiteLDev</string>
     <string name="about_license_note">Veja LICENSE no repositório para detalhes.</string>
     <string name="about_contribute_title">Contribuir</string>
@@ -667,7 +667,4 @@
     <string name="overlay_button_size_value">Tamanho: %1$ddp</string>
     <string name="overlay_button_opacity_value">Opacidade: %1$d%%</string>
     <string name="reset">Redefinir</string>
-    <string name="grant">Conceder</string>
-    <string name="storage_permission_required_title">Permissão de armazenamento necessária</string>
-    <string name="storage_permission_required_msg">O acesso a todos os arquivos é necessário para iniciar o jogo. Conceda nas configurações do sistema.</string>
 </resources>

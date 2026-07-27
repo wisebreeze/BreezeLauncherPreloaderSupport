@@ -384,7 +384,7 @@
     <string name="ms_login_failed">Microsoft 登录失败</string>
     <string name="ms_login_failed_detail">登录失败：%1$s</string>
     <string name="xbox_avatar">Xbox头像</string>
-    <string name="launcher_managed_mc_login">使用 LeviLauncher 登录 Minecraft</string>
+    <string name="launcher_managed_mc_login">使用 兼容框架 登录 Minecraft</string>
     <string name="dialog_title_login_required">需要登录</string>
     <string name="dialog_message_login_required">已开启使用启动器登录，但当前未登录。请前往账号管理登录后再启动。</string>
     <string name="go_to_accounts">账号管理</string>
@@ -633,7 +633,7 @@
     <string name="instance_delete_confirm_title">删除实例</string>
     <string name="instance_delete_confirm_msg">确定要删除此实例吗？包括世界在内的所有数据都将被永久移除。</string>
     <string name="instance_backup_title">备份实例</string>
-    <string name="instance_backup_desc">将此实例完整备份到 Download/LeviLauncher/Backups。</string>
+    <string name="instance_backup_desc">将此实例完整备份到 Download/兼容框架/Backups。</string>
     <string name="instance_backup_button">备份实例</string>
     <string name="instance_backup_confirm_message">现在创建此实例的完整备份吗？如果 Minecraft 正在运行，建议先退出游戏，避免备份过程中数据变化。</string>
     <string name="instance_backup_in_progress">正在备份实例…</string>
@@ -691,15 +691,15 @@
     <string name="about_authors_title">👥 作者与维护者</string>
     <string name="about_author_name">DreamGuXiang</string>
     <string name="about_author_badge">作者</string>
-    <string name="about_author_role">LeviLauncher 作者</string>
+    <string name="about_author_role">兼容框架 作者</string>
     <string name="about_afdian">爱发电</string>
     <string name="about_patreon">Patreon</string>
     <string name="about_source_title">源代码与开源</string>
-    <string name="about_github_repo">GitHub · LeviLauncher</string>
+    <string name="about_github_repo">GitHub · 兼容框架</string>
     <string name="about_github_org">LiteLDev</string>
     <string name="about_license_note">许可证详情请参阅仓库中的 LICENSE。</string>
     <string name="about_contribute_title">参与贡献</string>
-    <string name="about_contribute_desc">欢迎通过 Issues 或 Pull Requests 改进 LeviLauncher。</string>
+    <string name="about_contribute_desc">欢迎通过 Issues 或 Pull Requests 改进 兼容框架。</string>
     <string name="about_issues">Issue</string>
     <string name="about_star_fork">Star / Fork</string>
 <string name="theme_color_title">主题颜色</string>
@@ -711,7 +711,4 @@
 
     <string name="unsupported_version_title">不支持的版本</string>
     <string name="unsupported_version_msg">此启动器不支持早于 1.21.80 的 Minecraft 版本。</string>
-    <string name="grant">授予</string>
-    <string name="storage_permission_required_title">需要存储权限</string>
-    <string name="storage_permission_required_msg">启动游戏需要完整文件访问权限。请在系统设置中授予。</string>
 </resources>
