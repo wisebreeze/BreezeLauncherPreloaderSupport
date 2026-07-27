@@ -694,4 +694,7 @@
     <string name="overlay_button_size_value">Размер: %1$ddp</string>
     <string name="overlay_button_opacity_value">Непрозрачность: %1$d%%</string>
     <string name="reset">Сбросить</string>
+    <string name="about_framework_based_on">Основано на LeviLaunchroid</string>
+    <string name="about_framework_based_on_desc">Фреймворк совместимости BreezeLauncher основан на LeviLaunchroid. Нажмите, чтобы посетить репозиторий.</string>
+    <string name="about_open_failed">Не удалось открыть репозиторий</string>
 </resources>

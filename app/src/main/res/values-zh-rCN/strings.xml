@@ -711,4 +711,7 @@
 
     <string name="unsupported_version_title">不支持的版本</string>
     <string name="unsupported_version_msg">此启动器不支持早于 1.21.80 的 Minecraft 版本。</string>
+    <string name="about_framework_based_on">基于 LeviLaunchroid</string>
+    <string name="about_framework_based_on_desc">微风启动器兼容框架基于 LeviLaunchroid。点击前往仓库。</string>
+    <string name="about_open_failed">无法打开仓库</string>
 </resources>

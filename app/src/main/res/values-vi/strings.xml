@@ -720,4 +720,7 @@
     <string name="overlay_button_size_value">Kích thước: %1$ddp</string>
     <string name="overlay_button_opacity_value">Độ mờ: %1$d%%</string>
     <string name="reset">Đặt lại</string>
+    <string name="about_framework_based_on">Dựa trên LeviLaunchroid</string>
+    <string name="about_framework_based_on_desc">Khung tương thích BreezeLauncher dựa trên LeviLaunchroid. Nhấn để truy cập kho lưu trữ.</string>
+    <string name="about_open_failed">Không thể mở kho lưu trữ</string>
 </resources>

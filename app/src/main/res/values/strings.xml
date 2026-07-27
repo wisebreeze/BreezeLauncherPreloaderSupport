@@ -734,4 +734,7 @@
 
     <string name="unsupported_version_title">Unsupported Version</string>
     <string name="unsupported_version_msg">This launcher does not support Minecraft versions older than 1.21.80.</string>
+    <string name="about_framework_based_on">Based on LeviLaunchroid</string>
+    <string name="about_framework_based_on_desc">BreezeLauncher compatibility framework is based on LeviLaunchroid. Tap to visit the repository.</string>
+    <string name="about_open_failed">Cannot open the repository</string>
 </resources>

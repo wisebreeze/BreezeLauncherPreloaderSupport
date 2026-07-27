@@ -667,4 +667,7 @@
     <string name="overlay_button_size_value">Tamanho: %1$ddp</string>
     <string name="overlay_button_opacity_value">Opacidade: %1$d%%</string>
     <string name="reset">Redefinir</string>
+    <string name="about_framework_based_on">Baseado em LeviLaunchroid</string>
+    <string name="about_framework_based_on_desc">A estrutura de compatibilidade do BreezeLauncher é baseada em LeviLaunchroid. Toque para visitar o repositório.</string>
+    <string name="about_open_failed">Não é possível abrir o repositório</string>
 </resources>

@@ -721,4 +721,7 @@
     <string name="overlay_button_size_value">Boyut: %1$ddp</string>
     <string name="overlay_button_opacity_value">Opaklık: %1$d%%</string>
     <string name="reset">Sıfırla</string>
+    <string name="about_framework_based_on">LeviLaunchroid tabanlı</string>
+    <string name="about_framework_based_on_desc">BreezeLauncher uyumluluk çerçevesi LeviLaunchroid tabanlıdır. Depoyu ziyaret etmek için dokunun.</string>
+    <string name="about_open_failed">Depo açılamıyor</string>
 </resources>

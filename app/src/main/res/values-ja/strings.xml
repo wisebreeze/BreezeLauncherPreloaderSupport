@@ -664,4 +664,7 @@
     <string name="overlay_button_size_value">サイズ: %1$ddp</string>
     <string name="overlay_button_opacity_value">透明度: %1$d%%</string>
     <string name="reset">リセット</string>
+    <string name="about_framework_based_on">LeviLaunchroid に基づく</string>
+    <string name="about_framework_based_on_desc">BreezeLauncher 互換フレームワークは LeviLaunchroid に基づいています。タップしてリポジトリにアクセス。</string>
+    <string name="about_open_failed">リポジトリを開けません</string>
 </resources>

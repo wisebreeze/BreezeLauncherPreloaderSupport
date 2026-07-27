@@ -692,4 +692,7 @@
     <string name="overlay_button_size_value">आकार: %1$ddp</string>
     <string name="overlay_button_opacity_value">अपारदर्शिता: %1$d%%</string>
     <string name="reset">रीसेट</string>
+    <string name="about_framework_based_on">LeviLaunchroid पर आधारित</string>
+    <string name="about_framework_based_on_desc">BreezeLauncher संगतता फ्रेमवर्क LeviLaunchroid पर आधारित है। रिपॉजिटरी पर जाने के लिए टैप करें।</string>
+    <string name="about_open_failed">रिपॉजिटरी नहीं खोल सकते</string>
 </resources>

@@ -688,4 +688,7 @@
     <string name="overlay_button_size_value">Ukuran: %1$ddp</string>
     <string name="overlay_button_opacity_value">Opasitas: %1$d%%</string>
     <string name="reset">Reset</string>
+    <string name="about_framework_based_on">Berdasarkan LeviLaunchroid</string>
+    <string name="about_framework_based_on_desc">Kerangka kompatibilitas BreezeLauncher didasarkan pada LeviLaunchroid. Ketuk untuk mengunjungi repositori.</string>
+    <string name="about_open_failed">Tidak dapat membuka repositori</string>
 </resources>
