@@ -694,4 +694,7 @@
     <string name="overlay_button_size_value">Размер: %1$ddp</string>
     <string name="overlay_button_opacity_value">Непрозрачность: %1$d%%</string>
     <string name="reset">Сбросить</string>
+    <string name="grant">Предоставить</string>
+    <string name="storage_permission_required_title">Требуется разрешение на хранилище</string>
+    <string name="storage_permission_required_msg">Для запуска игры требуется доступ ко всем файлам. Предоставьте его в настройках системы.</string>
 </resources>

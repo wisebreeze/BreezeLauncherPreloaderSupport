@@ -667,4 +667,7 @@
     <string name="overlay_button_size_value">Tamaño: %1$ddp</string>
     <string name="overlay_button_opacity_value">Opacidad: %1$d%%</string>
     <string name="reset">Restablecer</string>
+    <string name="grant">Conceder</string>
+    <string name="storage_permission_required_title">Se requiere permiso de almacenamiento</string>
+    <string name="storage_permission_required_msg">Se requiere acceso a todos los archivos para iniciar el juego. Concédelo en la configuración del sistema.</string>
 </resources>

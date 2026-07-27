@@ -664,4 +664,7 @@
     <string name="overlay_button_size_value">サイズ: %1$ddp</string>
     <string name="overlay_button_opacity_value">透明度: %1$d%%</string>
     <string name="reset">リセット</string>
+    <string name="grant">許可</string>
+    <string name="storage_permission_required_title">ストレージ権限が必要です</string>
+    <string name="storage_permission_required_msg">ゲームを起動するにはすべてのファイルへのアクセスが必要です。システム設定で許可してください。</string>
 </resources>

@@ -720,4 +720,7 @@
     <string name="overlay_button_size_value">Kích thước: %1$ddp</string>
     <string name="overlay_button_opacity_value">Độ mờ: %1$d%%</string>
     <string name="reset">Đặt lại</string>
+    <string name="grant">Cấp</string>
+    <string name="storage_permission_required_title">Cần quyền lưu trữ</string>
+    <string name="storage_permission_required_msg">Cần truy cập tất cả tệp để khởi chạy trò chơi. Vui lòng cấp trong cài đặt hệ thống.</string>
 </resources>

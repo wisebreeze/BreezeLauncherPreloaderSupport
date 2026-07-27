@@ -125,6 +125,33 @@ class MinecraftLoadingActivity : BaseActivity(), MinecraftRuntimePreparer.Progre
         preparingStarted = true
         trace.milestone("Runtime preparation continuing")
         appendLog("Preparing game")
+
+        // 检测是否有完整文件访问权限（MANAGE_EXTERNAL_STORAGE）
+        if (!android.os.Environment.isExternalStorageManager()) {
+            appendLog("Warning: All-files access not granted")
+            org.levimc.launcher.ui.dialogs.CustomAlertDialog(this)
+                .setTitleText(getString(R.string.storage_permission_required_title))
+                .setMessage(getString(R.string.storage_permission_required_msg))
+                .setPositiveButton(getString(R.string.grant)) { d ->
+                    try {
+                        val intent = android.content.Intent(
+                            android.provider.Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION
+                        ).apply {
+                            data = android.net.Uri.parse("package:$packageName")
+                            addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK)
+                        }
+                        startActivity(intent)
+                    } catch (_: Exception) {
+                    }
+                    finish()
+                }
+                .setNegativeButton(getString(R.string.cancel)) { d ->
+                    finish()
+                }
+                .show()
+            return
+        }
+
         startPreparing()
     }
 

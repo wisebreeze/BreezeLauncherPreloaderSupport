@@ -667,4 +667,7 @@
     <string name="overlay_button_size_value">Taille : %1$ddp</string>
     <string name="overlay_button_opacity_value">Opacité : %1$d%%</string>
     <string name="reset">Réinitialiser</string>
+    <string name="grant">Accorder</string>
+    <string name="storage_permission_required_title">Autorisation de stockage requise</string>
+    <string name="storage_permission_required_msg">L'accès à tous les fichiers est requis pour lancer le jeu. Veuillez l'accorder dans les paramètres système.</string>
 </resources>

@@ -711,4 +711,7 @@
 
     <string name="unsupported_version_title">不支持的版本</string>
     <string name="unsupported_version_msg">此启动器不支持早于 1.21.80 的 Minecraft 版本。</string>
+    <string name="grant">授予</string>
+    <string name="storage_permission_required_title">需要存储权限</string>
+    <string name="storage_permission_required_msg">启动游戏需要完整文件访问权限。请在系统设置中授予。</string>
 </resources>

@@ -734,4 +734,7 @@
 
     <string name="unsupported_version_title">Unsupported Version</string>
     <string name="unsupported_version_msg">This launcher does not support Minecraft versions older than 1.21.80.</string>
+    <string name="grant">Grant</string>
+    <string name="storage_permission_required_title">Storage permission required</string>
+    <string name="storage_permission_required_msg">All-files access is required to launch the game. Please grant it in system settings.</string>
 </resources>
