@@ -452,6 +452,12 @@
             android:exported="true"
             android:grantUriPermissions="true" />
 
+        <!-- AIDL 绑定服务：让微风启动器通过 IPC 查询兼容框架的游戏内容（数量/列表/文件）。
+             服务跑在框架进程里，能访问自己的 Android/data/，bindService 时自动拉起进程。 -->
+        <service
+            android:name="org.levimc.launcher.core.content.ContentService"
+            android:exported="true" />
+
     </application>
 
     <permission
