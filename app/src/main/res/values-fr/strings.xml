@@ -672,5 +672,5 @@
     <string name="about_open_failed">Impossible d\'ouvrir le dépôt</string>
     <string name="grant">Accorder</string>
     <string name="storage_permission_required_title">Autorisation de stockage requise</string>
-    <string name="storage_permission_required_msg">L'accès à tous les fichiers est requis pour lancer le jeu. Veuillez l'accorder dans les paramètres système.</string>
+    <string name="storage_permission_required_msg">L\'accès à tous les fichiers est requis pour lancer le jeu. Veuillez l\'accorder dans les paramètres système.</string>
 </resources>
