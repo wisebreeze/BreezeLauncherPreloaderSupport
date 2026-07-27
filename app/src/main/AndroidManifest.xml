@@ -458,6 +458,13 @@
             android:name="org.levimc.launcher.core.content.ContentService"
             android:exported="true" />
 
+        <!-- 透明 Activity，用于在框架进程里触发 ACTION_OPEN_DOCUMENT_TREE，
+             让框架进程获得 games/com.mojang/ 目录的 SAF 持久化权限。 -->
+        <activity
+            android:name="org.levimc.launcher.core.content.SafRequestActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
     </application>
 
     <permission

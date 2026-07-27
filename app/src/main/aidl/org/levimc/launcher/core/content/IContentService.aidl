@@ -1,7 +1,5 @@
 // AIDL interface for cross-process content access between BreezeLauncher
-// and BreezeLauncherPreloaderSupport. The service runs in the framework's
-// process (which can access its own Android/data/), and BreezeLauncher
-// binds to it to query content counts and file lists.
+// and BreezeLauncherPreloaderSupport via SAF.
 package org.levimc.launcher.core.content;
 
 interface IContentService {
@@ -18,9 +16,16 @@ interface IContentService {
     // Returns the last-modified timestamps (epoch ms) of files.
     long[] listContentLastModified(String dirName);
 
-    // Opens a file by relative path (relative to games/com.mojang/) for reading.
+    // Opens a file by relative path for reading.
     ParcelFileDescriptor openFile(String relativePath);
 
     // Deletes a file/dir by relative path.
     boolean deleteFile(String relativePath);
+
+    // Whether the framework has been granted SAF access to games/com.mojang/.
+    boolean hasSafAccess();
+
+    // Trigger SAF folder selection (launches a transparent Activity in the
+    // framework process so the user can pick games/com.mojang/).
+    void requestSafAccess();
 }

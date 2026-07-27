@@ -12,26 +12,15 @@ import android.provider.OpenableColumns;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.levimc.launcher.util.LauncherStorage;
-
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Locale;
 
 /**
- * 把兼容框架的游戏数据目录（worlds / resource_packs / behavior_packs 等）
- * 通过 ContentProvider 暴露给微风启动器，让微风启动器在兼容模式下能查询
- * 兼容框架的内容数量、列表，并读取/导出单个文件。
+ * 把兼容框架的游戏数据目录通过 ContentProvider 暴露给微风启动器。
  *
- * URI:
- * - content://org.levimc.launcher.content/worlds
- * - content://org.levimc.launcher.content/resource_packs
- * - content://org.levimc.launcher.content/behavior_packs
- * - content://org.levimc.launcher.content/skin_packs
- * - content://org.levimc.launcher.content/screenshots
- * - content://org.levimc.launcher.content/file/relative/path → openFile
- *
- * 列：_id, _display_name, _size, last_modified, relative_path
+ * 关键：用 context.getExternalFilesDir(null) 作为基路径（即 Android/data/org.levimc.launcher/files），
+ * 因为 Mojang 的 setStorageDirectory 把游戏数据存在这里（games/com.mojang/ 下），
+ * 而不是 LauncherStorage.getSharedGameDataDir（会加 minecraft/_shared/ 前缀，路径不匹配）。
  */
 public class ContentSharingProvider extends ContentProvider {
 
@@ -90,19 +79,23 @@ public class ContentSharingProvider extends ContentProvider {
             throws FileNotFoundException {
         Context context = getContext();
         if (context == null) throw new FileNotFoundException("no context");
-        // 期望 path 段是相对路径（相对 game data dir）
         String rel = uri.getPath();
         if (rel == null || rel.isEmpty()) throw new FileNotFoundException("no path");
         if (rel.startsWith("/")) rel = rel.substring(1);
-        // 优先外部存储，回退内部
-        File externalBase = LauncherStorage.getSharedGameDataDir(context, true);
-        File target = new File(externalBase, rel);
-        if (!target.exists()) {
-            File internalBase = LauncherStorage.getSharedGameDataDir(context, false);
-            target = new File(internalBase, rel);
-        }
+        File base = getGameDataDir(context);
+        File target = new File(base, rel);
         if (!target.exists()) throw new FileNotFoundException(target.getAbsolutePath());
         return ParcelFileDescriptor.open(target, ParcelFileDescriptor.MODE_READ_ONLY);
+    }
+
+    /**
+     * 游戏数据根目录：getExternalFilesDir(null) + games/com.mojang
+     * = Android/data/org.levimc.launcher/files/games/com.mojang
+     */
+    private File getGameDataDir(Context context) {
+        File external = context.getExternalFilesDir(null);
+        if (external == null) external = context.getFilesDir();
+        return new File(external, "games/com.mojang");
     }
 
     @Nullable
@@ -117,15 +110,7 @@ public class ContentSharingProvider extends ContentProvider {
             case "screenshots": dirName = "Screenshots"; break;
             default: return null;
         }
-        // Minecraft 把游戏数据存在外部存储（Android/data/.../files/games/com.mojang/），
-        // 优先用外部；外部不存在时回退内部。
-        File externalBase = LauncherStorage.getSharedGameDataDir(context, true);
-        File externalDir = new File(externalBase, dirName);
-        if (externalDir.exists() && externalDir.isDirectory()) {
-            return externalDir;
-        }
-        File internalBase = LauncherStorage.getSharedGameDataDir(context, false);
-        return new File(internalBase, dirName);
+        return new File(getGameDataDir(context), dirName);
     }
 
     private String relativize(File base, File f) {
@@ -148,13 +133,12 @@ public class ContentSharingProvider extends ContentProvider {
     @Override
     public int delete(@NonNull Uri uri, @Nullable String selection,
                       @Nullable String[] selectionArgs) {
-        // 允许微风启动器删除单个文件（按 relative_path）
         Context context = getContext();
         if (context == null) return 0;
         String rel = uri.getPath();
         if (rel == null) return 0;
         if (rel.startsWith("/")) rel = rel.substring(1);
-        File base = LauncherStorage.getSharedGameDataDir(context, false);
+        File base = getGameDataDir(context);
         File target = new File(base, rel);
         if (target.exists()) {
             return deleteRecursively(target) ? 1 : 0;
