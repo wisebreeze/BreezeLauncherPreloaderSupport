@@ -347,7 +347,7 @@
     <string name="ms_active_badge">Aktif</string>
     <string name="ms_account_subtitle_format">ID Pengguna: %1$s • Diperbarui: %2$s</string>
     <string name="xbox_avatar">Avatar Xbox</string>
-    <string name="launcher_managed_mc_login">Masuk ke Minecraft menggunakan LeviLauncher</string>
+    <string name="launcher_managed_mc_login">Masuk ke Minecraft menggunakan Kerangka Kompatibilitas</string>
     <string name="dialog_title_login_required">Login diperlukan</string>
     <string name="dialog_message_login_required">Login yang dikelola oleh launcher diaktifkan, tetapi belum ada akun yang masuk. Buka Akun untuk masuk.</string>
     <string name="go_to_accounts">Akun</string>
@@ -593,15 +593,15 @@
     <string name="about_authors_title">👥 Penulis &amp; Pemelihara</string>
     <string name="about_author_name">DreamGuXiang</string>
     <string name="about_author_badge">Penulis</string>
-    <string name="about_author_role">Penulis LeviLauncher</string>
+    <string name="about_author_role">Penulis Kerangka Kompatibilitas</string>
     <string name="about_afdian">Afdian</string>
     <string name="about_patreon">Patreon</string>
     <string name="about_source_title">Kode Sumber &amp; Open Source</string>
-    <string name="about_github_repo">GitHub · LeviLauncher</string>
+    <string name="about_github_repo">GitHub · Kerangka Kompatibilitas</string>
     <string name="about_github_org">LiteLDev</string>
     <string name="about_license_note">Lihat LICENSE di repositori untuk detail lisensi.</string>
     <string name="about_contribute_title">Berkontribusi</string>
-    <string name="about_contribute_desc">Kontribusi melalui Issues atau Pull Requests dipersilakan untuk meningkatkan LeviLauncher.</string>
+    <string name="about_contribute_desc">Kontribusi melalui Issues atau Pull Requests dipersilakan untuk meningkatkan Kerangka Kompatibilitas.</string>
     <string name="about_issues">Issue</string>
     <string name="about_star_fork">Star / Fork</string>
 <string name="theme_color_title">Warna Tema</string>
@@ -688,4 +688,7 @@
     <string name="overlay_button_size_value">Ukuran: %1$ddp</string>
     <string name="overlay_button_opacity_value">Opasitas: %1$d%%</string>
     <string name="reset">Reset</string>
+    <string name="about_framework_based_on">Berdasarkan LeviLaunchroid</string>
+    <string name="about_framework_based_on_desc">Kerangka kompatibilitas BreezeLauncher didasarkan pada LeviLaunchroid. Ketuk untuk mengunjungi repositori.</string>
+    <string name="about_open_failed">Tidak dapat membuka repositori</string>
 </resources>

@@ -399,7 +399,7 @@
     <string name="ms_active_badge">सक्रिय</string>
     <string name="ms_account_subtitle_format">यूज़र आईडी: %1$s • अपडेट किया गया: %2$s</string>
     <string name="xbox_avatar">Xbox अवतार</string>
-    <string name="launcher_managed_mc_login">LeviLauncher के साथ Minecraft में साइन इन करें</string>
+    <string name="launcher_managed_mc_login">संगतता फ्रेमवर्क के साथ Minecraft में साइन इन करें</string>
     <string name="dialog_title_login_required">साइन-इन आवश्यक है</string>
     <string name="dialog_message_login_required">लॉन्चर-प्रबंधित लॉगिन सक्षम है, लेकिन कोई खाता साइन इन नहीं है। साइन इन करने के लिए खातों में जाएं।</string>
     <string name="go_to_accounts">खाते</string>
@@ -597,15 +597,15 @@
     <string name="about_authors_title">👥 लेखक और मेंटेनर</string>
     <string name="about_author_name">DreamGuXiang</string>
     <string name="about_author_badge">लेखक</string>
-    <string name="about_author_role">LeviLauncher के लेखक</string>
+    <string name="about_author_role">संगतता फ्रेमवर्क के लेखक</string>
     <string name="about_afdian">Afdian</string>
     <string name="about_patreon">Patreon</string>
     <string name="about_source_title">सोर्स कोड और ओपन सोर्स</string>
-    <string name="about_github_repo">GitHub · LeviLauncher</string>
+    <string name="about_github_repo">GitHub · संगतता फ्रेमवर्क</string>
     <string name="about_github_org">LiteLDev</string>
     <string name="about_license_note">लाइसेंस विवरण के लिए रिपॉजिटरी में LICENSE देखें।</string>
     <string name="about_contribute_title">योगदान करें</string>
-    <string name="about_contribute_desc">LeviLauncher को बेहतर बनाने के लिए Issues या Pull Requests के माध्यम से योगदान का स्वागत है।</string>
+    <string name="about_contribute_desc">संगतता फ्रेमवर्क को बेहतर बनाने के लिए Issues या Pull Requests के माध्यम से योगदान का स्वागत है।</string>
     <string name="about_issues">Issue</string>
     <string name="about_star_fork">Star / Fork</string>
 <string name="theme_color_title">थीम रंग</string>
@@ -692,4 +692,7 @@
     <string name="overlay_button_size_value">आकार: %1$ddp</string>
     <string name="overlay_button_opacity_value">अपारदर्शिता: %1$d%%</string>
     <string name="reset">रीसेट</string>
+    <string name="about_framework_based_on">LeviLaunchroid पर आधारित</string>
+    <string name="about_framework_based_on_desc">BreezeLauncher संगतता फ्रेमवर्क LeviLaunchroid पर आधारित है। रिपॉजिटरी पर जाने के लिए टैप करें।</string>
+    <string name="about_open_failed">रिपॉजिटरी नहीं खोल सकते</string>
 </resources>

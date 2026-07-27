@@ -203,7 +203,7 @@
     <string name="instance_delete_confirm_title">Delete Instance</string>
     <string name="instance_delete_confirm_msg">Are you sure you want to delete this instance? All data including worlds will be permanently removed.</string>
     <string name="instance_backup_title">Backup Instance</string>
-    <string name="instance_backup_desc">Create a full backup of this instance in Download/LeviLauncher/Backups.</string>
+    <string name="instance_backup_desc">Create a full backup of this instance in Download/Compatibility Framework/Backups.</string>
     <string name="instance_backup_button">Backup Instance</string>
     <string name="instance_backup_confirm_message">Create a full backup of this instance now? Exit Minecraft first if it is running to avoid changing files during backup.</string>
     <string name="instance_backup_in_progress">Backing up instance…</string>
@@ -469,7 +469,7 @@
     <string name="ms_active_badge">Active</string>
     <string name="ms_account_subtitle_format">User ID: %1$s • Updated: %2$s</string>
     <string name="xbox_avatar">Xbox avatar</string>
-    <string name="launcher_managed_mc_login">Sign in to Minecraft with LeviLauncher</string>
+    <string name="launcher_managed_mc_login">Sign in to Minecraft with Compatibility Framework</string>
     <string name="dialog_title_login_required">Sign-in required</string>
     <string name="dialog_message_login_required">Launcher-managed login is enabled, but no account is signed in. Go to Accounts to sign in.</string>
     <string name="go_to_accounts">Accounts</string>
@@ -712,15 +712,15 @@
     <string name="about_authors_title">👥 Authors &amp; Maintainers</string>
     <string name="about_author_name">DreamGuXiang</string>
     <string name="about_author_badge">Author</string>
-    <string name="about_author_role">LeviLauncher Authors</string>
+    <string name="about_author_role">Compatibility Framework Authors</string>
     <string name="about_afdian">Afdian</string>
     <string name="about_patreon">Patreon</string>
     <string name="about_source_title">Source Code &amp; Open Source</string>
-    <string name="about_github_repo">GitHub · LeviLauncher</string>
+    <string name="about_github_repo">GitHub · Compatibility Framework</string>
     <string name="about_github_org">LiteLDev</string>
     <string name="about_license_note">See LICENSE in the repository for license details.</string>
     <string name="about_contribute_title">Contribute</string>
-    <string name="about_contribute_desc">Contributions via Issues or Pull Requests are welcome to improve LeviLauncher.</string>
+    <string name="about_contribute_desc">Contributions via Issues or Pull Requests are welcome to improve Compatibility Framework.</string>
     <string name="about_issues">Issue</string>
     <string name="about_star_fork">Star / Fork</string>
 
@@ -734,4 +734,7 @@
 
     <string name="unsupported_version_title">Unsupported Version</string>
     <string name="unsupported_version_msg">This launcher does not support Minecraft versions older than 1.21.80.</string>
+    <string name="about_framework_based_on">Based on LeviLaunchroid</string>
+    <string name="about_framework_based_on_desc">BreezeLauncher compatibility framework is based on LeviLaunchroid. Tap to visit the repository.</string>
+    <string name="about_open_failed">Cannot open the repository</string>
 </resources>

@@ -386,7 +386,7 @@
     <string name="ms_active_badge">Activa</string>
     <string name="ms_account_subtitle_format">ID Usuario: %1$s • Actualizado: %2$s</string>
     <string name="xbox_avatar">Avatar de Xbox</string>
-    <string name="launcher_managed_mc_login">Inicia sesión en Minecraft con LeviLauncher</string>
+    <string name="launcher_managed_mc_login">Inicia sesión en Minecraft con Marco de Compatibilidad</string>
     <string name="dialog_title_login_required">Se requiere inicio de sesión</string>
     <string name="dialog_message_login_required">El inicio de sesión gestionado está habilitado, pero no hay ninguna cuenta. Ve a Cuentas para iniciar sesión.</string>
     <string name="go_to_accounts">Cuentas</string>
@@ -572,11 +572,11 @@
     <string name="about_authors_title">👥 Autores y Mantenedores</string>
     <string name="about_author_name">DreamGuXiang</string>
     <string name="about_author_badge">Autor</string>
-    <string name="about_author_role">Autores de LeviLauncher</string>
+    <string name="about_author_role">Autores de Marco de Compatibilidad</string>
     <string name="about_afdian">Afdian</string>
     <string name="about_patreon">Patreon</string>
     <string name="about_source_title">Código Fuente y Open Source</string>
-    <string name="about_github_repo">GitHub · LeviLauncher</string>
+    <string name="about_github_repo">GitHub · Marco de Compatibilidad</string>
     <string name="about_github_org">LiteLDev</string>
     <string name="about_license_note">Consulta el archivo LICENSE en el repositorio.</string>
     <string name="about_contribute_title">Contribuir</string>
@@ -667,4 +667,7 @@
     <string name="overlay_button_size_value">Tamaño: %1$ddp</string>
     <string name="overlay_button_opacity_value">Opacidad: %1$d%%</string>
     <string name="reset">Restablecer</string>
+    <string name="about_framework_based_on">Basado en LeviLaunchroid</string>
+    <string name="about_framework_based_on_desc">El framework de compatibilidad de BreezeLauncher está basado en LeviLaunchroid. Toca para visitar el repositorio.</string>
+    <string name="about_open_failed">No se puede abrir el repositorio</string>
 </resources>
