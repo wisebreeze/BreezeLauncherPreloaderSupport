@@ -669,5 +669,5 @@
     <string name="reset">Réinitialiser</string>
     <string name="about_framework_based_on">Basé sur LeviLaunchroid</string>
     <string name="about_framework_based_on_desc">Le framework de compatibilité BreezeLauncher est basé sur LeviLaunchroid. Appuyez pour visiter le dépôt.</string>
-    <string name="about_open_failed">Impossible d'ouvrir le dépôt</string>
+    <string name="about_open_failed">Impossible d\'ouvrir le dépôt</string>
 </resources>
