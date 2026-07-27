@@ -667,4 +667,7 @@
     <string name="about_framework_based_on">LeviLaunchroid に基づく</string>
     <string name="about_framework_based_on_desc">BreezeLauncher 互換フレームワークは LeviLaunchroid に基づいています。タップしてリポジトリにアクセス。</string>
     <string name="about_open_failed">リポジトリを開けません</string>
+    <string name="grant">許可</string>
+    <string name="storage_permission_required_title">ストレージ権限が必要です</string>
+    <string name="storage_permission_required_msg">ゲームを起動するにはすべてのファイルへのアクセスが必要です。システム設定で許可してください。</string>
 </resources>

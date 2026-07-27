@@ -695,4 +695,7 @@
     <string name="about_framework_based_on">LeviLaunchroid पर आधारित</string>
     <string name="about_framework_based_on_desc">BreezeLauncher संगतता फ्रेमवर्क LeviLaunchroid पर आधारित है। रिपॉजिटरी पर जाने के लिए टैप करें।</string>
     <string name="about_open_failed">रिपॉजिटरी नहीं खोल सकते</string>
+    <string name="grant">प्रदान करें</string>
+    <string name="storage_permission_required_title">स्टोरेज अनुमति आवश्यक</string>
+    <string name="storage_permission_required_msg">गेम लॉन्च करने के लिए सभी फ़ाइलों तक पहुँच आवश्यक है। कृपया सिस्टम सेटिंग्स में प्रदान करें।</string>
 </resources>

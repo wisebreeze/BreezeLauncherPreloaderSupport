@@ -697,4 +697,7 @@
     <string name="about_framework_based_on">Основано на LeviLaunchroid</string>
     <string name="about_framework_based_on_desc">Фреймворк совместимости BreezeLauncher основан на LeviLaunchroid. Нажмите, чтобы посетить репозиторий.</string>
     <string name="about_open_failed">Не удалось открыть репозиторий</string>
+    <string name="grant">Предоставить</string>
+    <string name="storage_permission_required_title">Требуется разрешение на хранилище</string>
+    <string name="storage_permission_required_msg">Для запуска игры требуется доступ ко всем файлам. Предоставьте его в настройках системы.</string>
 </resources>

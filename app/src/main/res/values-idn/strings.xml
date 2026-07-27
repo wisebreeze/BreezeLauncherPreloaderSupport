@@ -691,4 +691,7 @@
     <string name="about_framework_based_on">Berdasarkan LeviLaunchroid</string>
     <string name="about_framework_based_on_desc">Kerangka kompatibilitas BreezeLauncher didasarkan pada LeviLaunchroid. Ketuk untuk mengunjungi repositori.</string>
     <string name="about_open_failed">Tidak dapat membuka repositori</string>
+    <string name="grant">Berikan</string>
+    <string name="storage_permission_required_title">Izin penyimpanan diperlukan</string>
+    <string name="storage_permission_required_msg">Akses ke semua file diperlukan untuk meluncurkan game. Berikan di pengaturan sistem.</string>
 </resources>

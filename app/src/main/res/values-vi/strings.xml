@@ -723,4 +723,7 @@
     <string name="about_framework_based_on">Dựa trên LeviLaunchroid</string>
     <string name="about_framework_based_on_desc">Khung tương thích BreezeLauncher dựa trên LeviLaunchroid. Nhấn để truy cập kho lưu trữ.</string>
     <string name="about_open_failed">Không thể mở kho lưu trữ</string>
+    <string name="grant">Cấp</string>
+    <string name="storage_permission_required_title">Cần quyền lưu trữ</string>
+    <string name="storage_permission_required_msg">Cần truy cập tất cả tệp để khởi chạy trò chơi. Vui lòng cấp trong cài đặt hệ thống.</string>
 </resources>

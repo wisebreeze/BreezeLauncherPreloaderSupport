@@ -724,4 +724,7 @@
     <string name="about_framework_based_on">LeviLaunchroid tabanlı</string>
     <string name="about_framework_based_on_desc">BreezeLauncher uyumluluk çerçevesi LeviLaunchroid tabanlıdır. Depoyu ziyaret etmek için dokunun.</string>
     <string name="about_open_failed">Depo açılamıyor</string>
+    <string name="grant">Ver</string>
+    <string name="storage_permission_required_title">Depolama izni gerekli</string>
+    <string name="storage_permission_required_msg">Oyunu başlatmak için tüm dosyalara erişim gereklidir. Lütfen sistem ayarlarında verin.</string>
 </resources>
