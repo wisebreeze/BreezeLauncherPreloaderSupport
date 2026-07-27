@@ -10,6 +10,7 @@ public class GyroMod {
     }
 
     public static native boolean nativeInit();
+    public static native void nativePreResolve();
     public static native void nativeSetEnabled(boolean enabled);
     public static native void nativeUpdateDelta(float deltaYaw, float deltaPitch);
     public static native void nativeSetSensitivityX(float sensitivity);
