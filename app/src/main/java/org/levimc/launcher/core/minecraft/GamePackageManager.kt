@@ -51,7 +51,6 @@ class GamePackageManager private constructor(
         "libpairipcore.so",
         "libPlayFabMultiplayer.so",
         "libmaesdk.so",
-        "libgxcore.so",
     )
 
     data class LibraryLoadResult(

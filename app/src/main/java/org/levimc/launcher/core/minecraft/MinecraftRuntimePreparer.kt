@@ -342,7 +342,6 @@ object MinecraftRuntimePreparer {
             loadLibrary(gameManager, "fmod", 56, true, listener, trace)
             loadLibrary(gameManager, "MediaDecoders_Android", 62, true, listener, trace)
             loadLibrary(gameManager, "minecraftpe", 70, true, listener, trace)
-            loadLibrary(gameManager, "gxcore", 74, true, listener, trace)
         }
         trace.mark("Minecraft library loading finished")
     }
