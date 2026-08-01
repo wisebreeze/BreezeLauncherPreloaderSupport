@@ -21,13 +21,5 @@ Download and install that APK on your device.
 ## Why the migration?
 
 The BLA repository hosts the unified CI pipeline that builds all BreezeLauncher
-variants (default, preloader, antutu) in parallel from a single source tree.
-Consolidating the build here avoids duplicated CI config and keeps all release
-artifacts in one place.
-
-## Source code
-
-Source code is no longer maintained in this repository. It lives in the
-private [BreezeLauncher](https://github.com/wisebreeze/BreezeLauncher) repo
-and is built by the [BreezeLauncherAndroid](https://github.com/wisebreeze/BreezeLauncherAndroid)
-CI.
+variants (default, preloader, antutu) in parallel. Consolidating the build
+here avoids duplicated CI config and keeps all release artifacts in one place.
