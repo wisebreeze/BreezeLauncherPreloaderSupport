@@ -1,6 +1,0 @@
-# Auto detect text files and perform LF normalization
-* text=auto
-
-# Ensure gradlew is always executable
-gradlew text eol=lf
-gradlew.bat text eol=crlf
